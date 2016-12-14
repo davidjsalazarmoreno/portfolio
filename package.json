@@ -1,0 +1,37 @@
+{
+  "name": "devfolio.js",
+  "version": "0.0.1",
+  "description": "A simple portfolio orientied to developer and maybe designers",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "storybook": "start-storybook -s ./src/assets -p 6006",
+    "build-storybook": "build-storybook -c .storybook -o .out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:davidjsalazarmoreno/devfolio.js.git"
+  },
+  "keywords": [
+    "portfolio",
+    "web",
+    "javascript",
+    "library"
+  ],
+  "author": "David Salazar <davidjsalazarmoreno@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "getstorybook": "^1.6.1",
+    "normalize.css": "^5.0.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "css-loader": "^0.26.0",
+    "node-sass": "next",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1"
+  }
+}

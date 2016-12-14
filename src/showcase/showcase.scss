@@ -1,0 +1,31 @@
+// Variables
+@import '../variables';
+
+.ShowcaseComponent {
+  margin: 0 auto;
+  width: $component-width;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: $component-vertical-separation;
+
+  h3 {
+    flex-basis: 100%;
+  }
+
+  .Thumbnails {
+    width: 100%;
+  }
+
+  .Thumbnails .Thumbnail {
+    padding-right: 5px;
+    padding-left: 5px;
+    outline: none;
+
+  }
+
+  .Thumbnails .Thumbnail:hover {
+    cursor: pointer;
+  }
+}
