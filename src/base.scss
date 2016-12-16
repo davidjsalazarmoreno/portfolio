@@ -237,6 +237,7 @@
   margin: 0;
   position: relative;
   margin-top: -$component-vertical-separation;
+  margin-bottom: 10%;
 
   .heroImage {
     background-image: url('/hero-image.jpg');
@@ -258,7 +259,7 @@
   }
 
   p {
-    margin-top: 25%;
+    margin-top: 10%;
     text-align: center;
     color: $secondary;
     transition: 350ms ease all;
