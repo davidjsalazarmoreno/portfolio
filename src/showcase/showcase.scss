@@ -4,10 +4,10 @@
 .ShowcaseComponent {
   margin: 0 auto;
   width: $component-width;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
   margin-bottom: $component-vertical-separation;
 
   h3 {
@@ -15,17 +15,8 @@
   }
 
   .Thumbnails {
-    width: 100%;
+    column-count: 4;
+    column-gap: 0;
   }
 
-  .Thumbnails .Thumbnail {
-    padding-right: 5px;
-    padding-left: 5px;
-    outline: none;
-
-  }
-
-  .Thumbnails .Thumbnail:hover {
-    cursor: pointer;
-  }
 }

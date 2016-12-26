@@ -1,7 +1,7 @@
 {
-  "name": "devfolio.js",
+  "name": "portfolio",
   "version": "0.0.1",
-  "description": "A simple portfolio orientied to developer and maybe designers",
+  "description": "It's just my portfolio",
   "main": "index.js",
   "scripts": {
     "test": "test",
@@ -15,8 +15,7 @@
   "keywords": [
     "portfolio",
     "web",
-    "javascript",
-    "library"
+    "javascript"
   ],
   "author": "David Salazar <davidjsalazarmoreno@gmail.com>",
   "license": "MIT",

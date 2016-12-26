@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+require('./project.scss');
 
 export const ProjectComponent = (props) => {
   const { id, image, name, excerpt, information } = props;
@@ -10,23 +12,25 @@ export const ProjectComponent = (props) => {
             <img src={image} width="780" alt=""/>
           </div>
 
-          <p className="ProjectExcerpt">
+          <div className="ProjectExcerpt">
             <h2 className="ProjectName">
               {name}
             </h2>
-            {excerpt}
+            <p className="ProjectExcerpt">
+              {excerpt}
+            </p>
             <ul className="ProjectInformation">
               {
-                Object.entries(information).map((entry, index) => {
+                Object.entries(information).map(([key, value], index) => {
                   return (
-                    <li>
-                      <b>{entry[0]}:</b> {entry[1]} 
+                    <li key={`${key}-${Math.random()}`}>
+                      <b>{key}:</b> {value} 
                     </li>
                   )
                 })
               }
             </ul>
-          </p>
+          </div>
         </div>
     </div>
   )

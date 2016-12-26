@@ -18,27 +18,51 @@ import {SocialComponent} from './social/social';
 const playsmatchShowcase = [
   {
     type: 'image',
-    url: '/pm-showcase-1.png',
+    url: 'http://placehold.it/780x480',
+    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
     id: 'pm-showcase-1'
   },
   {
     type: 'image',
-    url: '/pm-showcase-1.png',
+    url: 'http://placehold.it/800x600',
+    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
+    id: 'pm-showcase-1'
+  },
+  {
+    type: 'image',
+    url: 'http://placehold.it/1280x720',
+    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
+    id: 'pm-showcase-1'
+  },
+  {
+    type: 'image',
+    url: 'http://placehold.it/780x480',
+    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
+    id: 'pm-showcase-1'
+  },
+
+  {
+    type: 'image',
+    url: 'http://placehold.it/300x350',
+    alt: 'Test comment',
     id: 'pm-showcase-2'
   },
   {
     type: 'image',
-    url: '/pm-showcase-1.png',
+    url: 'http://placehold.it/1800x760',
+    alt: 'Test comment',
     id: 'pm-showcase-3'
   },
   {
     type: 'image',
-    url: '/pm-showcase-1.png',
+    url: 'http://placehold.it/300x350',
+    alt: 'Test comment',
     id: 'pm-showcase-4'
   },
   {
     type: 'youtube',
     url: 'YAKTlImnS-g',
+    alt: 'Test comment',
     id: 'youtube-1'
   },
 
@@ -52,6 +76,95 @@ export const networks = [
   { url: 'http://davidjsmoreno.com.ve/', iconClassName: 'fa fa-wordpress' , title: 'Wordpress blog' }
 ];
 
+const componentsStack = {
+  FlatSeparator: FlatSeparatorComponent,
+  Showcase: ShowcaseComponent,
+  Header: HeaderComponent,
+  Excerpt: ExcerptComponent,
+  Filters: FiltersComponent,
+  Project: ProjectComponent,
+  Social: SocialComponent
+};
+
+const hrCustom = (props) => (<hr/>);
+
+const layout = [
+  {
+    componentName: 'Header', props: {}
+  },
+  {
+    componentName: 'FlatSeparator', props: { margin: "16px auto",  width: "20%"  }
+  },
+  {
+    componentName: 'Excerpt', props: {}
+  },
+  {
+    custom: <hr/>
+  },
+  {
+    componentName: 'Filters', props: {}
+  },
+  {
+    componentName: 'Project', props: {
+      id: "playsmatch" ,
+      image: "/pm-showcase-1.png" ,
+      name: "Cuádrala",
+      excerpt: "I work as a full stack web developer blah blah blah",
+      information: {
+        'Client': 'Playsmatch',
+        'Period': 'June 2016 - Currently',
+        'Work Type': 'FullTime',
+        'Role': 'Full Stack Web Developer',
+        'Technologies used': 'React / Nodejs',
+        'Company Website': 'Cuadrala.com'
+      }
+    }
+  },
+  {
+    componentName: 'Showcase', props: {
+      id: "PlaysmatchShowcase",
+      title: "Showcase", 
+      elements: playsmatchShowcase
+    }
+  },
+  {
+    custom: (
+      <footer>
+        <p>
+          <a href="mailto:davidjsalazarmoreno@gmail.com?subject=Awesome%20Project">
+            <i className="fa fa-envelope-o"></i>
+            <br/>
+            Contact me
+          </a>
+        </p>
+        
+        <FlatSeparatorComponent margin="8px auto" width="13%" />
+
+        <small className="footnote">
+          <a href="">
+            Made with <i className="fa fa-heart" title="Love" /> and Devolio.js
+          </a>
+        </small>
+
+        <SocialComponent id="SocialsOnFooter" networks={networks} />
+      </footer>
+      )
+  }
+];
+
+// {
+//   layout.map(({componentName, props, custom}, key) => {
+//     if( custom ) { return (custom) };
+
+//     const component = componentsStack[componentName];
+
+//     return (
+//       <div key={`${key}`}>
+//         {component(props)}
+//       </div>
+//     );
+//   })
+// }
 
 
 export class DevfolioComponent extends React.Component {
@@ -62,7 +175,6 @@ export class DevfolioComponent extends React.Component {
   render() {
     return (
       <section className="DevfolioComponent">
-
         <HeaderComponent />
         {/** /Header excerpt */}
         <FlatSeparatorComponent margin="16px auto" width="20%" />
@@ -78,15 +190,15 @@ export class DevfolioComponent extends React.Component {
         <ProjectComponent 
           id="playsmatch" 
           image="/pm-showcase-1.png" 
-          name="Cuádrala"
-          excerpt="I work as a full stack web developer blah blah blah"
+          name="Cuádrala / Playsmatch"
+          excerpt="Playsmatch is a reservation and payment management system for sports complexes, which seeks to eliminate all the flaws and difficulties that have a moment of renting a court for both users and administrators."
           information={{
             'Client': 'Playsmatch',
             'Period': 'June 2016 - Currently',
             'Work Type': 'FullTime',
             'Role': 'Full Stack Web Developer',
             'Technologies used': 'React / Nodejs',
-            'Company Website': 'Cuadrala.com'
+            'Company Website': <a href="https://www.cuadrala.com">Cuádrala</a>
           }}
         />
 
@@ -122,7 +234,7 @@ export class DevfolioComponent extends React.Component {
             'Client': 'ILC Academy',
             'Period': 'January 2013 - January 2015',
             'Work Type': 'FullTime',
-            'Role': 'Web Developer / Project Leader',
+            'Role': 'Web Developer / Wordpress Consultant / Project Leader',
             'Technologies used': 'Wordpress / jQuery',
             'Company Website': 'http://ilcacademy.com/'
           }}
@@ -151,10 +263,11 @@ export class DevfolioComponent extends React.Component {
 
           <SocialComponent id="SocialsOnFooter" networks={networks} />
         </footer>
-        
       </section>
     );
   }
 };
 
 export default DevfolioComponent;
+
+

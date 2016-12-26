@@ -53,6 +53,12 @@
     color: $accent;
   }
 
+  // .SocialComponent a,
+  // .SocialComponent a {
+  //   color: lighten($color: $primary, $amount: 25%);
+  //   transition: 350ms ease all;
+  // }
+
   .SocialComponent a:hover,
   .SocialComponent a:active {
     color: darken($color: $foreground, $amount: 25);
@@ -184,35 +190,6 @@
   }
 }
 
-.ProjectsComponent {
-  margin: 0 auto;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  
-  .ProjectExcerpt {
-    order: 1;
-  }
-
-  .ProjectInformation { 
-    order: 2;
-  }
-
-  .ProjectInformation li {
-    line-height: 1.8em;
-  }
-
-  .main-project-image {
-    order: 3;
-    margin-left: 10%;
-  }
-
-  .main-project-image img {
-    max-width: 100%;
-  }
-
-}
-
 // .ProjectShowcaseComponent {
 //   margin: 0 auto;
 //   width: $component-width;
@@ -327,7 +304,7 @@
   }
 
   .SocialComponent i {
-    font-size: .500em;
+    font-size: .650em;
   }
 
 }
