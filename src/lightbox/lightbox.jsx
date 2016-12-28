@@ -81,7 +81,7 @@ export class LightboxComponent extends React.Component {
           toggleVisibility();
         }}></i>
         <figure>
-          <iframe src={`https://www.youtube.com/embed/${url}`} width="800" height="600" frameBorder="0" allowFullScreen></iframe>
+          <iframe src={`https://www.youtube.com/embed/${url}`} width="640" height="480" frameBorder="0" allowFullScreen></iframe>
           <figcaption>{alt}</figcaption>
         
         </figure>
@@ -109,12 +109,19 @@ export class LightboxComponent extends React.Component {
     
     return(
       <div key={`${url}-${Math.random()}`} id={id} className="LightboxComponent">
-        <a href={url} className="Thumbnail" onClick={(e) => {
+        <a href={`https://www.youtube.com/watch?v=${url}`} className="Thumbnail" onClick={(e) => {
           e.preventDefault();
 
           toggleVisibility();
         }}>
-         <img src={ type === 'youtube' ? `http://img.youtube.com/vi/${url}/default.jpg` : url } />
+
+         <img 
+          src={ type === 'youtube' ? `http://img.youtube.com/vi/${url}/mqdefault.jpg` : url } 
+          style={{
+            width: this.props.width || '100%',
+            height: this.props.height || '100%'
+          }}   
+         />
         </a>
         {/* /Lightbox Thumbnail */}
 

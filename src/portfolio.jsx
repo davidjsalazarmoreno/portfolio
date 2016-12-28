@@ -2,7 +2,7 @@
 import React from 'react';
 
 require('./../node_modules/normalize.css/normalize.css');
-require('./devfolio.scss');
+require('./portfolio.scss');
 
 // Components
 import {FlatSeparatorComponent} from './flat-separator/flat-separator';
@@ -65,9 +65,43 @@ const playsmatchShowcase = [
     alt: 'Test comment',
     id: 'youtube-1'
   },
-
-
 ];
+
+const ILCShowcase = [
+  {
+    type: 'youtube',
+    url: 'igTVc5yygt8',
+    alt: 'Wordpress plugin video inside the web: This wordpress plugin allows the user to play the links of youtube and vimeo directly inside the web with the help of the fancybox library.',
+    id: 'ilc-showcase-2'
+  },
+  {
+    type: 'youtube',
+    url: 'AU-N8X3j7w8',
+    alt: 'Application Wheel of Life: It is a tool used in the world of coaching but taken to web application, with it you can create wheel life charts, save wheels, associate a customer with a wheel and generate a report in a PDF document.',
+    id: 'ilc-showcase-3'
+  },
+  {
+    type: 'youtube',
+    url: 'qoGVn7bbgFg',
+    alt: 'Small design of a contact page, with the button to call via skype.',
+    id: 'ilc-showcase-4'
+  },
+  {
+    type: 'youtube',
+    url: '21_bpODeA8s',
+    alt: 'Modification to budypress directory (Wordpress plugin): Basically the directory was modified to show specific roles of wordpress, depending on those roles apply CSS styles (the medallion on the right) in addition to adding these new roles to the filters to refine the users search .',
+    id: 'ilc-showcase-5'
+  },
+  {
+    type: 'image',
+    url: '/ilc/ilc-welcome.jpg',
+    // width: 'auto',
+    // height: '700px',
+    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
+    id: 'ilc-showcase-1'
+  },
+];
+
 
 export const networks = [
   { url: 'https://twitter.com/davidjsmoreno', iconClassName: 'fa fa-twitter' , title: 'Twitter' },
@@ -76,105 +110,14 @@ export const networks = [
   { url: 'http://davidjsmoreno.com.ve/', iconClassName: 'fa fa-wordpress' , title: 'Wordpress blog' }
 ];
 
-const componentsStack = {
-  FlatSeparator: FlatSeparatorComponent,
-  Showcase: ShowcaseComponent,
-  Header: HeaderComponent,
-  Excerpt: ExcerptComponent,
-  Filters: FiltersComponent,
-  Project: ProjectComponent,
-  Social: SocialComponent
-};
-
-const hrCustom = (props) => (<hr/>);
-
-const layout = [
-  {
-    componentName: 'Header', props: {}
-  },
-  {
-    componentName: 'FlatSeparator', props: { margin: "16px auto",  width: "20%"  }
-  },
-  {
-    componentName: 'Excerpt', props: {}
-  },
-  {
-    custom: <hr/>
-  },
-  {
-    componentName: 'Filters', props: {}
-  },
-  {
-    componentName: 'Project', props: {
-      id: "playsmatch" ,
-      image: "/pm-showcase-1.png" ,
-      name: "Cuádrala",
-      excerpt: "I work as a full stack web developer blah blah blah",
-      information: {
-        'Client': 'Playsmatch',
-        'Period': 'June 2016 - Currently',
-        'Work Type': 'FullTime',
-        'Role': 'Full Stack Web Developer',
-        'Technologies used': 'React / Nodejs',
-        'Company Website': 'Cuadrala.com'
-      }
-    }
-  },
-  {
-    componentName: 'Showcase', props: {
-      id: "PlaysmatchShowcase",
-      title: "Showcase", 
-      elements: playsmatchShowcase
-    }
-  },
-  {
-    custom: (
-      <footer>
-        <p>
-          <a href="mailto:davidjsalazarmoreno@gmail.com?subject=Awesome%20Project">
-            <i className="fa fa-envelope-o"></i>
-            <br/>
-            Contact me
-          </a>
-        </p>
-        
-        <FlatSeparatorComponent margin="8px auto" width="13%" />
-
-        <small className="footnote">
-          <a href="">
-            Made with <i className="fa fa-heart" title="Love" /> and Devolio.js
-          </a>
-        </small>
-
-        <SocialComponent id="SocialsOnFooter" networks={networks} />
-      </footer>
-      )
-  }
-];
-
-// {
-//   layout.map(({componentName, props, custom}, key) => {
-//     if( custom ) { return (custom) };
-
-//     const component = componentsStack[componentName];
-
-//     return (
-//       <div key={`${key}`}>
-//         {component(props)}
-//       </div>
-//     );
-//   })
-// }
-
-
-export class DevfolioComponent extends React.Component {
+export class PortfolioComponent extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <section className="DevfolioComponent">
+      <section className="PortfolioComponent">
         <HeaderComponent />
         {/** /Header excerpt */}
         <FlatSeparatorComponent margin="16px auto" width="20%" />
@@ -226,8 +169,26 @@ export class DevfolioComponent extends React.Component {
         {/** /Systrix Project and showcase */}
 
         <ProjectComponent 
-          id="ilc" 
+          id="Gente Excelente Venezuela" 
           image="http://placehold.it/780x480" 
+          name="ILC Academy"
+          excerpt="I work as a full stack web developer blah blah blah"
+          information={{
+            'Client': 'ILC Academy',
+            'Period': 'January 2013 - January 2015',
+            'Work Type': 'FullTime',
+            'Role': 'Web Developer / Wordpress Consultant',
+            'Technologies used': 'Wordpress / jQuery',
+            'Company Website': 'http://gentexcelente.com/'
+          }}
+        />
+
+        <ShowcaseComponent id="GenteExcelenteVenezuelaShowcase" title="Showcase" emptyStateText="Soon" elements={[]} />
+        {/** /Gente excelente project and showcase */}
+
+        <ProjectComponent 
+          id="ilc" 
+          image="/ilc/ilc-main.jpg" 
           name="ILC Academy"
           excerpt="I work as a full stack web developer blah blah blah"
           information={{
@@ -240,7 +201,13 @@ export class DevfolioComponent extends React.Component {
           }}
         />
 
-        <ShowcaseComponent id="ILCAcademyShowcase" title="Showcase" emptyStateText="Soon" elements={[]} />
+        <ShowcaseComponent 
+          id="ILCAcademyShowcase" 
+          title="Showcase" 
+          emptyStateText="Soon"
+          columnCount="2" 
+          elements={ILCShowcase} 
+        />
         {/** /ILC Academy Project and showcase */}
 
         <hr />
@@ -257,7 +224,7 @@ export class DevfolioComponent extends React.Component {
 
           <small className="footnote">
             <a href="">
-              Made with <i className="fa fa-heart" title="Love" /> and Devolio.js
+              Made with <i className="fa fa-heart" title="Love" /> and React.js
             </a>
           </small>
 
@@ -268,6 +235,6 @@ export class DevfolioComponent extends React.Component {
   }
 };
 
-export default DevfolioComponent;
+export default PortfolioComponent;
 
 

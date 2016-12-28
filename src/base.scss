@@ -38,8 +38,8 @@
   @extend .primary-btn;
 }
 
-/* Devfolio wrapper */
-.DevfolioComponent {
+/* Portfolio wrapper */
+.PortfolioComponent {
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -102,7 +102,7 @@
 }
 
 /* Header Component */
-.DevfolioComponent .HeaderComponent {
+.PortfolioComponent .HeaderComponent {
   display: flex;
   flex-direction: column;
   background: transparent;
@@ -139,7 +139,7 @@
 }
 
 /* ExcerptComponent */
-.DevfolioComponent .ExcerptComponent {
+.PortfolioComponent .ExcerptComponent {
   text-align: center;
   width: 80%;
   margin: 0 auto;
@@ -163,7 +163,7 @@
 
 
 /* FiltersComponent */
-.DevfolioComponent .FiltersComponent {
+.PortfolioComponent .FiltersComponent {
   margin: 0 auto;
   width: 80%;
   display: flex;
@@ -205,7 +205,7 @@
 // }
 
 /* Footer */
-.DevfolioComponent > footer {
+.PortfolioComponent > footer {
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -5,13 +5,13 @@ import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 
 // Components
-import {DevfolioComponent} from '../devfolio.jsx';
+import {PortfolioComponent} from '../portfolio.jsx';
 
-storiesOf('Devfolio Component', module)
+storiesOf('Portfolio Component', module)
   .add('default view', () => {
     return (
       <div>
-        <DevfolioComponent />
+        <PortfolioComponent />
       </div>
     );
   });
