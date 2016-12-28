@@ -1,0 +1,14 @@
+.SocialComponent {
+  display: flex;
+  flex-direction: row;
+
+  & > span {
+    display: inherit;
+    list-style: none;
+    font-size: 24px;
+    margin: auto 60px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+

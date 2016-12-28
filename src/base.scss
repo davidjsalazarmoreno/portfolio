@@ -38,8 +38,8 @@
   @extend .primary-btn;
 }
 
-/* Devfolio wrapper */
-.DevfolioComponent {
+/* Portfolio wrapper */
+.PortfolioComponent {
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -52,12 +52,6 @@
   a {
     color: $accent;
   }
-
-  // .SocialComponent a,
-  // .SocialComponent a {
-  //   color: lighten($color: $primary, $amount: 25%);
-  //   transition: 350ms ease all;
-  // }
 
   .SocialComponent a:hover,
   .SocialComponent a:active {
@@ -79,7 +73,7 @@
 
   code {
     @extend .code;
-    padding: 15px;
+    // padding: 15px;
   }
 
   .HeaderText {
@@ -100,214 +94,3 @@
     color: $secondary;
   }
 }
-
-/* Header Component */
-.DevfolioComponent .HeaderComponent {
-  display: flex;
-  flex-direction: column;
-  background: transparent;
-  margin: 0 auto;
-  width: 80%;
-  // margin-bottom: 20px;
-
-  & * {
-    align-self: center;
-  }
-
-  .HeaderAvatar {
-    margin: 25px auto auto;
-    border-radius: 80px;
-  }
-
-  .title {
-    order: 2;
-  }
-
-  .HeaderText {
-    margin-top: 40px;
-    order: 3;
-  }
-
-  .SocialComponent {
-    order: 3;
-  }
-
-  .HeaderAvatar {
-    order: 1;
-  }
-
-}
-
-/* ExcerptComponent */
-.DevfolioComponent .ExcerptComponent {
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 20px;
-
-  p.description {
-    font-size: 20px;
-    line-height: 2em;
-  }
-
-  .hireme {
-    order: 4;
-  }
-
-  .code {
-    padding: 5px 4px;
-    margin-left: 5px;
-    font-size: 12px;
-  }
-}
-
-
-/* FiltersComponent */
-.DevfolioComponent .FiltersComponent {
-  margin: 0 auto;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-  justify-content: space-around;
-
-  h1 {
-    text-align: left;
-    margin-bottom: 30px;
-  }
-
-  div {
-    display: flex;
-    justify-content: center;
-  }
-
-  div > span {
-    border: 1px solid #000;
-    padding: 10px 15px;
-    border-radius: 2px;
-    margin: auto 50px;
-    text-align: center;
-  }
-}
-
-// .ProjectShowcaseComponent {
-//   margin: 0 auto;
-//   width: $component-width;
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-//   margin-bottom: $component-vertical-separation;
-
-//   h3 {
-//     flex-basis: 100%;
-//   }
-// }
-
-/* Footer */
-.DevfolioComponent > footer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 350px;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  margin-top: -$component-vertical-separation;
-  margin-bottom: 10%;
-
-  .heroImage {
-    background-image: url('/hero-image.jpg');
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    min-width: 100px;
-    height: 350px;
-  }
-
-  .hireme {
-    width: 25%;
-    text-transform: capitalize;
-    margin: 0 auto;
-    margin-top: 5%;
-  }
-
-  p {
-    margin-top: 10%;
-    text-align: center;
-    color: $secondary;
-    transition: 350ms ease all;
-  }
-
-  p a {
-    outline: none;
-    color: $secondary;
-    text-decoration: none;
-    transition: 350ms ease all;
-  }
-
-
-  p i.fa.fa-envelope-o {
-    transition: 350ms ease all;
-    margin: 0 auto;
-    margin-top: 5%;
-    margin-bottom: 1%;
-    font-size: 2.5em;
-    color: $secondary;
-  }
-
-  p:hover,
-  p:hover a,
-  p:hover i.fa.fa-envelope-o {
-    outline: none;
-    color: rgba($color: $accent, $alpha: .9);
-    text-shadow: 0 0 15px rgba($color: $accent, $alpha: .1);
-    transition: 350ms ease all;
-    cursor: pointer;
-  }
-
-  small.footnote {
-    text-align: right;
-    margin-top: 10px;
-    font-style: italic;
-    position:absolute;
-    bottom:0;
-    right:0;
-    display: none;
-  }
-
-  .footnote a {
-    color: $secondary;
-    text-decoration: none;
-  }
-
-  .footnote .fa {
-    color: rgba(255,70,70,.5);
-    font-style: normal;
-  }
-
-  .footnote:hover a {
-    color: $primary;
-  }
-
-  .footnote:hover .fa {
-    color: rgba(255,70,70,1);
-    font-style: normal;
-  }
-
-  .SocialComponent {
-    margin: 0 auto;
-    margin-top: 25px;
-  }
-
-  .SocialComponent i {
-    font-size: .650em;
-  }
-
-}
-
-
-

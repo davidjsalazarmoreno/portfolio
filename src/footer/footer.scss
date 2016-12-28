@@ -1,0 +1,102 @@
+@import '../variables';
+
+.FooterComponent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 350px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  margin-top: -$component-vertical-separation;
+  margin-bottom: 8%;
+
+  .heroImage {
+    background-image: url('/hero-image.jpg');
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    min-width: 100px;
+    height: 350px;
+  }
+
+  .hireme {
+    width: 25%;
+    text-transform: capitalize;
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+
+  p {
+    margin-top: 10%;
+    text-align: center;
+    color: $secondary;
+    transition: 350ms ease all;
+  }
+
+  p a {
+    outline: none;
+    color: $secondary;
+    text-decoration: none;
+    transition: 350ms ease all;
+  }
+
+
+  p i.fa.fa-envelope-o {
+    transition: 350ms ease all;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-size: 2.5em;
+    color: $secondary;
+  }
+
+  p:hover,
+  p:hover a,
+  p:hover i.fa.fa-envelope-o {
+    outline: none;
+    color: rgba($color: $accent, $alpha: .9);
+    text-shadow: 0 0 15px rgba($color: $accent, $alpha: .1);
+    transition: 350ms ease all;
+    cursor: pointer;
+  }
+
+  .SocialComponent {
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+
+  .SocialComponent i {
+    font-size: .650em;
+  }
+  
+  small.footnote {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: -25px;
+  }
+
+  .footnote a {
+    color: $secondary;
+    text-decoration: none;
+  }
+
+  .footnote .fa {
+    color: rgba(255,70,70,.5);
+    font-style: normal;
+  }
+
+  .footnote a:hover {
+    color: $primary;
+  }
+
+  .footnote:hover .fa {
+    color: rgba(255,70,70,1);
+    font-style: normal;
+  }
+}
+
+

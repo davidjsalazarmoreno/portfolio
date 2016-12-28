@@ -22,7 +22,9 @@ export const ShowcaseComponent = (props) => {
     <div id={props.id | title} className="ShowcaseComponent">
       <h3>{title}</h3>
 
-      <div className="Thumbnails">
+      <div className="Thumbnails" style={{
+        columnCount: props.columnCount || '4'
+      }}>
         {
           props.elements.map((element) => <LightboxComponent {...element} />)
         }

@@ -2,6 +2,8 @@ import React from 'react'
 
 import {FlatSeparatorComponent} from './../flat-separator/flat-separator';
 
+require('./filters.scss');
+
 export const FiltersComponent = (props) => {
   return(
     <div className="FiltersComponent">

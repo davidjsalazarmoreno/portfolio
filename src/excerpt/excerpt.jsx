@@ -1,9 +1,11 @@
 import * as React from 'react';
 
+require('./excerpt.scss');
+
 export const ExcerptComponent = (props) => {
   return (
-    <div>
-      <article className="ExcerptComponent">
+    <div className="ExcerptComponent">
+      <article>
         <p className="description">
           Hi, I'm Software Developer, currently at <a href="cuadrala.com">Cuadrala</a>, I have experience with several web technologies like  <code>Javascript</code>, <code>HTML</code>, 
           <code>CSS</code> and <code>PHP</code>, I have worked on both backend and frontend but spent more of the time working with the last one.
