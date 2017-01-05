@@ -4,6 +4,7 @@ import {SocialComponent} from './../social/social';
 
 import {networks} from '../portfolio';
 
+
 require('./header.scss');
 
 /**

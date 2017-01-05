@@ -14,6 +14,7 @@ import {ProjectComponent} from './project/project';
 import {SocialComponent} from './social/social';
 import {FooterComponent} from './footer/footer';
 
+
 const playsmatchShowcase = [
   {
     type: 'image',
@@ -213,6 +214,8 @@ export class PortfolioComponent extends React.Component {
 
         <hr />
         <FooterComponent />
+
+
       </section>
     );
   }
