@@ -100,3 +100,8 @@
 }
 
 
+@media only screen and (max-width: 480px) {
+  .FooterComponent {
+    height: 300px;
+  }
+}

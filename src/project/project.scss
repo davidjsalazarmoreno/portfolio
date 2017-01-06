@@ -33,3 +33,19 @@
   }
 
 }
+
+@media only screen and (max-width: 480px) {
+  .ProjectsComponent {
+    flex-direction: column;
+    
+    .ProjectName {
+      text-align: center;
+    }
+
+    .main-project-image {
+      order: 1;
+      width: 100%;
+    }
+    
+  }
+}

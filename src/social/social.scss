@@ -10,5 +10,16 @@
     margin-bottom: 20px;
     text-align: center;
   }
+
 }
 
+@media only screen and (max-width: 480px) {
+  .SocialComponent {
+    & > span {
+      margin: 0 25px;
+      // text-indent: 50%;
+
+    }
+
+  }
+}

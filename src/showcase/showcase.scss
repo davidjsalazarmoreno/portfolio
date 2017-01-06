@@ -21,3 +21,12 @@
   }
 
 }
+
+@media only screen and (max-width: 480px) {
+  .ShowcaseComponent {
+    .Thumbnails {
+      column-count: 2;
+    }
+    
+  }
+}

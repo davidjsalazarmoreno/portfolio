@@ -2,6 +2,8 @@ import React from 'react';
 
 require('./project.scss');
 
+import {LightboxComponent} from '../lightbox/lightbox';
+
 export const ProjectComponent = (props) => {
   const { id, image, name, excerpt, information } = props;
 
@@ -9,7 +11,8 @@ export const ProjectComponent = (props) => {
     <div>
       <div id={id} className="ProjectsComponent">
           <div className="main-project-image">
-            <img src={image} width="780" alt=""/>
+            <LightboxComponent id={image}  type="image" url={image} alt={excerpt} />
+            {/*<img src={image} width="780" alt=""/>*/}
           </div>
 
           <div className="ProjectExcerpt">

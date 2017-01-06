@@ -109,14 +109,18 @@ export class LightboxComponent extends React.Component {
     
     return(
       <div key={`${url}-${Math.random()}`} id={id} className="LightboxComponent">
-        <a href={`https://www.youtube.com/watch?v=${url}`} className="Thumbnail" onClick={(e) => {
-          e.preventDefault();
+        <a 
+          href={ type === 'youtube' ? `https://www.youtube.com/watch?v=${url}` : `${url}` } 
+          className="Thumbnail" 
+          onClick={(e) => {
+            e.preventDefault();
 
-          toggleVisibility();
-        }}>
+            toggleVisibility();
+          }}
+        >
 
          <img 
-          src={ type === 'youtube' ? `http://img.youtube.com/vi/${url}/mqdefault.jpg` : url } 
+          src={ type === 'youtube' ? `http://img.youtube.com/vi/${url}/mqdefault.jpg` : `${url}` } 
           style={{
             width: this.props.width || '100%',
             height: this.props.height || '100%'

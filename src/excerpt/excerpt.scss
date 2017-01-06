@@ -19,3 +19,12 @@
     font-size: 12px;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .ExcerptComponent {
+    p.description {
+      font-size: 16px;
+    }
+    
+  }
+}

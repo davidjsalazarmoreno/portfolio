@@ -2,21 +2,39 @@ import * as React from 'react';
 
 require('./excerpt.scss');
 
-export const ExcerptComponent = (props) => {
-  return (
-    <div className="ExcerptComponent">
-      <article>
-        <p className="description">
-          Hi, I'm Software Developer, currently at <a href="cuadrala.com">Cuadrala</a>, I have experience with several web technologies like  <code>Javascript</code>, <code>HTML</code>, 
-          <code>CSS</code> and <code>PHP</code>, I have worked on both backend and frontend but spent more of the time working with the last one.
+export class ExcerptComponent extends React.Component {
+  state = {
+    showMore: false
+  };
 
-          Recently I has been immerse in <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
-          you can see the other technologies and approaches that I have worked in  <a href="">my projects section</a> or
-          visit <a href="">my blog</a> to know some of my thoughts. 
-        </p>
-       </article>
-    </div>
-  )
-}
+  render() {
+    const { short, long } = this.props;
 
-export default ExcerptComponent
+    const { showMore } = this.state;
+
+    return (
+      <div className="ExcerptComponent">
+        <article>
+          <p className="description">
+            {showMore ? long : short}
+            &nbsp;
+            <a href="#" 
+              onClick={(event) => {
+                event.preventDefault();
+                this.setState({
+                  ...this.state,
+                  showMore: !showMore
+              });
+            }}>
+              {!showMore ? 'more' : 'less'}
+            </a>
+            .
+          </p>
+        </article>
+      </div>
+    )
+
+  }
+};
+
+export default ExcerptComponent;
