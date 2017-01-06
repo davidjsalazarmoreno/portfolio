@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 require('./lightbox.scss');
 
 export class LightboxComponent extends React.Component {
@@ -74,7 +76,7 @@ export class LightboxComponent extends React.Component {
     }
 
     return (
-      <div className="Lightbox">
+      <div key={`${url}`} className="Lightbox">
         <i className="fa fa-close" onClick={(e) => {
           e.preventDefault();
 
@@ -108,6 +110,12 @@ export class LightboxComponent extends React.Component {
     };
     
     return(
+        <ReactCSSTransitionGroup
+          transitionName="example"
+              transitionAppear={false}
+          transitionEnterTimeout={0}
+          transitionLeaveTimeout={0}
+        >
       <div key={`${url}-${Math.random()}`} id={id} className="LightboxComponent">
         <a 
           href={ type === 'youtube' ? `https://www.youtube.com/watch?v=${url}` : `${url}` } 
@@ -128,10 +136,12 @@ export class LightboxComponent extends React.Component {
          />
         </a>
         {/* /Lightbox Thumbnail */}
-
+      
+          {dispatchTable[ type ]()}
+        
         {/* Rendering lightbox by type prop*/}
-        {dispatchTable[ type ]()}
       </div>
+        </ReactCSSTransitionGroup>
     );
   }
 }

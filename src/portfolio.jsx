@@ -23,48 +23,11 @@ const playsmatchShowcase = [
     id: 'pm-showcase-1'
   },
   {
-    type: 'image',
-    url: 'http://placehold.it/800x600',
-    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
-    id: 'pm-showcase-1'
-  },
-  {
-    type: 'image',
-    url: 'http://placehold.it/1280x720',
-    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
-    id: 'pm-showcase-1'
-  },
-  {
-    type: 'image',
-    url: 'http://placehold.it/780x480',
-    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
-    id: 'pm-showcase-1'
-  },
-
-  {
-    type: 'image',
-    url: 'http://placehold.it/300x350',
-    alt: 'Test comment',
-    id: 'pm-showcase-2'
-  },
-  {
-    type: 'image',
-    url: 'http://placehold.it/1800x760',
-    alt: 'Test comment',
-    id: 'pm-showcase-3'
-  },
-  {
-    type: 'image',
-    url: 'http://placehold.it/300x350',
-    alt: 'Test comment',
-    id: 'pm-showcase-4'
-  },
-  {
     type: 'youtube',
     url: 'YAKTlImnS-g',
     alt: 'Test comment',
     id: 'youtube-1'
-  },
+  }
 ];
 
 const ILCShowcase = [
@@ -93,6 +56,24 @@ const ILCShowcase = [
     url: '21_bpODeA8s',
     alt: 'Modification to budypress directory (Wordpress plugin): Basically the directory was modified to show specific roles of wordpress, depending on those roles apply CSS styles (the medallion on the right) in addition to adding these new roles to the filters to refine the users search .',
     id: 'ilc-showcase-5'
+  },
+  {
+    type: 'image',
+    url: '/ilc/subscribe-1.jpg',
+    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
+    id: 'ilc-showcase-1'
+  },
+  {
+    type: 'image',
+    url: '/ilc/subscribe-2.jpg',
+    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
+    id: 'ilc-showcase-1'
+  },
+  {
+    type: 'image',
+    url: '/ilc/ilc-certificates-prototype.jpg',
+    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
+    id: 'ilc-showcase-1'
   },
   {
     type: 'image',
@@ -173,7 +154,7 @@ export class PortfolioComponent extends React.Component {
 
         <ProjectComponent 
           id="systrix" 
-          image="http://placehold.it/780x480" 
+          image="/Systrix/sys-3.jpg" 
           name="Systrix"
           excerpt="I work as a full stack web developer blah blah blah"
           information={{
@@ -186,17 +167,58 @@ export class PortfolioComponent extends React.Component {
           }}
         />
 
-        <ShowcaseComponent id="SystrixShowcase" title="Showcase" emptyStateText="Soon" elements={[]} />
+        <ShowcaseComponent 
+          id="SystrixShowcase" 
+          title="Showcase"
+          elements={[
+            {
+              type: 'image',
+              url: '/Systrix/sys-1.jpg',
+              alt: 'Angular Survey Prototype',
+              id: 'sys-yt-1'
+            },
+            {
+              type: 'image',
+              url: '/Systrix/sys-2.jpg',
+              alt: 'Angular Survey Prototype',
+              id: 'sys-yt-1'
+            },
+            {
+              type: 'image',
+              url: '/Systrix/sys-3.jpg',
+              alt: 'Angular Survey Prototype',
+              id: 'sys-yt-1'
+            },
+            {
+              type: 'image',
+              url: '/Systrix/sys-4.jpg',
+              alt: 'Angular Survey Prototype',
+              id: 'sys-yt-1'
+            },
+            {
+              type: 'youtube',
+              url: 'Dr732zk-ltw',
+              alt: 'Angular Survey Prototype',
+              id: 'sys-yt-1'
+            },
+            {
+              type: 'youtube',
+              url: 'opDk68CFwLA',
+              alt: 'Working demo of Survey in IE11',
+              id: 'sys-yt-2'
+            },
+          ]} 
+        />
         {/** /Systrix Project and showcase */}
 
         <ProjectComponent 
           id="GE" 
-          image="http://placehold.it/780x480" 
+          image="/GE/ge.jpeg" 
           name="Gente Excelente Venezuela"
           excerpt="I work as a full stack web developer blah blah blah"
           information={{
             'Client': 'Gente Excelente Venezuela',
-            'Period': 'January 2013 - January 2015',
+            'Period': '2016',
             'Work Type': 'Freelancer',
             'Role': 'Web Developer / Wordpress Consultant',
             'Technologies used': 'Wordpress / HTML / CSS / Javascript',
