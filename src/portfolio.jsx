@@ -5,6 +5,7 @@ require('./../node_modules/normalize.css/normalize.css');
 require('./portfolio.scss');
 
 // Components
+import {GithubRibbon} from './github-ribbon/github-ribbon';
 import {FlatSeparatorComponent} from './flat-separator/flat-separator';
 import {ShowcaseComponent} from './showcase/showcase';
 import {HeaderComponent} from './header/header';
@@ -101,6 +102,7 @@ export class PortfolioComponent extends React.Component {
   render() {
     return (
       <section className="PortfolioComponent">
+        <GithubRibbon />
         
         <HeaderComponent />
         {/** /Header excerpt */}
