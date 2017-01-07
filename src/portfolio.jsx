@@ -5,6 +5,7 @@ require('./../node_modules/normalize.css/normalize.css');
 require('./portfolio.scss');
 
 // Components
+import {LanguageSelectorComponent} from './language-selector/language-selector';
 import {GithubRibbon} from './github-ribbon/github-ribbon';
 import {FlatSeparatorComponent} from './flat-separator/flat-separator';
 import {ShowcaseComponent} from './showcase/showcase';
@@ -102,6 +103,8 @@ export class PortfolioComponent extends React.Component {
   render() {
     return (
       <section className="PortfolioComponent">
+        <LanguageSelectorComponent />
+        
         <GithubRibbon />
         
         <HeaderComponent />
