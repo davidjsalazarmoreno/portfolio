@@ -1,8 +1,9 @@
 // React
 import React from 'react';
 
-require('./../node_modules/normalize.css/normalize.css');
-require('./portfolio.scss');
+// React intl
+import {FormattedMessage} from 'react-intl';
+
 
 // Components
 import {LanguageSelectorComponent} from './language-selector/language-selector';
@@ -16,21 +17,11 @@ import {ProjectComponent} from './project/project';
 import {SocialComponent} from './social/social';
 import {FooterComponent} from './footer/footer';
 
+import {messages} from './messages';
 
-const playsmatchShowcase = [
-  {
-    type: 'image',
-    url: 'http://placehold.it/780x480',
-    alt: 'Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment Test comment ',
-    id: 'pm-showcase-1'
-  },
-  {
-    type: 'youtube',
-    url: 'YAKTlImnS-g',
-    alt: 'Test comment',
-    id: 'youtube-1'
-  }
-];
+require('./portfolio.scss');
+
+const pmShowcase = [];
 
 const ILCShowcase = [
   {
@@ -114,19 +105,11 @@ export class PortfolioComponent extends React.Component {
         <ExcerptComponent
           short={
             <span>
-             Hi, I'm Software Developer, currently at <a href="https://www.cuadrala.com/es/">Cuadrala</a>, you can see the technologies and approaches that I have worked in <b>my projects section right below</b> or
-            visit <a href="http://davidjsmoreno.com.ve/">my blog</a> to know some of my thoughts,
+              <FormattedMessage {...messages.excerptShort} />
             </span>
           }
           long={
-            <span>
-                Hi, I'm Software Developer, currently at <a href="https://www.cuadrala.com/es/">Cuadrala</a>, I have experience with several web technologies like  <code>Javascript</code>, <code>HTML</code>, 
-                <code>CSS</code> and <code>PHP</code>, I have worked on both backend and frontend but spent more of the time working with the last one.
-
-                Recently I has been immerse in <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
-                you can see the other technologies and approaches that I have worked in <b>my projects section right below</b> or
-                visit <a href="http://davidjsmoreno.com.ve/">my blog</a> to know some of my thoughts,
-            </span>
+            <FormattedMessage {...messages.excerptLong} />
           }
         />
         
@@ -153,20 +136,19 @@ export class PortfolioComponent extends React.Component {
         />
 
 
-        <ShowcaseComponent id="PlaysmatchShowcase" title="Showcase" elements={playsmatchShowcase} />
+        <ShowcaseComponent id="PlaysmatchShowcase" title="Showcase" elements={pmShowcase} emptyStateText="Soon (Work in progress ;-D)" />
         {/** /Playsmatch Project and showcase */}
         
-
         <ProjectComponent 
           id="systrix" 
           image="/Systrix/sys-3.jpg" 
           name="Systrix"
-          excerpt="I work as a full stack web developer blah blah blah"
+          excerpt="Web development, media agency and call center outsourcing."
           information={{
             'Client': 'Systrix',
             'Period': 'January 2016 - May 2016',
             'Work Type': 'FullTime',
-            'Role': 'Full Stack Web Developer / Frontend Team Leader',
+            'Role': 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader',
             'Technologies used': 'Angular 2 / React/ Elixir / Phoenix / Elm',
             'Company Website': <a href="https://www.linkedin.com/company/systrix">Systrix</a> 
           }}
@@ -175,6 +157,7 @@ export class PortfolioComponent extends React.Component {
         <ShowcaseComponent 
           id="SystrixShowcase" 
           title="Showcase"
+          columnCount="2" 
           elements={[
             {
               type: 'image',
@@ -220,7 +203,7 @@ export class PortfolioComponent extends React.Component {
           id="GE" 
           image="/GE/ge.jpeg" 
           name="Gente Excelente Venezuela"
-          excerpt="I work as a full stack web developer blah blah blah"
+          excerpt="We are Gente Excelente Venezuela. Our mission is the success of People. Our motto Saving in readiness is to invest in ignorance. Life Coaching"
           information={{
             'Client': 'Gente Excelente Venezuela',
             'Period': '2016',
@@ -231,14 +214,20 @@ export class PortfolioComponent extends React.Component {
           }}
         />
 
-        <ShowcaseComponent id="GenteExcelenteVenezuelaShowcase" title="Showcase" emptyStateText="Soon" elements={[]} />
+        <ShowcaseComponent 
+          id="GenteExcelenteVenezuelaShowcase" 
+          title="Showcase" 
+          emptyStateText="Soon" 
+          elements={[]}
+          columnCount="2" 
+        />
         {/** /Gente excelente project and showcase */}
 
         <ProjectComponent 
           id="ilc" 
           image="/ilc/ilc-main.jpg" 
           name="ILC Academy"
-          excerpt="I work as a full stack web developer blah blah blah"
+          excerpt="ILC Academy, a platform for expanding awareness, knowledge and skills to enhance your attributes like LifeCoach."
           information={{
             'Client': 'ILC Academy',
             'Period': 'January 2013 - January 2015',

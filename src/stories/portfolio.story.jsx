@@ -1,6 +1,9 @@
 // React
 import React from 'react';
 
+// React intl
+import {IntlProvider} from 'react-intl';
+
 // React Storybook
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 
@@ -10,8 +13,15 @@ import {PortfolioComponent} from '../portfolio.jsx';
 storiesOf('Portfolio Component', module)
   .add('default view', () => {
     return (
-      <div>
+      <IntlProvider locale="en">
         <PortfolioComponent />
-      </div>
+      </IntlProvider>
+    );
+  })
+  .add('locale es', () => {
+    return (
+      <IntlProvider locale="es">
+        <PortfolioComponent />
+      </IntlProvider>
     );
   });

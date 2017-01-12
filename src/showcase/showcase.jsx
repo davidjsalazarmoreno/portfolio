@@ -26,7 +26,7 @@ export const ShowcaseComponent = (props) => {
         columnCount: props.columnCount || '4'
       }}>
         {
-          props.elements.map((element) => <LightboxComponent {...element} />)
+          props.elements.map((element) => <LightboxComponent key={`${element.url}`} {...element} />)
         }
       </div>
     </div>

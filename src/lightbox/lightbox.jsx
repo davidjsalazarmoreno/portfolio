@@ -110,12 +110,12 @@ export class LightboxComponent extends React.Component {
     };
     
     return(
-        <ReactCSSTransitionGroup
-          transitionName="example"
-              transitionAppear={false}
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}
-        >
+        // <ReactCSSTransitionGroup
+        //   transitionName="example"
+        //       transitionAppear={false}
+        //   transitionEnterTimeout={0}
+        //   transitionLeaveTimeout={0}
+        // >
       <div key={`${url}-${Math.random()}`} id={id} className="LightboxComponent">
         <a 
           href={ type === 'youtube' ? `https://www.youtube.com/watch?v=${url}` : `${url}` } 
@@ -141,7 +141,7 @@ export class LightboxComponent extends React.Component {
         
         {/* Rendering lightbox by type prop*/}
       </div>
-        </ReactCSSTransitionGroup>
+        // </ReactCSSTransitionGroup>
     );
   }
 }
