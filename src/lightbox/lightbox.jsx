@@ -2,6 +2,8 @@ import React from 'react';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import LazyLoad from 'react-lazyload';
+
 require('./lightbox.scss');
 
 export class LightboxComponent extends React.Component {
@@ -126,14 +128,16 @@ export class LightboxComponent extends React.Component {
             toggleVisibility();
           }}
         >
-
-         <img 
-          src={ type === 'youtube' ? `http://img.youtube.com/vi/${url}/mqdefault.jpg` : `${url}` } 
-          style={{
-            width: this.props.width || '100%',
-            height: this.props.height || '100%'
-          }}   
-         />
+          <LazyLoad>
+            <img 
+              src={ type === 'youtube' ? `http://img.youtube.com/vi/${url}/mqdefault.jpg` : `${url}` } 
+              style={{
+                width: this.props.width || '100%',
+                height: this.props.height || '100%'
+              }}   
+            />
+          
+          </LazyLoad>
         </a>
         {/* /Lightbox Thumbnail */}
       

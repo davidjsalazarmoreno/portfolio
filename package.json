@@ -25,7 +25,8 @@
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.4.1",
-    "react-intl": "^2.2.2"
+    "react-intl": "^2.2.2",
+    "react-lazyload": "^2.2.0"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
