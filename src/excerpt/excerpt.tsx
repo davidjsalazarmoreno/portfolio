@@ -2,7 +2,7 @@ import * as React from 'react';
 
 require('./excerpt.scss');
 
-export class ExcerptComponent extends React.Component {
+export class ExcerptComponent extends React.Component<any, any> {
   state = {
     showMore: false
   };

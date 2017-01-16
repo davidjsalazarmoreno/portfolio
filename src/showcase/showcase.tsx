@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import {LightboxComponent} from '../lightbox/lightbox';
 
@@ -11,7 +11,7 @@ export const ShowcaseComponent = (props) => {
 
   if ( elements.length === 0 ) {
     return (
-      <div id={props.id | title} className="ShowcaseComponent">
+      <div id={`${props.id | title}`} className="ShowcaseComponent">
         <h3>{title}</h3>
         <p>{emptyStateText}</p>
       </div>
@@ -19,7 +19,7 @@ export const ShowcaseComponent = (props) => {
   }
 
   return (
-    <div id={props.id | title} className="ShowcaseComponent">
+    <div id={`${props.id | title}`} className="ShowcaseComponent">
       <h3>{title}</h3>
 
       <div className="Thumbnails" style={{

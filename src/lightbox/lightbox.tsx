@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -6,7 +6,7 @@ import LazyLoad from 'react-lazyload';
 
 require('./lightbox.scss');
 
-export class LightboxComponent extends React.Component {
+export class LightboxComponent extends React.Component<any, any> {
   state = {
     visible: false
   };

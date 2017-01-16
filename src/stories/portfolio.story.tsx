@@ -1,5 +1,5 @@
 // React
-import React from 'react';
+import * as React from 'react';
 
 // React intl
 import {IntlProvider} from 'react-intl';

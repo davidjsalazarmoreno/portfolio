@@ -1,9 +1,8 @@
 // React
-import React from 'react';
+import * as React from 'react';
 
 // React intl
 import {FormattedMessage} from 'react-intl';
-
 
 // Components
 import {LanguageSelectorComponent} from './language-selector/language-selector';
@@ -19,7 +18,7 @@ import {FooterComponent} from './footer/footer';
 
 import {messages} from './messages';
 
-require('./portfolio.scss');
+import './portfolio.scss';
 
 const pmShowcase = [];
 
@@ -86,7 +85,7 @@ export const networks = [
   { url: 'http://davidjsmoreno.com.ve/', iconClassName: 'fa fa-wordpress' , title: 'Wordpress blog' }
 ];
 
-export class PortfolioComponent extends React.Component {
+export class PortfolioComponent extends React.Component<any, any> {
   constructor(props) {
     super(props);
   }
