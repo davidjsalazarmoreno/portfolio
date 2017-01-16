@@ -5,10 +5,10 @@ import * as React from 'react';
 import {IntlProvider} from 'react-intl';
 
 // React Storybook
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import { storiesOf, action, linkTo, module } from '@kadira/storybook';
 
 // Components
-import {PortfolioComponent} from '../portfolio.jsx';
+import {PortfolioComponent} from '../portfolio';
 
 storiesOf('Portfolio Component', module)
   .add('default view', () => {

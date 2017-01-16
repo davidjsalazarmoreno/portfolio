@@ -8,7 +8,8 @@ require('./lightbox.scss');
 
 export class LightboxComponent extends React.Component<any, any> {
   state = {
-    visible: false
+    visible: false,
+    isLoading: true
   };
 
   constructor(props) {
@@ -79,13 +80,26 @@ export class LightboxComponent extends React.Component<any, any> {
 
     return (
       <div key={`${url}`} className="Lightbox">
+        {this.state.isLoading && "Loading video, please wait..."}
+
         <i className="fa fa-close" onClick={(e) => {
           e.preventDefault();
 
           toggleVisibility();
         }}></i>
         <figure>
-          <iframe src={`https://www.youtube.com/embed/${url}`} width="640" height="480" frameBorder="0" allowFullScreen></iframe>
+          <iframe 
+            src={`https://www.youtube.com/embed/${url}`} 
+            width="640" 
+            height="480" 
+            frameBorder="0" 
+            allowFullScreen
+            onLoad={() => {
+              const newState = { ...this.state, isLoading: false };
+              this.setState(newState);
+            }}
+          >
+          </iframe>
           <figcaption>{alt}</figcaption>
         
         </figure>

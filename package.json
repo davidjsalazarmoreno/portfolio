@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
+    "watch:dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base /dist",
     "storybook": "start-storybook -s ./src/assets -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages"

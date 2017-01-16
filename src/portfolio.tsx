@@ -121,7 +121,7 @@ export class PortfolioComponent extends React.Component<any, any> {
 
         <ProjectComponent 
           id="playsmatch" 
-          image="/pm-showcase-1.png" 
+          image="./assets/pm-showcase-1.png" 
           name="Cuádrala / Playsmatch"
           excerpt="Playsmatch is a reservation and payment management system for sports complexes, which seeks to eliminate all the flaws and difficulties that have a moment of renting a court for both users and administrators."
           information={{

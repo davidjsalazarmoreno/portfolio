@@ -10,8 +10,15 @@ module.exports = {
   plugins: [
     // your custom plugins
   ],
+  resolve: {
+    extensions: [ '', '.ts', '.tsx', '.webpack.js', '.web.js', '.js' ]
+  },
   module: {
     loaders: [
+      { 
+        test: /\.tsx?$/, 
+        loader: 'ts-loader?configFileName=./tsconfig.json' 
+      },
       {
         test: /\.css?$/,
         loaders: [ 'style', 'raw' ]
