@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {SocialComponent} from './../social/social';
 
-import {networks} from '../portfolio';
+import {networks} from '../config';
 
 
 require('./header.scss');

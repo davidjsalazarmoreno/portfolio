@@ -4,7 +4,17 @@ require('./project.scss');
 
 import {LightboxComponent} from '../lightbox/lightbox';
 
-export const ProjectComponent = (props) => {
+type TProjectInformationNames = 'Client' | 'Period' | 'Work Type' | 'Role' | 'Technologies used' | 'Company Website';
+
+interface IProjectComponentProps {
+  id: string;
+  image: string | JSX.Element;
+  name: string | JSX.Element;
+  excerpt: string | JSX.Element;
+  information: Array<{ key: TProjectInformationNames, value: string | JSX.Element }>;
+};
+
+export const ProjectComponent = ( props: IProjectComponentProps ) => {
   const { id, image, name, excerpt, information } = props;
 
   return(
@@ -12,7 +22,6 @@ export const ProjectComponent = (props) => {
       <div id={id} className="ProjectsComponent">
           <div className="main-project-image">
             <LightboxComponent id={image}  type="image" url={image} alt={excerpt} />
-            {/*<img src={image} width="780" alt=""/>*/}
           </div>
 
           <div className="ProjectExcerpt">
@@ -24,9 +33,9 @@ export const ProjectComponent = (props) => {
             </p>
             <ul className="ProjectInformation">
               {
-                Object.entries(information).map(([key, value], index) => {
+                information.map(({key, value}, index) => {
                   return (
-                    <li key={`${key}-${Math.random()}`}>
+                    <li key={`${key}-${index}`}>
                       <b>{key}:</b> {value} 
                     </li>
                   )

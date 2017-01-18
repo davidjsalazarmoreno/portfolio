@@ -8,7 +8,7 @@ import {IntlProvider} from 'react-intl';
 import { storiesOf, action, linkTo, module } from '@kadira/storybook';
 
 // Components
-import {PortfolioComponent} from '../portfolio';
+import {PortfolioComponent} from '../portfolio/portfolio';
 
 storiesOf('Portfolio Component', module)
   .add('default view', () => {

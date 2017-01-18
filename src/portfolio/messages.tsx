@@ -93,6 +93,10 @@ export const messages = defineMessages({
     id: 'ilc.description',
     defaultMessage: 'ILC Academy, a platform for expanding awareness, knowledge and skills to enhance your attributes like LifeCoach.'
   },
+  ilcPeriod: {
+    id: 'ilc.period',
+    defaultMessage: 'January 2013 - January 2015'
+  },
   contactMe: {
     id: 'general.contactMe',
     defaultMessage: 'Contact me'
