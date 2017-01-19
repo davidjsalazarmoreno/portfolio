@@ -5,6 +5,14 @@ import * as React from 'react';
 import {defineMessages} from 'react-intl';
 
 export const messages = defineMessages({
+  en: {
+    id: 'general.english',
+    defaultMessage: 'English'
+  },
+  es: {
+    id: 'general.spanish',
+    defaultMessage: 'Spanish'
+  },
   excerptShort: {
     id: 'excerpt.short',
     defaultMessage: `Hi, I'm Software Developer, currently at {currently}, you can see the technologies and approaches that 

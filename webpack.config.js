@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    javascript: './src/Bootstrap.tsx',
+    javascript: './src/portfolio/Bootstrap.tsx',
     html: './src/views/index.html'
   },
   output: {
