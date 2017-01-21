@@ -11,7 +11,7 @@ import {FlatSeparatorComponent} from './../../components/flat-separator/flat-sep
 import {ShowcaseComponent} from './../../components/showcase/showcase';
 import {HeaderComponent} from './../../components/header/header';
 import {ExcerptComponent} from './../../components/excerpt/excerpt';
-import {FiltersComponent} from './../../components/filters/filters';
+import {SectionHeaderComponent} from './../../components/section-header/section-header';
 import {ProjectComponent} from './../../components/project/project';
 import {SocialComponent} from './../../components/social/social';
 import {FooterComponent} from './../../components/footer/footer';
@@ -88,7 +88,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
           
           <hr />
 
-          <FiltersComponent />
+          <SectionHeaderComponent title={<FormattedMessage {...messages.myWork} />} />
           {/** /Project filters */}
 
           <ProjectComponent 
