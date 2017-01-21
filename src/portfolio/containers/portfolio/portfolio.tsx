@@ -49,6 +49,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
               'en' ,
               'es',
             ]}
+            languageLabel={<FormattedMessage {...messages.language} />}
             selected={language}
             messages={messages}
             onChange={(event) => {
@@ -65,8 +66,9 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
           <GithubRibbon />
           
-          <HeaderComponent />
+          <HeaderComponent avatarUrl="/avatar.jpg" />
           {/** /Header excerpt */}
+
           <FlatSeparatorComponent margin="16px auto" width="20%" />
 
           <ExcerptComponent
@@ -78,6 +80,8 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             long={
               <FormattedMessage {...messages.excerptLong} />
             }
+            moreLabel={<FormattedMessage {...messages.more} />}
+            lessLabel={<FormattedMessage {...messages.less} />}
           />
           
           {/** /Portfolio excerpt */}
@@ -93,37 +97,41 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             name="Cuádrala / Playsmatch"
             excerpt={<FormattedMessage {...messages.pmDescription} />}
             information={[
-              { key: 'Client', value: 'Cuádrala / Playsmatch' },
-              { key: 'Period', value: <FormattedMessage {...messages.pmPeriod} /> },
-              { key: 'Work Type', value: 'FullTime' },
-              { key: 'Role', value: 'Full Stack Web Developer' },
-              { key: 'Technologies used', value: 'React / Nodejs' },
-              { key: 'Company Website', value: <a href="https://www.cuadrala.com">Cuádrala</a> }
+              { key: <FormattedMessage {...messages.client} />, value: 'Cuádrala / Playsmatch' },
+              { key: <FormattedMessage {...messages.period} />, value: <FormattedMessage {...messages.pmPeriod} /> },
+              { key: <FormattedMessage {...messages.workType} />, value: 'FullTime' },
+              { key: <FormattedMessage {...messages.role} />, value: 'Full Stack Web Developer' },
+              { key: <FormattedMessage {...messages.technologies} />, value: 'React / Nodejs' },
+              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="https://www.cuadrala.com">Cuádrala</a> }
             ]}
           />
 
 
-          <ShowcaseComponent id="PlaysmatchShowcase" title="Showcase" elements={pmShowcase} emptyStateText="Soon (Work in progress ;-D)" />
+          <ShowcaseComponent id="PlaysmatchShowcase" 
+            title={<FormattedMessage {...messages.showcaseTitle} />} 
+            elements={pmShowcase} 
+            emptyStateText={<FormattedMessage {...messages.showcaseEmptyText} />} 
+          />
           {/** /Playsmatch Project and showcase */}
           
           <ProjectComponent 
             id="systrix" 
             image="/Systrix/sys-3.jpg" 
             name="Systrix"
-            excerpt="Web development, media agency and call center outsourcing."
+            excerpt={<FormattedMessage {...messages.sysDescription} />}
             information={[
-              { key: 'Client', value: 'Systrix' },
-              { key: 'Period', value: <FormattedMessage {...messages.sysPeriod} /> },
-              { key: 'Work Type', value: 'FullTime' },
-              { key: 'Role', value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
-              { key: 'Technologies used', value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
-              { key: 'Company Website', value: <a href="https://www.linkedin.com/company/systrix">Systrix</a> }
+              { key: <FormattedMessage {...messages.client} />, value: 'Systrix' },
+              { key: <FormattedMessage {...messages.period} />, value: <FormattedMessage {...messages.sysPeriod} /> },
+              { key: <FormattedMessage {...messages.workType} />, value: 'FullTime' },
+              { key: <FormattedMessage {...messages.role} />, value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
+              { key: <FormattedMessage {...messages.technologies} />, value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
+              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="https://www.linkedin.com/company/systrix">Systrix</a> }
             ]}
           />
 
           <ShowcaseComponent 
             id="SystrixShowcase" 
-            title="Showcase"
+            title={<FormattedMessage {...messages.showcaseTitle} />}
             columnCount="2" 
             elements={[
               {
@@ -170,22 +178,29 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             id="GE" 
             image="/GE/ge.jpeg" 
             name="Gente Excelente Venezuela"
-            excerpt="We are Gente Excelente Venezuela. Our mission is the success of People. Our motto Saving in readiness is to invest in ignorance. Life Coaching"
+            excerpt={<FormattedMessage {...messages.geDescription} />}
             information={[
-              { key: 'Client', value: 'Gente Excelente Venezuela' },
-              { key: 'Period', value: '2016' },
-              { key: 'Work Type', value: 'Freelancer' },
-              { key: 'Role', value: 'Web Developer / Wordpress Consultant' },
-              { key: 'Technologies used', value: 'Wordpress / HTML / CSS / Javascript' },
-              { key: 'Company Website', value: <a href="http://gentexcelente.com">gentexcelente.com</a> }
+              { key: <FormattedMessage {...messages.client} />, value: 'Gente Excelente Venezuela' },
+              { key: <FormattedMessage {...messages.period} />, value: '2016' },
+              { key: <FormattedMessage {...messages.workType} />, value: 'Freelancer' },
+              { key: <FormattedMessage {...messages.role} />, value: 'Web Developer / Wordpress Consultant' },
+              { key: <FormattedMessage {...messages.technologies} />, value: 'Wordpress / HTML / CSS / Javascript' },
+              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="http://gentexcelente.com">gentexcelente.com</a> }
             ]}
           />
 
           <ShowcaseComponent 
             id="GenteExcelenteVenezuelaShowcase" 
-            title="Showcase" 
+            title={<FormattedMessage {...messages.showcaseTitle} />} 
             emptyStateText="Soon" 
-            elements={[]}
+            elements={[
+              {
+                type: 'image',
+                url: '/GE/ge-1-web.jpeg',
+                alt: 'Gente Excelente Venezuela Website',
+                id: 'ge-image-1'
+              }
+            ]}
             columnCount="2" 
           />
           {/** /Gente excelente project and showcase */}
@@ -194,21 +209,20 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             id="ilc" 
             image="/ilc/ilc-main.jpg" 
             name="ILC Academy"
-            excerpt="ILC Academy, a platform for expanding awareness, knowledge and skills to enhance your attributes like LifeCoach."
+            excerpt={<FormattedMessage {...messages.ilcDescription} />}
             information={[
-              { key: 'Client', value: 'ILC Academy' },
-              { key: 'Period', value: <FormattedMessage {...messages.ilcPeriod} /> },
-              { key: 'Work Type', value: 'FullTime' },
-              { key: 'Role', value: 'Web Developer / Wordpress Consultant / Project Leader' },
-              { key: 'Technologies used', value: 'Wordpress / jQuery / HTML / CSS' },
-              { key: 'Company Website', value: <a href="http://ilcacademy.com/">ilcacademy.com</a> }
+              { key: <FormattedMessage {...messages.client} />, value: 'ILC Academy' },
+              { key: <FormattedMessage {...messages.period} />, value: <FormattedMessage {...messages.ilcPeriod} /> },
+              { key: <FormattedMessage {...messages.workType} />, value: 'FullTime' },
+              { key: <FormattedMessage {...messages.role} />, value: 'Web Developer / Wordpress Consultant / Project Leader' },
+              { key: <FormattedMessage {...messages.technologies} />, value: 'Wordpress / jQuery / HTML / CSS' },
+              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="http://ilcacademy.com/">ilcacademy.com</a> }
             ]}
           />
 
           <ShowcaseComponent 
             id="ILCAcademyShowcase" 
-            title="Showcase" 
-            emptyStateText="Soon"
+            title={<FormattedMessage {...messages.showcaseTitle} />} 
             columnCount="2" 
             elements={ILCShowcase} 
           />

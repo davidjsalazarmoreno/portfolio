@@ -51,7 +51,7 @@ export const messages = defineMessages({
   },
   role: {
     id: 'general.role',
-    defaultMessage: 'role'
+    defaultMessage: 'Role'
   },
   technologies: {
     id: 'general.technologies',
@@ -112,6 +112,14 @@ export const messages = defineMessages({
   language: {
     id: 'general.language',
     defaultMessage: 'Language'
+  },
+  more: {
+    id: 'general.more',
+    defaultMessage: 'more'
+  },
+  less: {
+    id: 'general.less',
+    defaultMessage: 'less'
   },
   made: {
     id: 'general.made',

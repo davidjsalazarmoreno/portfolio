@@ -22,7 +22,7 @@ export const FooterComponent = (props) => {
       </p>
       
       <FlatSeparatorComponent margin="8px auto" width="13%" />
-
+      
       <SocialComponent id="SocialsOnFooter" networks={networks} />
       
       <small className="footnote">

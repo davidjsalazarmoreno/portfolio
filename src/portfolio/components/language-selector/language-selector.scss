@@ -6,8 +6,11 @@
   outline: none;
   font-size: 1em;
   vertical-align: super;
+  transition: all 350ms ease 250ms;
   
   &:hover {
+    color: #E74C3C;
+    transition: all 350ms ease 250ms;
     cursor: pointer;
   }
 
@@ -23,6 +26,14 @@
     padding-right: 5%;
   }
 
+  .languageSelectorLabel {
+    float: left;
+    position: absolute;
+    vertical-align: super;
+    top: 15%;
+    left: 118%;
+  }
+
   select {
     float: left;
     position: absolute;
@@ -32,6 +43,4 @@
     opacity: 0;
     transform: translateX(-100%);
   }
-
-
 }

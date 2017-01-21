@@ -11,7 +11,7 @@ interface IProjectComponentProps {
   image: string | JSX.Element;
   name: string | JSX.Element;
   excerpt: string | JSX.Element;
-  information: Array<{ key: TProjectInformationNames, value: string | JSX.Element }>;
+  information: Array<{ key: string | JSX.Element, value: string | JSX.Element }>;
 };
 
 export const ProjectComponent = ( props: IProjectComponentProps ) => {

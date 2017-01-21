@@ -1,14 +1,22 @@
 import * as React from 'react';
 
-require('./excerpt.scss');
+import './excerpt.scss';
 
-export class ExcerptComponent extends React.Component<any, any> {
+
+interface IExcerptComponentProps {
+  short: string | JSX.Element;
+  long: string | JSX.Element;
+  moreLabel: string | JSX.Element;
+  lessLabel: string | JSX.Element;
+};
+
+export class ExcerptComponent extends React.Component<IExcerptComponentProps, any> {
   state = {
     showMore: false
   };
 
   render() {
-    const { short, long } = this.props;
+    const { short, long, moreLabel, lessLabel } = this.props;
 
     const { showMore } = this.state;
 
@@ -26,7 +34,7 @@ export class ExcerptComponent extends React.Component<any, any> {
                   showMore: !showMore
               });
             }}>
-              {!showMore ? 'more' : 'less'}
+              {!showMore ?  moreLabel : lessLabel}
             </a>
             .
           </p>

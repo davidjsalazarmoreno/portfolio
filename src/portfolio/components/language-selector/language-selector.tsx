@@ -9,6 +9,7 @@ import './language-selector.scss';
 
 interface ILanguageSelectorComponentProps {
   languages?: string[];
+  languageLabel: string | JSX.Element;
   selected?: string;
   intl?: InjectedIntl;
   messages: Messages;
@@ -16,11 +17,12 @@ interface ILanguageSelectorComponentProps {
 };
 
 const LanguageSelector = ( props: ILanguageSelectorComponentProps ) => {
-  const { languages, onChange, selected, intl, messages } = props;
+  const { languages, onChange, selected, intl, messages, languageLabel } = props;
   
   return (
     <div className="LanguageSelectorComponent">
       <i className="fa fa-language" aria-hidden="true"></i>
+      <span className="languageSelectorLabel">{languageLabel}</span>
       <select name="LanguageSelector" id="LanguageSelector" onChange={onChange} defaultValue={selected}>
          {
           languages.map((value, index) => {
