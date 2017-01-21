@@ -5,21 +5,21 @@ import * as React from 'react';
 import {FormattedMessage, IntlProvider} from 'react-intl';
 
 // Components
-import {LanguageSelectorComponent} from './language-selector/language-selector';
-import {GithubRibbon} from './github-ribbon/github-ribbon';
-import {FlatSeparatorComponent} from './flat-separator/flat-separator';
-import {ShowcaseComponent} from './showcase/showcase';
-import {HeaderComponent} from './header/header';
-import {ExcerptComponent} from './excerpt/excerpt';
-import {FiltersComponent} from './filters/filters';
-import {ProjectComponent} from './project/project';
-import {SocialComponent} from './social/social';
-import {FooterComponent} from './footer/footer';
+import {LanguageSelectorComponent} from './../../components/language-selector/language-selector';
+import {GithubRibbon} from './../../components/github-ribbon/github-ribbon';
+import {FlatSeparatorComponent} from './../../components/flat-separator/flat-separator';
+import {ShowcaseComponent} from './../../components/showcase/showcase';
+import {HeaderComponent} from './../../components/header/header';
+import {ExcerptComponent} from './../../components/excerpt/excerpt';
+import {FiltersComponent} from './../../components/filters/filters';
+import {ProjectComponent} from './../../components/project/project';
+import {SocialComponent} from './../../components/social/social';
+import {FooterComponent} from './../../components/footer/footer';
 
 // Intl Messages
-import {messages} from './messages';
+import {messages} from './../../messages';
 
-import {ILCShowcase, networks, pmShowcase} from './config';
+import {ILCShowcase, networks, pmShowcase} from './../../config';
 
 // Styles
 import './portfolio.scss';

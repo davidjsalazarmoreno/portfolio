@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
+    "@types/react-addons-css-transition-group": "^15.0.0",
     "babel-cli": "^6.18.0",
     "babel-core": "6.21.0",
     "babel-loader": "6.2.10",

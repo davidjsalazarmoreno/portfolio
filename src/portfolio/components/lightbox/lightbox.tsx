@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import * as ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import LazyLoad from 'react-lazyload';
+const LazyLoad = require('react-lazyload').default;
 
 require('./lightbox.scss');
 

@@ -3,9 +3,9 @@ import * as React from 'react';
 import {SocialComponent} from './../social/social';
 import {FlatSeparatorComponent} from './../flat-separator/flat-separator';
 
-import {networks} from '../config';
+import {networks} from '../../config/index';
 
-require('./footer.scss');
+import './footer.scss';
 
 /**
  * Portfolio Header

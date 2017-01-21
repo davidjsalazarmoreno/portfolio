@@ -1,9 +1,10 @@
+// React
 import * as React from 'react';
 
+// Components
 import {LightboxComponent} from '../lightbox/lightbox';
 
-require('./showcase.scss');
-
+import './showcase.scss';
 
 export const ShowcaseComponent = (props) => {
   // Props

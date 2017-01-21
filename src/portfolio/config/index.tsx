@@ -1,7 +1,16 @@
 // React
 import * as React from 'react';
 
+// Playsmatch
+
 export const pmShowcase = [];
+
+
+// Systrix
+
+// GenteExcelente Venezuela
+
+// ILC Academy
 
 export const ILCShowcase = [
   {
@@ -58,7 +67,7 @@ export const ILCShowcase = [
   },
 ];
 
-
+// Others configurations
 export const networks = [
   { url: 'https://twitter.com/davidjsmoreno', iconClassName: 'fa fa-twitter' , title: 'Twitter' },
   { url: 'https://github.com/davidjsalazarmoreno', iconClassName: 'fa fa-github' , title: 'Github' },

@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import {SocialComponent} from './../social/social';
 
-import {networks} from '../config';
+import {networks} from '../../config/index';
 
 
-require('./header.scss');
+import './header.scss';
 
 /**
  * Portfolio Header

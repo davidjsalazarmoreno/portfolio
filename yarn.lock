@@ -110,6 +110,19 @@
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.0.tgz#c081147b109da5f9c57af70571771be97ce9c0ba"
 
+"@types/react-addons-css-transition-group@^15.0.0":
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-addons-css-transition-group/-/react-addons-css-transition-group-15.0.0.tgz#290bcaead071564ea64e1e25242b36616ff64bc1"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-addons-transition-group" "*"
+
+"@types/react-addons-transition-group@*":
+  version "0.14.18"
+  resolved "https://registry.yarnpkg.com/@types/react-addons-transition-group/-/react-addons-transition-group-0.14.18.tgz#8526c730dde12fa1bde83de8021cd59c06f51d00"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-dom@^0.14.20":
   version "0.14.20"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-0.14.20.tgz#6e30d66148e78b29ef593fa91ba30d0175190604"

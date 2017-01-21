@@ -6,7 +6,7 @@ import * as ReactDOM from 'react-dom';
 import {injectIntl} from 'react-intl';
 
 // Containers/Components
-import {PortfolioContainer} from './portfolio';
+import {PortfolioContainer} from './containers/portfolio/portfolio';
 
 ReactDOM.render(
   <PortfolioContainer />,
