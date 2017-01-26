@@ -1,6 +1,12 @@
 // React
 import * as React from 'react';
 
+// React intl
+import {FormattedMessage} from 'react-intl';
+
+// Intl Messages
+import {messages} from './../messages';
+
 // Playsmatch
 
 export const pmShowcase = [];
@@ -8,7 +14,54 @@ export const pmShowcase = [];
 
 // Systrix
 
+export const sysShowcase = [
+  {
+    type: 'image',
+    url: '/Systrix/sys-1.jpg',
+    alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
+    id: 'sys-showcase-1'
+  },
+  {
+    type: 'image',
+    url: '/Systrix/sys-2.jpg',
+    alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
+    id: 'sys-image-2'
+  },
+  {
+    type: 'image',
+    url: '/Systrix/sys-3.jpg',
+    alt: (<FormattedMessage {...messages['sysShowcase-3']} />),
+    id: 'sys-showcase-3'
+  },
+  {
+    type: 'image',
+    url: '/Systrix/sys-4.jpg',
+    alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
+    id: 'sys-showcase-4'
+  },
+  {
+    type: 'youtube',
+    url: 'Dr732zk-ltw',
+    alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
+    id: 'sys-showcase-5'
+  },
+  {
+    type: 'youtube',
+    url: 'opDk68CFwLA',
+    alt: (<FormattedMessage {...messages['sysShowcase-6']} />),
+    id: 'sys-showcase-6'
+  },
+];
+
 // GenteExcelente Venezuela
+export const geShowcase = [
+    {
+    type: 'image',
+    url: '/GE/ge-1-web.jpeg',
+    alt: (<FormattedMessage {...messages['geShowcase-1']} />),
+    id: 'ge-showcase-1'
+  }
+]
 
 // ILC Academy
 
@@ -16,54 +69,50 @@ export const ILCShowcase = [
   {
     type: 'youtube',
     url: 'igTVc5yygt8',
-    alt: (<p>
-     <b>Wordpress plugin video inside the web</b>: This Wordpress plugin allows the user to play the links of youtube and vimeo directly inside the web with the help of the fancybox library.
-    </p>),
-    id: 'ilc-showcase-2'
+    alt: (<FormattedMessage {...messages['ilcShowcase-1']} />),
+    id: 'ilc-showcase-1'
   },
   {
     type: 'youtube',
     url: 'AU-N8X3j7w8',
-    alt: 'Application Wheel of Life: It is a tool used in the world of coaching but taken to web application, with it you can create wheel life charts, save wheels, associate a customer with a wheel and generate a report in a PDF document.',
-    id: 'ilc-showcase-3'
+    alt:  (<FormattedMessage {...messages['ilcShowcase-2']} />),
+    id: 'ilc-showcase-2'
   },
   {
     type: 'youtube',
     url: 'qoGVn7bbgFg',
-    alt: 'Small design of a contact page, with the button to call via skype.',
-    id: 'ilc-showcase-4'
+    alt: (<FormattedMessage {...messages['ilcShowcase-3']} />),
+    id: 'ilc-showcase-3'
   },
   {
     type: 'youtube',
     url: '21_bpODeA8s',
-    alt: 'Modification to budypress directory (Wordpress plugin): Basically the directory was modified to show specific roles of wordpress, depending on those roles apply CSS styles (the medallion on the right) in addition to adding these new roles to the filters to refine the users search .',
-    id: 'ilc-showcase-5'
+    alt: (<FormattedMessage {...messages['ilcShowcase-4']} />),
+    id: 'ilc-showcase-4'
   },
   {
     type: 'image',
     url: '/ilc/subscribe-1.jpg',
-    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-    id: 'ilc-showcase-1'
+    alt: (<FormattedMessage {...messages['ilcShowcase-5']} />),
+    id: 'ilc-showcase-5'
   },
   {
     type: 'image',
     url: '/ilc/subscribe-2.jpg',
-    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-    id: 'ilc-showcase-1'
+    alt: (<FormattedMessage {...messages['ilcShowcase-5']} />),
+    id: 'ilc-showcase-6'
   },
   {
     type: 'image',
     url: '/ilc/ilc-certificates-prototype.jpg',
-    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-    id: 'ilc-showcase-1'
+    alt: (<FormattedMessage {...messages['ilcShowcase-7']} />),
+    id: 'ilc-showcase-7'
   },
   {
     type: 'image',
     url: '/ilc/ilc-welcome.jpg',
-    // width: 'auto',
-    // height: '700px',
-    alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-    id: 'ilc-showcase-1'
+    alt: (<FormattedMessage {...messages['ilcShowcase-8']} />),
+    id: 'ilc-showcase-8'
   },
 ];
 

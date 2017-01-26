@@ -3,35 +3,40 @@ import * as React from 'react';
 import {SocialComponent} from './../social/social';
 import {FlatSeparatorComponent} from './../flat-separator/flat-separator';
 
-import {networks} from '../../config/index';
-
 import './footer.scss';
+
+interface IFooterComponent {
+  contactMe: string | JSX.Element;
+  made: string | JSX.Element;
+  inspiration: string | JSX.Element;
+  networks: any;
+};
 
 /**
  * Portfolio Header
  */
-export const FooterComponent = (props) => {
+export const FooterComponent = (props: IFooterComponent) => {
   return (
     <footer className="FooterComponent">
       <p>
         <a href="mailto:davidjsalazarmoreno@gmail.com?subject=Awesome%20Project">
           <i className="fa fa-envelope-o"></i>
           <br/>
-          Contact me
+          {props.contactMe}
         </a>
       </p>
       
       <FlatSeparatorComponent margin="8px auto" width="13%" />
       
-      <SocialComponent id="SocialsOnFooter" networks={networks} />
+      <SocialComponent id="SocialsOnFooter" networks={props.networks} />
       
       <small className="footnote">
         <hr />
         <a href="https://github.com/davidjsalazarmoreno/portfolio">
-          Made with <i className="fa fa-heart" title="Love" /> and React.js
+          {props.made}
         </a>
-        | 
-        The styles are inspired by <a href="http://www.hamvocke.com/">hamvocke</a> 
+        |
+        {props.inspiration} 
       </small>
     </footer> 
   );

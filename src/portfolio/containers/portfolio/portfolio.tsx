@@ -19,7 +19,7 @@ import {FooterComponent} from './../../components/footer/footer';
 // Intl Messages
 import {messages} from './../../messages';
 
-import {ILCShowcase, networks, pmShowcase} from './../../config';
+import {pmShowcase, sysShowcase, geShowcase, ILCShowcase, networks} from './../../config';
 
 // Styles
 import './portfolio.scss';
@@ -133,44 +133,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             id="SystrixShowcase" 
             title={<FormattedMessage {...messages.showcaseTitle} />}
             columnCount="2" 
-            elements={[
-              {
-                type: 'image',
-                url: '/Systrix/sys-1.jpg',
-                alt: 'Angular Survey Prototype',
-                id: 'sys-yt-1'
-              },
-              {
-                type: 'image',
-                url: '/Systrix/sys-2.jpg',
-                alt: 'Angular Survey Prototype',
-                id: 'sys-yt-1'
-              },
-              {
-                type: 'image',
-                url: '/Systrix/sys-3.jpg',
-                alt: 'Angular Survey Prototype',
-                id: 'sys-yt-1'
-              },
-              {
-                type: 'image',
-                url: '/Systrix/sys-4.jpg',
-                alt: 'Angular Survey Prototype',
-                id: 'sys-yt-1'
-              },
-              {
-                type: 'youtube',
-                url: 'Dr732zk-ltw',
-                alt: 'Angular Survey Prototype',
-                id: 'sys-yt-1'
-              },
-              {
-                type: 'youtube',
-                url: 'opDk68CFwLA',
-                alt: 'Working demo of Survey in IE11',
-                id: 'sys-yt-2'
-              },
-            ]} 
+            elements={sysShowcase} 
           />
           {/** /Systrix Project and showcase */}
 
@@ -193,14 +156,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             id="GenteExcelenteVenezuelaShowcase" 
             title={<FormattedMessage {...messages.showcaseTitle} />} 
             emptyStateText="Soon" 
-            elements={[
-              {
-                type: 'image',
-                url: '/GE/ge-1-web.jpeg',
-                alt: 'Gente Excelente Venezuela Website',
-                id: 'ge-image-1'
-              }
-            ]}
+            elements={geShowcase}
             columnCount="2" 
           />
           {/** /Gente excelente project and showcase */}
@@ -229,7 +185,12 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
           {/** /ILC Academy Project and showcase */}
 
           <hr />
-          <FooterComponent />
+          <FooterComponent 
+            contactMe={<FormattedMessage {...messages.contactMe} />}
+            networks={networks}
+            made={<FormattedMessage {...messages.made} />}
+            inspiration={<FormattedMessage {...messages.inspiration} />}
+          />
 
         </section>
       </IntlProvider>
