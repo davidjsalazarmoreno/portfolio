@@ -4,7 +4,7 @@ import * as ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const LazyLoad = require('react-lazyload').default;
 
-require('./lightbox.scss');
+import './lightbox.scss';
 
 export class LightboxComponent extends React.Component<any, any> {
   state = {
@@ -21,7 +21,7 @@ export class LightboxComponent extends React.Component<any, any> {
 
     // State getters/setters
     this.toggleVisibility = this.toggleVisibility.bind(this);
-  }
+  }  
 
   toggleVisibility() {
     const newState = { ...this.state, visible: !this.state.visible };
@@ -80,7 +80,6 @@ export class LightboxComponent extends React.Component<any, any> {
 
     return (
       <div key={`${url}`} className="Lightbox">
-        {this.state.isLoading && "Loading video, please wait..."}
 
         <i className="fa fa-close" onClick={(e) => {
           e.preventDefault();
@@ -88,6 +87,7 @@ export class LightboxComponent extends React.Component<any, any> {
           toggleVisibility();
         }}></i>
         <figure>
+          {this.state.isLoading && <h2>Loading video, please wait...</h2>}
           <iframe 
             src={`https://www.youtube.com/embed/${url}`} 
             width="640" 
@@ -95,8 +95,11 @@ export class LightboxComponent extends React.Component<any, any> {
             frameBorder="0" 
             allowFullScreen
             onLoad={() => {
-              const newState = { ...this.state, isLoading: false };
-              this.setState(newState);
+              if ( !!this.state.isLoading ) {
+                console.info('Iframe onload');
+                const newState = { ...this.state, isLoading: false };
+                this.setState(newState);
+              }
             }}
           >
           </iframe>
@@ -142,7 +145,11 @@ export class LightboxComponent extends React.Component<any, any> {
             toggleVisibility();
           }}
         >
-          <LazyLoad>
+          <LazyLoad offset={100} placeholder={
+            <div className="placeholder">
+              <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+            </div>
+          }>
             <img 
               src={ type === 'youtube' ? `http://img.youtube.com/vi/${url}/mqdefault.jpg` : `${url}` } 
               style={{

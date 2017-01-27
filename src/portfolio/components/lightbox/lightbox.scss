@@ -2,6 +2,7 @@
   display: inline-block;
   margin: 0;
   width: 100%;
+  color: #fff;
 
   .Thumbnail {
     // padding-right: 5px;
@@ -42,7 +43,6 @@
   }
 
   .Lightbox figcaption {
-    color: #fff;
     margin-top: 1%;
     line-height: 1.5em;
     font-size: 1.2em;
@@ -50,7 +50,6 @@
 
   .fa.fa-close {
     position: fixed;
-    color: #fff;
     font-size: 2em;
     right: 0;
     margin-right: 2%;
@@ -60,5 +59,10 @@
   .fa.fa-close:hover,
   .fa.fa-close:active {
     cursor: pointer;
+  }
+
+  .placeholder {
+    width: 100px;
+    margin: 0 auto;
   }
 }

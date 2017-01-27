@@ -143,7 +143,7 @@ export const messages = defineMessages({
   },
   'ilcShowcase-7': {
     id: 'ilc.ilcShowcase-7',
-    defaultMessage: ' '
+    defaultMessage: '.'
   },
   'ilcShowcase-8': {
     id: 'ilc.ilcShowcase-8',

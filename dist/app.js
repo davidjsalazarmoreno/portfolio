@@ -51,7 +51,7 @@
 	// Containers/Components
 	var portfolio_1 = __webpack_require__(3);
 	ReactDOM.render(React.createElement(portfolio_1.PortfolioContainer, null), document.getElementById('app'));
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQm9vdHN0cmFwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiQm9vdHN0cmFwLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsUUFBUTtBQUNSLDZCQUErQjtBQUMvQixvQ0FBc0M7QUFLdEMsd0JBQXdCO0FBQ3hCLHlDQUErQztBQUUvQyxRQUFRLENBQUMsTUFBTSxDQUNiLG9CQUFDLDhCQUFrQixPQUFHLEVBQ3RCLFFBQVEsQ0FBQyxjQUFjLENBQUMsS0FBSyxDQUFDLENBQy9CLENBQUMifQ==
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQm9vdHN0cmFwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiQm9vdHN0cmFwLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsUUFBUTtBQUNSLDZCQUErQjtBQUMvQixvQ0FBc0M7QUFLdEMsd0JBQXdCO0FBQ3hCLDhEQUFvRTtBQUVwRSxRQUFRLENBQUMsTUFBTSxDQUNiLG9CQUFDLDhCQUFrQixPQUFHLEVBQ3RCLFFBQVEsQ0FBQyxjQUFjLENBQUMsS0FBSyxDQUFDLENBQy9CLENBQUMifQ==
 
 /***/ },
 /* 1 */
@@ -93,13 +93,13 @@
 	var flat_separator_1 = __webpack_require__(36);
 	var showcase_1 = __webpack_require__(39);
 	var header_1 = __webpack_require__(51);
-	var excerpt_1 = __webpack_require__(58);
-	var filters_1 = __webpack_require__(61);
-	var project_1 = __webpack_require__(64);
-	var footer_1 = __webpack_require__(67);
+	var excerpt_1 = __webpack_require__(59);
+	var section_header_1 = __webpack_require__(62);
+	var project_1 = __webpack_require__(65);
+	var footer_1 = __webpack_require__(68);
 	// Intl Messages
-	var messages_1 = __webpack_require__(70);
-	var config_1 = __webpack_require__(55);
+	var messages_1 = __webpack_require__(56);
+	var index_1 = __webpack_require__(55);
 	// Styles
 	__webpack_require__(71);
 	;
@@ -121,93 +121,56 @@
 	                React.createElement(language_selector_1.LanguageSelectorComponent, { languages: [
 	                        'en',
 	                        'es',
-	                    ], selected: language, messages: messages_1.messages, onChange: function (event) {
+	                    ], languageLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.language)), selected: language, messages: messages_1.messages, onChange: function (event) {
 	                        var languageSelected = event.target.value;
 	                        console.log(languageSelected);
 	                        _this.setState(__assign({}, _this.state, { language: languageSelected }));
 	                    } }),
 	                React.createElement(github_ribbon_1.GithubRibbon, null),
-	                React.createElement(header_1.HeaderComponent, null),
+	                React.createElement(header_1.HeaderComponent, { avatarUrl: "/avatar.jpg" }),
 	                React.createElement(flat_separator_1.FlatSeparatorComponent, { margin: "16px auto", width: "20%" }),
 	                React.createElement(excerpt_1.ExcerptComponent, { short: React.createElement("span", null,
-	                        React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.excerptShort))), long: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.excerptLong)) }),
+	                        React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.excerptShort))), long: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.excerptLong)), moreLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.more)), lessLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.less)) }),
 	                React.createElement("hr", null),
-	                React.createElement(filters_1.FiltersComponent, null),
+	                React.createElement(section_header_1.SectionHeaderComponent, { title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.myWork)) }),
 	                React.createElement(project_1.ProjectComponent, { id: "playsmatch", image: "/pm-showcase-1.png", name: "Cuádrala / Playsmatch", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.pmDescription)), information: [
-	                        { key: 'Client', value: 'Cuádrala / Playsmatch' },
-	                        { key: 'Period', value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.pmPeriod)) },
-	                        { key: 'Work Type', value: 'FullTime' },
-	                        { key: 'Role', value: 'Full Stack Web Developer' },
-	                        { key: 'Technologies used', value: 'React / Nodejs' },
-	                        { key: 'Company Website', value: React.createElement("a", { href: "https://www.cuadrala.com" }, "Cu\u00E1drala") }
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'Cuádrala / Playsmatch' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.pmPeriod)) },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'FullTime' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Full Stack Web Developer' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'React / Nodejs' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "https://www.cuadrala.com" }, "Cu\u00E1drala") }
 	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "PlaysmatchShowcase", title: "Showcase", elements: config_1.pmShowcase, emptyStateText: "Soon (Work in progress ;-D)" }),
-	                React.createElement(project_1.ProjectComponent, { id: "systrix", image: "/Systrix/sys-3.jpg", name: "Systrix", excerpt: "Web development, media agency and call center outsourcing.", information: [
-	                        { key: 'Client', value: 'Systrix' },
-	                        { key: 'Period', value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.sysPeriod)) },
-	                        { key: 'Work Type', value: 'FullTime' },
-	                        { key: 'Role', value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
-	                        { key: 'Technologies used', value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
-	                        { key: 'Company Website', value: React.createElement("a", { href: "https://www.linkedin.com/company/systrix" }, "Systrix") }
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "PlaysmatchShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), elements: index_1.pmShowcase, emptyStateText: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseEmptyText)) }),
+	                React.createElement(project_1.ProjectComponent, { id: "systrix", image: "/Systrix/sys-3.jpg", name: "Systrix", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.sysDescription)), information: [
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'Systrix' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.sysPeriod)) },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'FullTime' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "https://www.linkedin.com/company/systrix" }, "Systrix") }
 	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "SystrixShowcase", title: "Showcase", columnCount: "2", elements: [
-	                        {
-	                            type: 'image',
-	                            url: '/Systrix/sys-1.jpg',
-	                            alt: 'Angular Survey Prototype',
-	                            id: 'sys-yt-1'
-	                        },
-	                        {
-	                            type: 'image',
-	                            url: '/Systrix/sys-2.jpg',
-	                            alt: 'Angular Survey Prototype',
-	                            id: 'sys-yt-1'
-	                        },
-	                        {
-	                            type: 'image',
-	                            url: '/Systrix/sys-3.jpg',
-	                            alt: 'Angular Survey Prototype',
-	                            id: 'sys-yt-1'
-	                        },
-	                        {
-	                            type: 'image',
-	                            url: '/Systrix/sys-4.jpg',
-	                            alt: 'Angular Survey Prototype',
-	                            id: 'sys-yt-1'
-	                        },
-	                        {
-	                            type: 'youtube',
-	                            url: 'Dr732zk-ltw',
-	                            alt: 'Angular Survey Prototype',
-	                            id: 'sys-yt-1'
-	                        },
-	                        {
-	                            type: 'youtube',
-	                            url: 'opDk68CFwLA',
-	                            alt: 'Working demo of Survey in IE11',
-	                            id: 'sys-yt-2'
-	                        },
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "SystrixShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), columnCount: "2", elements: index_1.sysShowcase }),
+	                React.createElement(project_1.ProjectComponent, { id: "GE", image: "/GE/ge.jpeg", name: "Gente Excelente Venezuela", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.geDescription)), information: [
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'Gente Excelente Venezuela' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: '2016' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'Freelancer' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Web Developer / Wordpress Consultant' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'Wordpress / HTML / CSS / Javascript' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "http://gentexcelente.com" }, "gentexcelente.com") }
 	                    ] }),
-	                React.createElement(project_1.ProjectComponent, { id: "GE", image: "/GE/ge.jpeg", name: "Gente Excelente Venezuela", excerpt: "We are Gente Excelente Venezuela. Our mission is the success of People. Our motto Saving in readiness is to invest in ignorance. Life Coaching", information: [
-	                        { key: 'Client', value: 'Gente Excelente Venezuela' },
-	                        { key: 'Period', value: '2016' },
-	                        { key: 'Work Type', value: 'Freelancer' },
-	                        { key: 'Role', value: 'Web Developer / Wordpress Consultant' },
-	                        { key: 'Technologies used', value: 'Wordpress / HTML / CSS / Javascript' },
-	                        { key: 'Company Website', value: React.createElement("a", { href: "http://gentexcelente.com" }, "gentexcelente.com") }
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "GenteExcelenteVenezuelaShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), emptyStateText: "Soon", elements: index_1.geShowcase, columnCount: "2" }),
+	                React.createElement(project_1.ProjectComponent, { id: "ilc", image: "/ilc/ilc-main.jpg", name: "ILC Academy", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.ilcDescription)), information: [
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'ILC Academy' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.ilcPeriod)) },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'FullTime' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Web Developer / Wordpress Consultant / Project Leader' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'Wordpress / jQuery / HTML / CSS' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "http://ilcacademy.com/" }, "ilcacademy.com") }
 	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "GenteExcelenteVenezuelaShowcase", title: "Showcase", emptyStateText: "Soon", elements: [], columnCount: "2" }),
-	                React.createElement(project_1.ProjectComponent, { id: "ilc", image: "/ilc/ilc-main.jpg", name: "ILC Academy", excerpt: "ILC Academy, a platform for expanding awareness, knowledge and skills to enhance your attributes like LifeCoach.", information: [
-	                        { key: 'Client', value: 'ILC Academy' },
-	                        { key: 'Period', value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.ilcPeriod)) },
-	                        { key: 'Work Type', value: 'FullTime' },
-	                        { key: 'Role', value: 'Web Developer / Wordpress Consultant / Project Leader' },
-	                        { key: 'Technologies used', value: 'Wordpress / jQuery / HTML / CSS' },
-	                        { key: 'Company Website', value: React.createElement("a", { href: "http://ilcacademy.com/" }, "ilcacademy.com") }
-	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "ILCAcademyShowcase", title: "Showcase", emptyStateText: "Soon", columnCount: "2", elements: config_1.ILCShowcase }),
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "ILCAcademyShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), columnCount: "2", elements: index_1.ILCShowcase }),
 	                React.createElement("hr", null),
-	                React.createElement(footer_1.FooterComponent, null))));
+	                React.createElement(footer_1.FooterComponent, { contactMe: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.contactMe)), networks: index_1.networks, made: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.made)), inspiration: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.inspiration)) }))));
 	    };
 	    return PortfolioContainer;
 	}(React.Component));
@@ -215,7 +178,7 @@
 	;
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = PortfolioContainer;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9ydGZvbGlvLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicG9ydGZvbGlvLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwRDtBQUUxRCxhQUFhO0FBQ2IsMkVBQWdGO0FBQ2hGLCtEQUEyRDtBQUMzRCxrRUFBdUU7QUFDdkUsZ0RBQXNEO0FBQ3RELDBDQUFnRDtBQUNoRCw2Q0FBbUQ7QUFDbkQsNkNBQW1EO0FBQ25ELDZDQUFtRDtBQUVuRCwwQ0FBZ0Q7QUFFaEQsZ0JBQWdCO0FBQ2hCLHVDQUFvQztBQUVwQyxtQ0FBMkQ7QUFFM0QsU0FBUztBQUNULDRCQUEwQjtBQUl6QixDQUFDO0FBRUY7SUFBd0Msc0NBQThDO0lBS3BGLDRCQUFZLEtBQUs7UUFBakIsWUFDRSxrQkFBTSxLQUFLLENBQUMsU0FDYjtRQU5ELFdBQUssR0FBRztZQUNOLFFBQVEsRUFBRSxJQUFJO1NBQ2YsQ0FBQzs7SUFJRixDQUFDO0lBRUQsbUNBQU0sR0FBTjtRQUFBLGlCQXVMQztRQXRMQyxRQUFRO1FBQ0EsSUFBQSw4QkFBUSxDQUFnQjtRQUVoQyxNQUFNLENBQUMsQ0FDTCxvQkFBQyx5QkFBWSxJQUFDLE1BQU0sRUFBRSxRQUFRO1lBQzVCLGlDQUFTLFNBQVMsRUFBQyxvQkFBb0I7Z0JBQ3JDLG9CQUFDLDZDQUF5QixJQUN4QixTQUFTLEVBQUU7d0JBQ1QsSUFBSTt3QkFDSixJQUFJO3FCQUNMLEVBQ0QsUUFBUSxFQUFFLFFBQVEsRUFDbEIsUUFBUSxFQUFFLG1CQUFRLEVBQ2xCLFFBQVEsRUFBRSxVQUFDLEtBQUs7d0JBQ2QsSUFBTSxnQkFBZ0IsR0FBRyxLQUFLLENBQUMsTUFBTSxDQUFDLEtBQUssQ0FBQzt3QkFFNUMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDO3dCQUU5QixLQUFJLENBQUMsUUFBUSxjQUNSLEtBQUksQ0FBQyxLQUFLLElBQ2IsUUFBUSxFQUFFLGdCQUFnQixJQUMxQixDQUFDO29CQUNMLENBQUMsR0FDRDtnQkFFRixvQkFBQyw0QkFBWSxPQUFHO2dCQUVoQixvQkFBQyx3QkFBZSxPQUFHO2dCQUVuQixvQkFBQyx1Q0FBc0IsSUFBQyxNQUFNLEVBQUMsV0FBVyxFQUFDLEtBQUssRUFBQyxLQUFLLEdBQUc7Z0JBRXpELG9CQUFDLDBCQUFnQixJQUNmLEtBQUssRUFDSDt3QkFDRSxvQkFBQyw2QkFBZ0IsZUFBSyxtQkFBUSxDQUFDLFlBQVksRUFBSSxDQUMxQyxFQUVULElBQUksRUFDRixvQkFBQyw2QkFBZ0IsZUFBSyxtQkFBUSxDQUFDLFdBQVcsRUFBSSxHQUVoRDtnQkFJRiwrQkFBTTtnQkFFTixvQkFBQywwQkFBZ0IsT0FBRztnQkFHcEIsb0JBQUMsMEJBQWdCLElBQ2YsRUFBRSxFQUFDLFlBQVksRUFDZixLQUFLLEVBQUMsb0JBQW9CLEVBQzFCLElBQUksRUFBQyx1QkFBdUIsRUFDNUIsT0FBTyxFQUFFLG9CQUFDLDZCQUFnQixlQUFLLG1CQUFRLENBQUMsYUFBYSxFQUFJLEVBQ3pELFdBQVcsRUFBRTt3QkFDWCxFQUFFLEdBQUcsRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLHVCQUF1QixFQUFFO3dCQUNqRCxFQUFFLEdBQUcsRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLG9CQUFDLDZCQUFnQixlQUFLLG1CQUFRLENBQUMsUUFBUSxFQUFJLEVBQUU7d0JBQ3JFLEVBQUUsR0FBRyxFQUFFLFdBQVcsRUFBRSxLQUFLLEVBQUUsVUFBVSxFQUFFO3dCQUN2QyxFQUFFLEdBQUcsRUFBRSxNQUFNLEVBQUUsS0FBSyxFQUFFLDBCQUEwQixFQUFFO3dCQUNsRCxFQUFFLEdBQUcsRUFBRSxtQkFBbUIsRUFBRSxLQUFLLEVBQUUsZ0JBQWdCLEVBQUU7d0JBQ3JELEVBQUUsR0FBRyxFQUFFLGlCQUFpQixFQUFFLEtBQUssRUFBRSwyQkFBRyxJQUFJLEVBQUMsMEJBQTBCLG9CQUFhLEVBQUU7cUJBQ25GLEdBQ0Q7Z0JBR0Ysb0JBQUMsNEJBQWlCLElBQUMsRUFBRSxFQUFDLG9CQUFvQixFQUFDLEtBQUssRUFBQyxVQUFVLEVBQUMsUUFBUSxFQUFFLG1CQUFVLEVBQUUsY0FBYyxFQUFDLDZCQUE2QixHQUFHO2dCQUdqSSxvQkFBQywwQkFBZ0IsSUFDZixFQUFFLEVBQUMsU0FBUyxFQUNaLEtBQUssRUFBQyxvQkFBb0IsRUFDMUIsSUFBSSxFQUFDLFNBQVMsRUFDZCxPQUFPLEVBQUMsNERBQTRELEVBQ3BFLFdBQVcsRUFBRTt3QkFDWCxFQUFFLEdBQUcsRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLFNBQVMsRUFBRTt3QkFDbkMsRUFBRSxHQUFHLEVBQUUsUUFBUSxFQUFFLEtBQUssRUFBRSxvQkFBQyw2QkFBZ0IsZUFBSyxtQkFBUSxDQUFDLFNBQVMsRUFBSSxFQUFFO3dCQUN0RSxFQUFFLEdBQUcsRUFBRSxXQUFXLEVBQUUsS0FBSyxFQUFFLFVBQVUsRUFBRTt3QkFDdkMsRUFBRSxHQUFHLEVBQUUsTUFBTSxFQUFFLEtBQUssRUFBRSx1RUFBdUUsRUFBRTt3QkFDL0YsRUFBRSxHQUFHLEVBQUUsbUJBQW1CLEVBQUUsS0FBSyxFQUFFLDJDQUEyQyxFQUFFO3dCQUNoRixFQUFFLEdBQUcsRUFBRSxpQkFBaUIsRUFBRSxLQUFLLEVBQUUsMkJBQUcsSUFBSSxFQUFDLDBDQUEwQyxjQUFZLEVBQUU7cUJBQ2xHLEdBQ0Q7Z0JBRUYsb0JBQUMsNEJBQWlCLElBQ2hCLEVBQUUsRUFBQyxpQkFBaUIsRUFDcEIsS0FBSyxFQUFDLFVBQVUsRUFDaEIsV0FBVyxFQUFDLEdBQUcsRUFDZixRQUFRLEVBQUU7d0JBQ1I7NEJBQ0UsSUFBSSxFQUFFLE9BQU87NEJBQ2IsR0FBRyxFQUFFLG9CQUFvQjs0QkFDekIsR0FBRyxFQUFFLDBCQUEwQjs0QkFDL0IsRUFBRSxFQUFFLFVBQVU7eUJBQ2Y7d0JBQ0Q7NEJBQ0UsSUFBSSxFQUFFLE9BQU87NEJBQ2IsR0FBRyxFQUFFLG9CQUFvQjs0QkFDekIsR0FBRyxFQUFFLDBCQUEwQjs0QkFDL0IsRUFBRSxFQUFFLFVBQVU7eUJBQ2Y7d0JBQ0Q7NEJBQ0UsSUFBSSxFQUFFLE9BQU87NEJBQ2IsR0FBRyxFQUFFLG9CQUFvQjs0QkFDekIsR0FBRyxFQUFFLDBCQUEwQjs0QkFDL0IsRUFBRSxFQUFFLFVBQVU7eUJBQ2Y7d0JBQ0Q7NEJBQ0UsSUFBSSxFQUFFLE9BQU87NEJBQ2IsR0FBRyxFQUFFLG9CQUFvQjs0QkFDekIsR0FBRyxFQUFFLDBCQUEwQjs0QkFDL0IsRUFBRSxFQUFFLFVBQVU7eUJBQ2Y7d0JBQ0Q7NEJBQ0UsSUFBSSxFQUFFLFNBQVM7NEJBQ2YsR0FBRyxFQUFFLGFBQWE7NEJBQ2xCLEdBQUcsRUFBRSwwQkFBMEI7NEJBQy9CLEVBQUUsRUFBRSxVQUFVO3lCQUNmO3dCQUNEOzRCQUNFLElBQUksRUFBRSxTQUFTOzRCQUNmLEdBQUcsRUFBRSxhQUFhOzRCQUNsQixHQUFHLEVBQUUsZ0NBQWdDOzRCQUNyQyxFQUFFLEVBQUUsVUFBVTt5QkFDZjtxQkFDRixHQUNEO2dCQUdGLG9CQUFDLDBCQUFnQixJQUNmLEVBQUUsRUFBQyxJQUFJLEVBQ1AsS0FBSyxFQUFDLGFBQWEsRUFDbkIsSUFBSSxFQUFDLDJCQUEyQixFQUNoQyxPQUFPLEVBQUMsZ0pBQWdKLEVBQ3hKLFdBQVcsRUFBRTt3QkFDWCxFQUFFLEdBQUcsRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLDJCQUEyQixFQUFFO3dCQUNyRCxFQUFFLEdBQUcsRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLE1BQU0sRUFBRTt3QkFDaEMsRUFBRSxHQUFHLEVBQUUsV0FBVyxFQUFFLEtBQUssRUFBRSxZQUFZLEVBQUU7d0JBQ3pDLEVBQUUsR0FBRyxFQUFFLE1BQU0sRUFBRSxLQUFLLEVBQUUsc0NBQXNDLEVBQUU7d0JBQzlELEVBQUUsR0FBRyxFQUFFLG1CQUFtQixFQUFFLEtBQUssRUFBRSxxQ0FBcUMsRUFBRTt3QkFDMUUsRUFBRSxHQUFHLEVBQUUsaUJBQWlCLEVBQUUsS0FBSyxFQUFFLDJCQUFHLElBQUksRUFBQywwQkFBMEIsd0JBQXNCLEVBQUU7cUJBQzVGLEdBQ0Q7Z0JBRUYsb0JBQUMsNEJBQWlCLElBQ2hCLEVBQUUsRUFBQyxpQ0FBaUMsRUFDcEMsS0FBSyxFQUFDLFVBQVUsRUFDaEIsY0FBYyxFQUFDLE1BQU0sRUFDckIsUUFBUSxFQUFFLEVBQUUsRUFDWixXQUFXLEVBQUMsR0FBRyxHQUNmO2dCQUdGLG9CQUFDLDBCQUFnQixJQUNmLEVBQUUsRUFBQyxLQUFLLEVBQ1IsS0FBSyxFQUFDLG1CQUFtQixFQUN6QixJQUFJLEVBQUMsYUFBYSxFQUNsQixPQUFPLEVBQUMsa0hBQWtILEVBQzFILFdBQVcsRUFBRTt3QkFDWCxFQUFFLEdBQUcsRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLGFBQWEsRUFBRTt3QkFDdkMsRUFBRSxHQUFHLEVBQUUsUUFBUSxFQUFFLEtBQUssRUFBRSxvQkFBQyw2QkFBZ0IsZUFBSyxtQkFBUSxDQUFDLFNBQVMsRUFBSSxFQUFFO3dCQUN0RSxFQUFFLEdBQUcsRUFBRSxXQUFXLEVBQUUsS0FBSyxFQUFFLFVBQVUsRUFBRTt3QkFDdkMsRUFBRSxHQUFHLEVBQUUsTUFBTSxFQUFFLEtBQUssRUFBRSx1REFBdUQsRUFBRTt3QkFDL0UsRUFBRSxHQUFHLEVBQUUsbUJBQW1CLEVBQUUsS0FBSyxFQUFFLGlDQUFpQyxFQUFFO3dCQUN0RSxFQUFFLEdBQUcsRUFBRSxpQkFBaUIsRUFBRSxLQUFLLEVBQUUsMkJBQUcsSUFBSSxFQUFDLHdCQUF3QixxQkFBbUIsRUFBRTtxQkFDdkYsR0FDRDtnQkFFRixvQkFBQyw0QkFBaUIsSUFDaEIsRUFBRSxFQUFDLG9CQUFvQixFQUN2QixLQUFLLEVBQUMsVUFBVSxFQUNoQixjQUFjLEVBQUMsTUFBTSxFQUNyQixXQUFXLEVBQUMsR0FBRyxFQUNmLFFBQVEsRUFBRSxvQkFBVyxHQUNyQjtnQkFHRiwrQkFBTTtnQkFDTixvQkFBQyx3QkFBZSxPQUFHLENBRVgsQ0FDRyxDQUNoQixDQUFDO0lBQ0osQ0FBQztJQUNILHlCQUFDO0FBQUQsQ0FBQyxBQWpNRCxDQUF3QyxLQUFLLENBQUMsU0FBUyxHQWlNdEQ7QUFqTVksZ0RBQWtCO0FBaU05QixDQUFDOztBQUVGLGtCQUFlLGtCQUFrQixDQUFDIn0=
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9ydGZvbGlvLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicG9ydGZvbGlvLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwRDtBQUUxRCxhQUFhO0FBQ2IsNEZBQWlHO0FBQ2pHLGdGQUE0RTtBQUM1RSxtRkFBd0Y7QUFDeEYsaUVBQXVFO0FBQ3ZFLDJEQUFpRTtBQUNqRSw4REFBb0U7QUFDcEUsbUZBQXdGO0FBQ3hGLDhEQUFvRTtBQUVwRSwyREFBaUU7QUFFakUsZ0JBQWdCO0FBQ2hCLDZDQUEwQztBQUUxQyw4Q0FBZ0c7QUFFaEcsU0FBUztBQUNULDRCQUEwQjtBQUl6QixDQUFDO0FBRUY7SUFBd0Msc0NBQThDO0lBS3BGLDRCQUFZLEtBQUs7UUFBakIsWUFDRSxrQkFBTSxLQUFLLENBQUMsU0FDYjtRQU5ELFdBQUssR0FBRztZQUNOLFFBQVEsRUFBRSxJQUFJO1NBQ2YsQ0FBQzs7SUFJRixDQUFDO0lBRUQsbUNBQU0sR0FBTjtRQUFBLGlCQTZKQztRQTVKQyxRQUFRO1FBQ0EsSUFBQSw4QkFBUSxDQUFnQjtRQUVoQyxNQUFNLENBQUMsQ0FDTCxvQkFBQyx5QkFBWSxJQUFDLE1BQU0sRUFBRSxRQUFRO1lBQzVCLGlDQUFTLFNBQVMsRUFBQyxvQkFBb0I7Z0JBQ3JDLG9CQUFDLDZDQUF5QixJQUN4QixTQUFTLEVBQUU7d0JBQ1QsSUFBSTt3QkFDSixJQUFJO3FCQUNMLEVBQ0QsYUFBYSxFQUFFLG9CQUFDLDZCQUFnQixlQUFLLG1CQUFRLENBQUMsUUFBUSxFQUFJLEVBQzFELFFBQVEsRUFBRSxRQUFRLEVBQ2xCLFFBQVEsRUFBRSxtQkFBUSxFQUNsQixRQUFRLEVBQUUsVUFBQyxLQUFLO3dCQUNkLElBQU0sZ0JBQWdCLEdBQUcsS0FBSyxDQUFDLE1BQU0sQ0FBQyxLQUFLLENBQUM7d0JBRTVDLE9BQU8sQ0FBQyxHQUFHLENBQUMsZ0JBQWdC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
 
 /***/ },
 /* 4 */
@@ -4807,9 +4770,10 @@
 	__webpack_require__(29);
 	;
 	var LanguageSelector = function (props) {
-	    var languages = props.languages, onChange = props.onChange, selected = props.selected, intl = props.intl, messages = props.messages;
+	    var languages = props.languages, onChange = props.onChange, selected = props.selected, intl = props.intl, messages = props.messages, languageLabel = props.languageLabel;
 	    return (React.createElement("div", { className: "LanguageSelectorComponent" },
 	        React.createElement("i", { className: "fa fa-language", "aria-hidden": "true" }),
+	        React.createElement("span", { className: "languageSelectorLabel" }, languageLabel),
 	        React.createElement("select", { name: "LanguageSelector", id: "LanguageSelector", onChange: onChange, defaultValue: selected }, languages.map(function (value, index) {
 	            return (React.createElement("option", { key: index, value: value }, intl.formatMessage(messages[value])));
 	        }))));
@@ -4817,7 +4781,7 @@
 	exports.LanguageSelectorComponent = react_intl_1.injectIntl(LanguageSelector);
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = exports.LanguageSelectorComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFuZ3VhZ2Utc2VsZWN0b3IuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsYW5ndWFnZS1zZWxlY3Rvci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUE4RDtBQUU5RCxTQUFTO0FBQ1Qsb0NBQWtDO0FBUWpDLENBQUM7QUFFRixJQUFNLGdCQUFnQixHQUFHLFVBQUUsS0FBc0M7SUFDdkQsSUFBQSwyQkFBUyxFQUFFLHlCQUFRLEVBQUUseUJBQVEsRUFBRSxpQkFBSSxFQUFFLHlCQUFRLENBQVc7SUFFaEUsTUFBTSxDQUFDLENBQ0wsNkJBQUssU0FBUyxFQUFDLDJCQUEyQjtRQUN4QywyQkFBRyxTQUFTLEVBQUMsZ0JBQWdCLGlCQUFhLE1BQU0sR0FBSztRQUNyRCxnQ0FBUSxJQUFJLEVBQUMsa0JBQWtCLEVBQUMsRUFBRSxFQUFDLGtCQUFrQixFQUFDLFFBQVEsRUFBRSxRQUFRLEVBQUUsWUFBWSxFQUFFLFFBQVEsSUFFNUYsU0FBUyxDQUFDLEdBQUcsQ0FBQyxVQUFDLEtBQUssRUFBRSxLQUFLO1lBQ3pCLE1BQU0sQ0FBQyxDQUNMLGdDQUNFLEdBQUcsRUFBRSxLQUFLLEVBQ1YsS0FBSyxFQUFFLEtBQUssSUFFVixJQUFJLENBQUMsYUFBYSxDQUFFLFFBQVEsQ0FBRSxLQUFLLENBQUUsQ0FBRSxDQUVsQyxDQUNWLENBQUM7UUFDSixDQUFDLENBQUMsQ0FFRyxDQUNMLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQztBQUlXLFFBQUEseUJBQXlCLEdBQUcsdUJBQVUsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDOztBQUN0RSxrQkFBZSxpQ0FBeUIsQ0FBQyJ9
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFuZ3VhZ2Utc2VsZWN0b3IuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsYW5ndWFnZS1zZWxlY3Rvci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUE4RDtBQUU5RCxTQUFTO0FBQ1Qsb0NBQWtDO0FBU2pDLENBQUM7QUFFRixJQUFNLGdCQUFnQixHQUFHLFVBQUUsS0FBc0M7SUFDdkQsSUFBQSwyQkFBUyxFQUFFLHlCQUFRLEVBQUUseUJBQVEsRUFBRSxpQkFBSSxFQUFFLHlCQUFRLEVBQUUsbUNBQWEsQ0FBVztJQUUvRSxNQUFNLENBQUMsQ0FDTCw2QkFBSyxTQUFTLEVBQUMsMkJBQTJCO1FBQ3hDLDJCQUFHLFNBQVMsRUFBQyxnQkFBZ0IsaUJBQWEsTUFBTSxHQUFLO1FBQ3JELDhCQUFNLFNBQVMsRUFBQyx1QkFBdUIsSUFBRSxhQUFhLENBQVE7UUFDOUQsZ0NBQVEsSUFBSSxFQUFDLGtCQUFrQixFQUFDLEVBQUUsRUFBQyxrQkFBa0IsRUFBQyxRQUFRLEVBQUUsUUFBUSxFQUFFLFlBQVksRUFBRSxRQUFRLElBRTVGLFNBQVMsQ0FBQyxHQUFHLENBQUMsVUFBQyxLQUFLLEVBQUUsS0FBSztZQUN6QixNQUFNLENBQUMsQ0FDTCxnQ0FDRSxHQUFHLEVBQUUsS0FBSyxFQUNWLEtBQUssRUFBRSxLQUFLLElBRVYsSUFBSSxDQUFDLGFBQWEsQ0FBRSxRQUFRLENBQUUsS0FBSyxDQUFFLENBQUUsQ0FFbEMsQ0FDVixDQUFDO1FBQ0osQ0FBQyxDQUFDLENBRUcsQ0FDTCxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUM7QUFJVyxRQUFBLHlCQUF5QixHQUFHLHVCQUFVLENBQUMsZ0JBQWdCLENBQUMsQ0FBQzs7QUFDdEUsa0JBQWUsaUNBQXlCLENBQUMifQ==
 
 /***/ },
 /* 29 */
@@ -4835,8 +4799,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./language-selector.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./language-selector.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./language-selector.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./language-selector.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -4854,7 +4818,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".LanguageSelectorComponent {\n  position: absolute;\n  left: 1.5%;\n  border: 0;\n  top: 3%;\n  outline: none;\n  font-size: 1em;\n  vertical-align: super; }\n  .LanguageSelectorComponent:hover {\n    cursor: pointer; }\n  .LanguageSelectorComponent:hover select,\n  .LanguageSelectorComponent:active select {\n    opacity: 1;\n    transform: translateX(0%);\n    transition: all 350ms ease; }\n  .LanguageSelectorComponent i {\n    font-size: 2em;\n    padding-right: 5%; }\n  .LanguageSelectorComponent select {\n    float: left;\n    position: absolute;\n    margin-left: 5px;\n    transition: all 350ms ease 250ms;\n    padding: 2.5px;\n    opacity: 0;\n    transform: translateX(-100%); }\n", ""]);
+	exports.push([module.id, ".LanguageSelectorComponent {\n  position: absolute;\n  left: 1.5%;\n  border: 0;\n  top: 3%;\n  outline: none;\n  font-size: 1em;\n  vertical-align: super;\n  transition: all 350ms ease 250ms; }\n  .LanguageSelectorComponent:hover {\n    color: #E74C3C;\n    transition: all 350ms ease 250ms;\n    cursor: pointer; }\n  .LanguageSelectorComponent:hover select,\n  .LanguageSelectorComponent:active select {\n    opacity: 1;\n    transform: translateX(0%);\n    transition: all 350ms ease; }\n  .LanguageSelectorComponent i {\n    font-size: 2em;\n    padding-right: 5%; }\n  .LanguageSelectorComponent .languageSelectorLabel {\n    float: left;\n    position: absolute;\n    vertical-align: super;\n    top: 15%;\n    left: 118%; }\n  .LanguageSelectorComponent select {\n    float: left;\n    position: absolute;\n    margin-left: 5px;\n    transition: all 350ms ease 250ms;\n    padding: 2.5px;\n    opacity: 0;\n    transform: translateX(-100%); }\n", ""]);
 	
 	// exports
 
@@ -5205,8 +5169,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./github-ribbon.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./github-ribbon.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./github-ribbon.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./github-ribbon.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -5259,8 +5223,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./flat-separator.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./flat-separator.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./flat-separator.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./flat-separator.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -5296,7 +5260,9 @@
 	    }
 	    return t;
 	};
+	// React
 	var React = __webpack_require__(1);
+	// Components
 	var lightbox_1 = __webpack_require__(40);
 	__webpack_require__(49);
 	exports.ShowcaseComponent = function (props) {
@@ -5315,7 +5281,7 @@
 	};
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = exports.ShowcaseComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2hvd2Nhc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzaG93Y2FzZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUEsNkJBQStCO0FBRS9CLGlEQUF1RDtBQUV2RCxPQUFPLENBQUMsaUJBQWlCLENBQUMsQ0FBQztBQUdkLFFBQUEsaUJBQWlCLEdBQUcsVUFBQyxLQUFLO0lBQ3JDLFFBQVE7SUFDQSxJQUFBLG1CQUFLLEVBQUUseUJBQVEsRUFBRSxxQ0FBYyxDQUFXO0lBRWxELEVBQUUsQ0FBQyxDQUFFLFFBQVEsQ0FBQyxNQUFNLEtBQUssQ0FBRSxDQUFDLENBQUMsQ0FBQztRQUM1QixNQUFNLENBQUMsQ0FDTCw2QkFBSyxFQUFFLEVBQUUsTUFBRyxLQUFLLENBQUMsRUFBRSxHQUFHLEtBQUssQ0FBRSxFQUFFLFNBQVMsRUFBQyxtQkFBbUI7WUFDM0QsZ0NBQUssS0FBSyxDQUFNO1lBQ2hCLCtCQUFJLGNBQWMsQ0FBSyxDQUNuQixDQUNQLENBQUE7SUFDSCxDQUFDO0lBRUQsTUFBTSxDQUFDLENBQ0wsNkJBQUssRUFBRSxFQUFFLE1BQUcsS0FBSyxDQUFDLEVBQUUsR0FBRyxLQUFLLENBQUUsRUFBRSxTQUFTLEVBQUMsbUJBQW1CO1FBQzNELGdDQUFLLEtBQUssQ0FBTTtRQUVoQiw2QkFBSyxTQUFTLEVBQUMsWUFBWSxFQUFDLEtBQUssRUFBRTtnQkFDakMsV0FBVyxFQUFFLEtBQUssQ0FBQyxXQUFXLElBQUksR0FBRzthQUN0QyxJQUVHLEtBQUssQ0FBQyxRQUFRLENBQUMsR0FBRyxDQUFDLFVBQUMsT0FBTyxJQUFLLE9BQUEsb0JBQUMsNEJBQWlCLGFBQUMsR0FBRyxFQUFFLEtBQUcsT0FBTyxDQUFDLEdBQUssSUFBTSxPQUFPLEVBQUksRUFBekQsQ0FBeUQsQ0FBQyxDQUV4RixDQUNGLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTs7QUFFRCxrQkFBZSx5QkFBaUIsQ0FBQSJ9
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2hvd2Nhc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzaG93Y2FzZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUEsUUFBUTtBQUNSLDZCQUErQjtBQUUvQixhQUFhO0FBQ2IsaURBQXVEO0FBRXZELDJCQUF5QjtBQUVaLFFBQUEsaUJBQWlCLEdBQUcsVUFBQyxLQUFLO0lBQ3JDLFFBQVE7SUFDQSxJQUFBLG1CQUFLLEVBQUUseUJBQVEsRUFBRSxxQ0FBYyxDQUFXO0lBRWxELEVBQUUsQ0FBQyxDQUFFLFFBQVEsQ0FBQyxNQUFNLEtBQUssQ0FBRSxDQUFDLENBQUMsQ0FBQztRQUM1QixNQUFNLENBQUMsQ0FDTCw2QkFBSyxFQUFFLEVBQUUsTUFBRyxLQUFLLENBQUMsRUFBRSxHQUFHLEtBQUssQ0FBRSxFQUFFLFNBQVMsRUFBQyxtQkFBbUI7WUFDM0QsZ0NBQUssS0FBSyxDQUFNO1lBQ2hCLCtCQUFJLGNBQWMsQ0FBSyxDQUNuQixDQUNQLENBQUE7SUFDSCxDQUFDO0lBRUQsTUFBTSxDQUFDLENBQ0wsNkJBQUssRUFBRSxFQUFFLE1BQUcsS0FBSyxDQUFDLEVBQUUsR0FBRyxLQUFLLENBQUUsRUFBRSxTQUFTLEVBQUMsbUJBQW1CO1FBQzNELGdDQUFLLEtBQUssQ0FBTTtRQUVoQiw2QkFBSyxTQUFTLEVBQUMsWUFBWSxFQUFDLEtBQUssRUFBRTtnQkFDakMsV0FBVyxFQUFFLEtBQUssQ0FBQyxXQUFXLElBQUksR0FBRzthQUN0QyxJQUVHLEtBQUssQ0FBQyxRQUFRLENBQUMsR0FBRyxDQUFDLFVBQUMsT0FBTyxJQUFLLE9BQUEsb0JBQUMsNEJBQWlCLGFBQUMsR0FBRyxFQUFFLEtBQUcsT0FBTyxDQUFDLEdBQUssSUFBTSxPQUFPLEVBQUksRUFBekQsQ0FBeUQsQ0FBQyxDQUV4RixDQUNGLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTs7QUFFRCxrQkFBZSx5QkFBaUIsQ0FBQSJ9
 
 /***/ },
 /* 40 */
@@ -5336,7 +5302,7 @@
 	    return t;
 	};
 	var React = __webpack_require__(1);
-	var react_lazyload_1 = __webpack_require__(41);
+	var LazyLoad = __webpack_require__(41).default;
 	__webpack_require__(47);
 	var LightboxComponent = (function (_super) {
 	    __extends(LightboxComponent, _super);
@@ -5428,7 +5394,7 @@
 	                    e.preventDefault();
 	                    toggleVisibility();
 	                } },
-	                React.createElement(react_lazyload_1.default, null,
+	                React.createElement(LazyLoad, { placeholder: React.createElement("i", { className: "fa fa-circle-o-notch fa-spin fa-3x fa-fw" }) },
 	                    React.createElement("img", { src: type === 'youtube' ? "http://img.youtube.com/vi/" + url + "/mqdefault.jpg" : "" + url, style: {
 	                            width: this.props.width || '100%',
 	                            height: this.props.height || '100%'
@@ -5440,7 +5406,7 @@
 	exports.LightboxComponent = LightboxComponent;
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = LightboxComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlnaHRib3guanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsaWdodGJveC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7QUFBQSw2QkFBK0I7QUFJL0IsaURBQXNDO0FBRXRDLE9BQU8sQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDO0FBRTNCO0lBQXVDLHFDQUF5QjtJQU05RCwyQkFBWSxLQUFLO1FBQWpCLFlBQ0Usa0JBQU0sS0FBSyxDQUFDLFNBUWI7UUFkRCxXQUFLLEdBQUc7WUFDTixPQUFPLEVBQUUsS0FBSztZQUNkLFNBQVMsRUFBRSxJQUFJO1NBQ2hCLENBQUM7UUFLQSxpQkFBaUI7UUFDakIsS0FBSSxDQUFDLG1CQUFtQixHQUFHLEtBQUksQ0FBQyxtQkFBbUIsQ0FBQyxJQUFJLENBQUMsS0FBSSxDQUFDLENBQUM7UUFDL0QsS0FBSSxDQUFDLHFCQUFxQixHQUFHLEtBQUksQ0FBQyxxQkFBcUIsQ0FBQyxJQUFJLENBQUMsS0FBSSxDQUFDLENBQUM7UUFFbkUsd0JBQXdCO1FBQ3hCLEtBQUksQ0FBQyxnQkFBZ0IsR0FBRyxLQUFJLENBQUMsZ0JBQWdCLENBQUMsSUFBSSxDQUFDLEtBQUksQ0FBQyxDQUFDOztJQUMzRCxDQUFDO0lBRUQsNENBQWdCLEdBQWhCO1FBQ0UsSUFBTSxRQUFRLGdCQUFRLElBQUksQ0FBQyxLQUFLLElBQUUsT0FBTyxFQUFFLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxPQUFPLEdBQUUsQ0FBQztRQUVqRSxJQUFJLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQyxDQUFDO0lBQzFCLENBQUM7SUFFRCwrQ0FBbUIsR0FBbkI7UUFDRSxRQUFRO1FBQ0YsSUFBQSxlQUF5QixFQUF2QixZQUFHLEVBQUUsWUFBRyxDQUFnQjtRQUVoQyxRQUFRO1FBQ0EsSUFBQSw0QkFBTyxDQUFnQjtRQUUvQix3QkFBd0I7UUFDaEIsSUFBQSx3Q0FBZ0IsQ0FBVTtRQUVsQyxFQUFFLENBQUEsQ0FBRSxDQUFDLE9BQVEs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
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlnaHRib3guanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsaWdodGJveC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7QUFBQSw2QkFBK0I7QUFJL0IsSUFBTSxRQUFRLEdBQUcsT0FBTyxDQUFDLGdCQUFnQixDQUFDLENBQUMsT0FBTyxDQUFDO0FBRW5ELE9BQU8sQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDO0FBRTNCO0lBQXVDLHFDQUF5QjtJQU05RCwyQkFBWSxLQUFLO1FBQWpCLFlBQ0Usa0JBQU0sS0FBSyxDQUFDLFNBUWI7UUFkRCxXQUFLLEdBQUc7WUFDTixPQUFPLEVBQUUsS0FBSztZQUNkLFNBQVMsRUFBRSxJQUFJO1NBQ2hCLENBQUM7UUFLQSxpQkFBaUI7UUFDakIsS0FBSSxDQUFDLG1CQUFtQixHQUFHLEtBQUksQ0FBQyxtQkFBbUIsQ0FBQyxJQUFJLENBQUMsS0FBSSxDQUFDLENBQUM7UUFDL0QsS0FBSSxDQUFDLHFCQUFxQixHQUFHLEtBQUksQ0FBQyxxQkFBcUIsQ0FBQyxJQUFJLENBQUMsS0FBSSxDQUFDLENBQUM7UUFFbkUsd0JBQXdCO1FBQ3hCLEtBQUksQ0FBQyxnQkFBZ0IsR0FBRyxLQUFJLENBQUMsZ0JBQWdCLENBQUMsSUFBSSxDQUFDLEtBQUksQ0FBQyxDQUFDOztJQUMzRCxDQUFDO0lBRUQsNENBQWdCLEdBQWhCO1FBQ0UsSUFBTSxRQUFRLGdCQUFRLElBQUksQ0FBQyxLQUFLLElBQUUsT0FBTyxFQUFFLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxPQUFPLEdBQUUsQ0FBQztRQUVqRSxJQUFJLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQyxDQUFDO0lBQzFCLENBQUM7SUFFRCwrQ0FBbUIsR0FBbkI7UUFDRSxRQUFRO1FBQ0YsSUFBQSxlQUF5QixFQUF2QixZQUFHLEVBQUUsWUFBRyxDQUFnQjtRQUVoQyxRQUFRO1FBQ0EsSUFBQSw0QkFBTyxDQUFnQjtRQUUvQix3QkFBd0I7UUFDaEIsSUFB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
 
 /***/ },
 /* 41 */
@@ -6007,8 +5973,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./lightbox.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./lightbox.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./lightbox.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./lightbox.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -6026,7 +5992,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".LightboxComponent {\n  display: inline-block;\n  margin: 0;\n  width: 100%; }\n  .LightboxComponent .Thumbnail {\n    outline: none;\n    transition: opacity 350ms ease; }\n  .LightboxComponent .Thumbnail:hover {\n    cursor: pointer;\n    opacity: .75;\n    transition: opacity 350ms ease; }\n  .LightboxComponent .Lightbox {\n    /** Position and style */\n    position: fixed;\n    z-index: 999;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    top: 0;\n    left: 0;\n    background: rgba(0, 0, 0, 0.8);\n    overflow-y: scroll; }\n  .LightboxComponent .Lightbox img {\n    max-width: 90%;\n    max-height: 80%;\n    margin-top: 2%; }\n  .LightboxComponent .Lightbox img:hover,\n  .LightboxComponent .Lightbox img:active {\n    cursor: pointer; }\n  .LightboxComponent .Lightbox figcaption {\n    color: #fff;\n    margin-top: 1%;\n    line-height: 1.5em;\n    font-size: 1.2em; }\n  .LightboxComponent .fa.fa-close {\n    position: fixed;\n    color: #fff;\n    font-size: 2em;\n    right: 0;\n    margin-right: 2%;\n    margin-top: .5%; }\n  .LightboxComponent .fa.fa-close:hover,\n  .LightboxComponent .fa.fa-close:active {\n    cursor: pointer; }\n", ""]);
+	exports.push([module.id, ".LightboxComponent {\n  display: inline-block;\n  margin: 0;\n  width: 100%; }\n  .LightboxComponent .Thumbnail {\n    outline: none;\n    transition: opacity 350ms ease; }\n  .LightboxComponent .Thumbnail:hover {\n    cursor: pointer;\n    opacity: .75;\n    transition: opacity 350ms ease; }\n  .LightboxComponent .Lightbox {\n    /** Position and style */\n    position: fixed;\n    z-index: 999;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    top: 0;\n    left: 0;\n    background: rgba(0, 0, 0, 0.8);\n    overflow-y: scroll; }\n  .LightboxComponent .Lightbox img {\n    max-width: 90%;\n    max-height: 80%;\n    margin-top: 2%; }\n  .LightboxComponent .Lightbox img:hover,\n  .LightboxComponent .Lightbox img:active {\n    cursor: pointer; }\n  .LightboxComponent .Lightbox figcaption {\n    color: #fff;\n    margin-top: 1%;\n    line-height: 1.5em;\n    font-size: 1.2em; }\n  .LightboxComponent .fa.fa-close {\n    position: fixed;\n    color: #fff;\n    font-size: 2em;\n    right: 0;\n    margin-right: 2%;\n    margin-top: .5%; }\n  .LightboxComponent .fa.fa-close:hover,\n  .LightboxComponent .fa.fa-close:active {\n    cursor: pointer; }\n  .LightboxComponent .fa.fa-circle-o-notch {\n    margin: 0 auto; }\n", ""]);
 	
 	// exports
 
@@ -6047,8 +6013,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./showcase.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./showcase.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./showcase.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./showcase.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -6078,20 +6044,21 @@
 	"use strict";
 	var React = __webpack_require__(1);
 	var social_1 = __webpack_require__(52);
-	var config_1 = __webpack_require__(55);
-	__webpack_require__(56);
+	var index_1 = __webpack_require__(55);
+	__webpack_require__(57);
+	;
 	/**
 	 * Portfolio Header
 	 */
 	exports.HeaderComponent = function (props) {
 	    return (React.createElement("header", { className: "HeaderComponent" },
 	        React.createElement("h1", { className: "title" }, "David Salazar"),
-	        React.createElement("img", { className: "HeaderAvatar", src: "/avatar.jpg", width: "150", height: "150", alt: "Avatar" }),
-	        React.createElement(social_1.SocialComponent, { id: "SocialsOnFooter", networks: config_1.networks })));
+	        React.createElement("img", { className: "HeaderAvatar", src: props.avatarUrl, width: "150", height: "150", alt: "David Salazar" }),
+	        React.createElement(social_1.SocialComponent, { id: "SocialsOnHeader", networks: index_1.networks })));
 	};
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = exports.HeaderComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaGVhZGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiaGVhZGVyLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsNkJBQStCO0FBRS9CLDZDQUFtRDtBQUVuRCxvQ0FBbUM7QUFHbkMsT0FBTyxDQUFDLGVBQWUsQ0FBQyxDQUFDO0FBRXpCOztHQUVHO0FBQ1UsUUFBQSxlQUFlLEdBQUcsVUFBQyxLQUFLO0lBQ25DLE1BQU0sQ0FBQyxDQUNMLGdDQUFRLFNBQVMsRUFBQyxpQkFBaUI7UUFDakMsNEJBQUksU0FBUyxFQUFDLE9BQU8sb0JBRWhCO1FBS0wsNkJBQUssU0FBUyxFQUFDLGNBQWMsRUFBQyxHQUFHLEVBQUMsYUFBYSxFQUFDLEtBQUssRUFBQyxLQUFLLEVBQUMsTUFBTSxFQUFDLEtBQUssRUFBQyxHQUFHLEVBQUMsUUFBUSxHQUFHO1FBQ3hGLG9CQUFDLHdCQUFlLElBQUMsRUFBRSxFQUFDLGlCQUFpQixFQUFDLFFBQVEsRUFBRSxpQkFBUSxHQUFJLENBQ3JELENBRVYsQ0FBQTtBQUNILENBQUMsQ0FBQTs7QUFFRCxrQkFBZSx1QkFBZSxDQUFBIn0=
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaGVhZGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiaGVhZGVyLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsNkJBQStCO0FBRS9CLDZDQUFtRDtBQUVuRCw0Q0FBNEM7QUFHNUMseUJBQXVCO0FBSXRCLENBQUM7QUFFRjs7R0FFRztBQUNVLFFBQUEsZUFBZSxHQUFHLFVBQUMsS0FBNEI7SUFDMUQsTUFBTSxDQUFDLENBQ0wsZ0NBQVEsU0FBUyxFQUFDLGlCQUFpQjtRQUNqQyw0QkFBSSxTQUFTLEVBQUMsT0FBTyxvQkFFaEI7UUFFTCw2QkFDRSxTQUFTLEVBQUMsY0FBYyxFQUN4QixHQUFHLEVBQUUsS0FBSyxDQUFDLFNBQVMsRUFDcEIsS0FBSyxFQUFDLEtBQUssRUFDWCxNQUFNLEVBQUMsS0FBSyxFQUNaLEdBQUcsRUFBQyxlQUFlLEdBQ2xCO1FBQ0gsb0JBQUMsd0JBQWUsSUFBQyxFQUFFLEVBQUMsaUJBQWlCLEVBQUMsUUFBUSxFQUFFLGdCQUFRLEdBQUksQ0FDckQsQ0FFVixDQUFBO0FBQ0gsQ0FBQyxDQUFBOztBQUVELGtCQUFlLHVCQUFlLENBQUEifQ==
 
 /***/ },
 /* 52 */
@@ -6130,8 +6097,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./social.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./social.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./social.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./social.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -6159,121 +6126,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	// React
-	var React = __webpack_require__(1);
-	exports.pmShowcase = [];
-	exports.ILCShowcase = [
-	    {
-	        type: 'youtube',
-	        url: 'igTVc5yygt8',
-	        alt: (React.createElement("p", null,
-	            React.createElement("b", null, "Wordpress plugin video inside the web"),
-	            ": This Wordpress plugin allows the user to play the links of youtube and vimeo directly inside the web with the help of the fancybox library.")),
-	        id: 'ilc-showcase-2'
-	    },
-	    {
-	        type: 'youtube',
-	        url: 'AU-N8X3j7w8',
-	        alt: 'Application Wheel of Life: It is a tool used in the world of coaching but taken to web application, with it you can create wheel life charts, save wheels, associate a customer with a wheel and generate a report in a PDF document.',
-	        id: 'ilc-showcase-3'
-	    },
-	    {
-	        type: 'youtube',
-	        url: 'qoGVn7bbgFg',
-	        alt: 'Small design of a contact page, with the button to call via skype.',
-	        id: 'ilc-showcase-4'
-	    },
-	    {
-	        type: 'youtube',
-	        url: '21_bpODeA8s',
-	        alt: 'Modification to budypress directory (Wordpress plugin): Basically the directory was modified to show specific roles of wordpress, depending on those roles apply CSS styles (the medallion on the right) in addition to adding these new roles to the filters to refine the users search .',
-	        id: 'ilc-showcase-5'
-	    },
-	    {
-	        type: 'image',
-	        url: '/ilc/subscribe-1.jpg',
-	        alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-	        id: 'ilc-showcase-1'
-	    },
-	    {
-	        type: 'image',
-	        url: '/ilc/subscribe-2.jpg',
-	        alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-	        id: 'ilc-showcase-1'
-	    },
-	    {
-	        type: 'image',
-	        url: '/ilc/ilc-certificates-prototype.jpg',
-	        alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-	        id: 'ilc-showcase-1'
-	    },
-	    {
-	        type: 'image',
-	        url: '/ilc/ilc-welcome.jpg',
-	        // width: 'auto',
-	        // height: '700px',
-	        alt: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js',
-	        id: 'ilc-showcase-1'
-	    },
-	];
-	exports.networks = [
-	    { url: 'https://twitter.com/davidjsmoreno', iconClassName: 'fa fa-twitter', title: 'Twitter' },
-	    { url: 'https://github.com/davidjsalazarmoreno', iconClassName: 'fa fa-github', title: 'Github' },
-	    { url: 'https://ve.linkedin.com/in/david-salazar-63500724', iconClassName: 'fa fa-linkedin', title: 'Linkedin' },
-	    { url: 'http://davidjsmoreno.com.ve/', iconClassName: 'fa fa-wordpress', title: 'Wordpress blog' }
-	];
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uZmlnLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uZmlnLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsUUFBUTtBQUNSLDZCQUErQjtBQUVsQixRQUFBLFVBQVUsR0FBRyxFQUFFLENBQUM7QUFFaEIsUUFBQSxXQUFXLEdBQUc7SUFDekI7UUFDRSxJQUFJLEVBQUUsU0FBUztRQUNmLEdBQUcsRUFBRSxhQUFhO1FBQ2xCLEdBQUcsRUFBRSxDQUFDO1lBQ0wsdUVBQTRDOzRKQUN6QyxDQUFDO1FBQ0wsRUFBRSxFQUFFLGdCQUFnQjtLQUNyQjtJQUNEO1FBQ0UsSUFBSSxFQUFFLFNBQVM7UUFDZixHQUFHLEVBQUUsYUFBYTtRQUNsQixHQUFHLEVBQUUsdU9BQXVPO1FBQzVPLEVBQUUsRUFBRSxnQkFBZ0I7S0FDckI7SUFDRDtRQUNFLElBQUksRUFBRSxTQUFTO1FBQ2YsR0FBRyxFQUFFLGFBQWE7UUFDbEIsR0FBRyxFQUFFLG9FQUFvRTtRQUN6RSxFQUFFLEVBQUUsZ0JBQWdCO0tBQ3JCO0lBQ0Q7UUFDRSxJQUFJLEVBQUUsU0FBUztRQUNmLEdBQUcsRUFBRSxhQUFhO1FBQ2xCLEdBQUcsRUFBRSw0UkFBNFI7UUFDalMsRUFBRSxFQUFFLGdCQUFnQjtLQUNyQjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixHQUFHLEVBQUUsc0JBQXNCO1FBQzNCLEdBQUcsRUFBRSwySkFBMko7UUFDaEssRUFBRSxFQUFFLGdCQUFnQjtLQUNyQjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixHQUFHLEVBQUUsc0JBQXNCO1FBQzNCLEdBQUcsRUFBRSwySkFBMko7UUFDaEssRUFBRSxFQUFFLGdCQUFnQjtLQUNyQjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixHQUFHLEVBQUUscUNBQXFDO1FBQzFDLEdBQUcsRUFBRSwySkFBMko7UUFDaEssRUFBRSxFQUFFLGdCQUFnQjtLQUNyQjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixHQUFHLEVBQUUsc0JBQXNCO1FBQzNCLGlCQUFpQjtRQUNqQixtQkFBbUI7UUFDbkIsR0FBRyxFQUFFLDJKQUEySjtRQUNoSyxFQUFFLEVBQUUsZ0JBQWdCO0tBQ3JCO0NBQ0YsQ0FBQztBQUdXLFFBQUEsUUFBUSxHQUFHO0lBQ3RCLEVBQUUsR0FBRyxFQUFFLG1DQUFtQyxFQUFFLGFBQWEsRUFBRSxlQUFlLEVBQUcsS0FBSyxFQUFFLFNBQVMsRUFBRTtJQUMvRixFQUFFLEdBQUcsRUFBRSx3Q0FBd0MsRUFBRSxhQUFhLEVBQUUsY0FBYyxFQUFHLEtBQUssRUFBRSxRQUFRLEVBQUU7SUFDbEcsRUFBRSxHQUFHLEVBQUUsbURBQW1ELEVBQUUsYUFBYSxFQUFFLGdCQUFnQixFQUFHLEtBQUssRUFBRSxVQUFVLEVBQUU7SUFDakgsRUFBRSxHQUFHLEVBQUUsOEJBQThCLEVBQUUsYUFBYSxFQUFFLGlCQUFpQixFQUFHLEtBQUssRUFBRSxnQkFBZ0IsRUFBRTtDQUNwRyxDQUFDIn0=
-
-/***/ },
-/* 56 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(57);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(32)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 57 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(31)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".HeaderComponent {\n  display: flex;\n  flex-direction: column;\n  background: transparent;\n  margin: 0 auto;\n  width: 80%; }\n  .HeaderComponent * {\n    align-self: center; }\n  .HeaderComponent .HeaderAvatar {\n    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);\n    margin: 40.2px auto auto;\n    border-radius: 80px; }\n  .HeaderComponent .title {\n    order: 2; }\n  .HeaderComponent .HeaderText {\n    margin-top: 40px;\n    order: 3; }\n  .HeaderComponent .SocialComponent {\n    order: 3; }\n  .HeaderComponent .HeaderAvatar {\n    order: 1; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 58 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
 	var __assign = (this && this.__assign) || Object.assign || function(t) {
 	    for (var s, i = 1, n = arguments.length; i < n; i++) {
 	        s = arguments[i];
@@ -6282,286 +6134,124 @@
 	    }
 	    return t;
 	};
+	// React
 	var React = __webpack_require__(1);
-	__webpack_require__(59);
-	var ExcerptComponent = (function (_super) {
-	    __extends(ExcerptComponent, _super);
-	    function ExcerptComponent() {
-	        var _this = _super !== null && _super.apply(this, arguments) || this;
-	        _this.state = {
-	            showMore: false
-	        };
-	        return _this;
+	// React intl
+	var react_intl_1 = __webpack_require__(4);
+	// Intl Messages
+	var messages_1 = __webpack_require__(56);
+	// Playsmatch
+	exports.pmShowcase = [];
+	// Systrix
+	exports.sysShowcase = [
+	    {
+	        type: 'image',
+	        url: '/Systrix/sys-1.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['sysShowcase-1']))),
+	        id: 'sys-showcase-1'
+	    },
+	    {
+	        type: 'image',
+	        url: '/Systrix/sys-2.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['sysShowcase-1']))),
+	        id: 'sys-image-2'
+	    },
+	    {
+	        type: 'image',
+	        url: '/Systrix/sys-3.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['sysShowcase-3']))),
+	        id: 'sys-showcase-3'
+	    },
+	    {
+	        type: 'image',
+	        url: '/Systrix/sys-4.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['sysShowcase-1']))),
+	        id: 'sys-showcase-4'
+	    },
+	    {
+	        type: 'youtube',
+	        url: 'Dr732zk-ltw',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['sysShowcase-1']))),
+	        id: 'sys-showcase-5'
+	    },
+	    {
+	        type: 'youtube',
+	        url: 'opDk68CFwLA',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['sysShowcase-6']))),
+	        id: 'sys-showcase-6'
+	    },
+	];
+	// GenteExcelente Venezuela
+	exports.geShowcase = [
+	    {
+	        type: 'image',
+	        url: '/GE/ge-1-web.jpeg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['geShowcase-1']))),
+	        id: 'ge-showcase-1'
 	    }
-	    ExcerptComponent.prototype.render = function () {
-	        var _this = this;
-	        var _a = this.props, short = _a.short, long = _a.long;
-	        var showMore = this.state.showMore;
-	        return (React.createElement("div", { className: "ExcerptComponent" },
-	            React.createElement("article", null,
-	                React.createElement("p", { className: "description" },
-	                    showMore ? long : short,
-	                    "\u00A0",
-	                    React.createElement("a", { href: "#", onClick: function (event) {
-	                            event.preventDefault();
-	                            _this.setState(__assign({}, _this.state, { showMore: !showMore }));
-	                        } }, !showMore ? 'more' : 'less'),
-	                    "."))));
-	    };
-	    return ExcerptComponent;
-	}(React.Component));
-	exports.ExcerptComponent = ExcerptComponent;
-	;
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = ExcerptComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXhjZXJwdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImV4Y2VycHQudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7O0FBQUEsNkJBQStCO0FBRS9CLE9BQU8sQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDO0FBRTFCO0lBQXNDLG9DQUF5QjtJQUEvRDtRQUFBLHFFQWlDQztRQWhDQyxXQUFLLEdBQUc7WUFDTixRQUFRLEVBQUUsS0FBSztTQUNoQixDQUFDOztJQThCSixDQUFDO0lBNUJDLGlDQUFNLEdBQU47UUFBQSxpQkEyQkM7UUExQk8sSUFBQSxlQUE0QixFQUExQixnQkFBSyxFQUFFLGNBQUksQ0FBZ0I7UUFFM0IsSUFBQSw4QkFBUSxDQUFnQjtRQUVoQyxNQUFNLENBQUMsQ0FDTCw2QkFBSyxTQUFTLEVBQUMsa0JBQWtCO1lBQy9CO2dCQUNFLDJCQUFHLFNBQVMsRUFBQyxhQUFhO29CQUN2QixRQUFRLEdBQUcsSUFBSSxHQUFHLEtBQUs7O29CQUV4QiwyQkFBRyxJQUFJLEVBQUMsR0FBRyxFQUNULE9BQU8sRUFBRSxVQUFDLEtBQUs7NEJBQ2IsS0FBSyxDQUFDLGNBQWMsRUFBRSxDQUFDOzRCQUN2QixLQUFJLENBQUMsUUFBUSxjQUNSLEtBQUksQ0FBQyxLQUFLLElBQ2IsUUFBUSxFQUFFLENBQUMsUUFBUSxJQUNyQixDQUFDO3dCQUNMLENBQUMsSUFDRSxDQUFDLFFBQVEsR0FBRyxNQUFNLEdBQUcsTUFBTSxDQUMxQjt3QkFFRixDQUNJLENBQ04sQ0FDUCxDQUFBO0lBRUgsQ0FBQztJQUNILHVCQUFDO0FBQUQsQ0FBQyxBQWpDRCxDQUFzQyxLQUFLLENBQUMsU0FBUyxHQWlDcEQ7QUFqQ1ksNENBQWdCO0FBaUM1QixDQUFDOztBQUVGLGtCQUFlLGdCQUFnQixDQUFDIn0=
+	];
+	// ILC Academy
+	exports.ILCShowcase = [
+	    {
+	        type: 'youtube',
+	        url: 'igTVc5yygt8',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-1']))),
+	        id: 'ilc-showcase-1'
+	    },
+	    {
+	        type: 'youtube',
+	        url: 'AU-N8X3j7w8',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-2']))),
+	        id: 'ilc-showcase-2'
+	    },
+	    {
+	        type: 'youtube',
+	        url: 'qoGVn7bbgFg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-3']))),
+	        id: 'ilc-showcase-3'
+	    },
+	    {
+	        type: 'youtube',
+	        url: '21_bpODeA8s',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-4']))),
+	        id: 'ilc-showcase-4'
+	    },
+	    {
+	        type: 'image',
+	        url: '/ilc/subscribe-1.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-5']))),
+	        id: 'ilc-showcase-5'
+	    },
+	    {
+	        type: 'image',
+	        url: '/ilc/subscribe-2.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-5']))),
+	        id: 'ilc-showcase-6'
+	    },
+	    {
+	        type: 'image',
+	        url: '/ilc/ilc-certificates-prototype.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-7']))),
+	        id: 'ilc-showcase-7'
+	    },
+	    {
+	        type: 'image',
+	        url: '/ilc/ilc-welcome.jpg',
+	        alt: (React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages['ilcShowcase-8']))),
+	        id: 'ilc-showcase-8'
+	    },
+	];
+	// Others configurations
+	exports.networks = [
+	    { url: 'https://twitter.com/davidjsmoreno', iconClassName: 'fa fa-twitter', title: 'Twitter' },
+	    { url: 'https://github.com/davidjsalazarmoreno', iconClassName: 'fa fa-github', title: 'Github' },
+	    { url: 'https://ve.linkedin.com/in/david-salazar-63500724', iconClassName: 'fa fa-linkedin', title: 'Linkedin' },
+	    { url: 'http://davidjsmoreno.com.ve/', iconClassName: 'fa fa-wordpress', title: 'Wordpress blog' }
+	];
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUEsUUFBUTtBQUNSLDZCQUErQjtBQUUvQixhQUFhO0FBQ2IseUNBQTRDO0FBRTVDLGdCQUFnQjtBQUNoQiwwQ0FBdUM7QUFFdkMsYUFBYTtBQUVBLFFBQUEsVUFBVSxHQUFHLEVBQUUsQ0FBQztBQUc3QixVQUFVO0FBRUcsUUFBQSxXQUFXLEdBQUc7SUFDekI7UUFDRSxJQUFJLEVBQUUsT0FBTztRQUNiLEdBQUcsRUFBRSxvQkFBb0I7UUFDekIsR0FBRyxFQUFFLENBQUMsb0JBQUMsNkJBQWdCLGVBQUssbUJBQVEsQ0FBQyxlQUFlLENBQUMsRUFBSSxDQUFDO1FBQzFELEVBQUUsRUFBRSxnQkFBZ0I7S0FDckI7SUFDRDtRQUNFLElBQUksRUFBRSxPQUFPO1FBQ2IsR0FBRyxFQUFFLG9CQUFvQjtRQUN6QixHQUFHLEVBQUUsQ0FBQyxvQkFBQyw2QkFBZ0IsZUFBSyxtQkFBUSxDQUFDLGVBQWUsQ0FBQyxFQUFJLENBQUM7UUFDMUQsRUFBRSxFQUFFLGFBQWE7S0FDbEI7SUFDRDtRQUNFLElBQUksRUFBRSxPQUFPO1FBQ2IsR0FBRyxFQUFFLG9CQUFvQjtRQUN6QixHQUFHLEVBQUUsQ0FBQyxvQkFBQyw2QkFBZ0IsZUFBSyxtQkFBUSxDQUFDLGVBQWUsQ0FBQyxFQUFJLENBQUM7UUFDMUQsRUFBRSxFQUFFLGdCQUFnQjtLQUNyQjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixHQUFHLEVBQUUsb0JBQW9CO1FBQ3pCLEdBQUcsRUFBRSxDQUFDLG9CQUFDLDZCQUFnQixlQUFLLG1CQUFRLENBQUMsZUFBZSxDQUFDLEVBQUksQ0FBQztRQUMxRCxFQUFFLEVBQUUsZ0JBQWdCO0tBQ3JCO0lBQ0Q7UUFDRSxJQUFJLEVBQUUsU0FBUztRQUNmLEdBQUcsRUFBRSxhQUFhO1FBQ2xCLEdBQUcsRUFBRSxDQUFDLG9CQUFD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
 
 /***/ },
-/* 59 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(60);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(32)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./excerpt.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./excerpt.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 60 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(31)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".ExcerptComponent {\n  text-align: center;\n  width: 80%;\n  margin: 0 auto;\n  margin-bottom: 20px; }\n  .ExcerptComponent p.description {\n    font-size: 20px;\n    line-height: 2em; }\n  .ExcerptComponent .hireme {\n    order: 4; }\n  .ExcerptComponent code {\n    padding: 5px 4px !important;\n    margin-left: 5px !important;\n    font-size: 12px; }\n\n@media only screen and (max-width: 480px) {\n  .ExcerptComponent p.description {\n    font-size: 16px; } }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 61 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var React = __webpack_require__(1);
-	var flat_separator_1 = __webpack_require__(36);
-	__webpack_require__(62);
-	exports.FiltersComponent = function (props) {
-	    return (React.createElement("div", { className: "FiltersComponent" },
-	        React.createElement("h1", null, "My Work"),
-	        React.createElement(flat_separator_1.FlatSeparatorComponent, { margin: "0 0", width: "20%" })));
-	};
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = exports.FiltersComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmlsdGVycy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImZpbHRlcnMudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSw2QkFBK0I7QUFFL0IscUVBQTBFO0FBRTFFLE9BQU8sQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDO0FBRWIsUUFBQSxnQkFBZ0IsR0FBRyxVQUFDLEtBQUs7SUFDcEMsTUFBTSxDQUFBLENBQ0osNkJBQUssU0FBUyxFQUFDLGtCQUFrQjtRQUMvQiwwQ0FBZ0I7UUFDaEIsb0JBQUMsdUNBQXNCLElBQUMsTUFBTSxFQUFDLEtBQUssRUFBQyxLQUFLLEVBQUMsS0FBSyxHQUFHLENBTS9DLENBQ1AsQ0FBQztBQUNKLENBQUMsQ0FBQTs7QUFFRCxrQkFBZSx3QkFBZ0IsQ0FBQyJ9
-
-/***/ },
-/* 62 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(63);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(32)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./filters.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./filters.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 63 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(31)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".FiltersComponent {\n  margin: 0 auto;\n  width: 80%;\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 25px;\n  justify-content: space-around; }\n  .FiltersComponent h1 {\n    text-align: left;\n    margin-bottom: 30px; }\n  .FiltersComponent div {\n    display: flex;\n    justify-content: center; }\n  .FiltersComponent div > span {\n    border: 1px solid #000;\n    padding: 10px 15px;\n    border-radius: 2px;\n    margin: auto 50px;\n    text-align: center; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var React = __webpack_require__(1);
-	__webpack_require__(65);
-	var lightbox_1 = __webpack_require__(40);
-	;
-	exports.ProjectComponent = function (props) {
-	    var id = props.id, image = props.image, name = props.name, excerpt = props.excerpt, information = props.information;
-	    return (React.createElement("div", null,
-	        React.createElement("div", { id: id, className: "ProjectsComponent" },
-	            React.createElement("div", { className: "main-project-image" },
-	                React.createElement(lightbox_1.LightboxComponent, { id: image, type: "image", url: image, alt: excerpt })),
-	            React.createElement("div", { className: "ProjectExcerpt" },
-	                React.createElement("h2", { className: "ProjectName" }, name),
-	                React.createElement("p", { className: "ProjectExcerpt" }, excerpt),
-	                React.createElement("ul", { className: "ProjectInformation" }, information.map(function (_a, index) {
-	                    var key = _a.key, value = _a.value;
-	                    return (React.createElement("li", { key: key + "-" + index },
-	                        React.createElement("b", null,
-	                            key,
-	                            ":"),
-	                        " ",
-	                        value));
-	                }))))));
-	};
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = exports.ProjectComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvamVjdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInByb2plY3QudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSw2QkFBK0I7QUFFL0IsT0FBTyxDQUFDLGdCQUFnQixDQUFDLENBQUM7QUFFMUIsaURBQXVEO0FBVXRELENBQUM7QUFFVyxRQUFBLGdCQUFnQixHQUFHLFVBQUUsS0FBNkI7SUFDckQsSUFBQSxhQUFFLEVBQUUsbUJBQUssRUFBRSxpQkFBSSxFQUFFLHVCQUFPLEVBQUUsK0JBQVcsQ0FBVztJQUV4RCxNQUFNLENBQUEsQ0FDSjtRQUNFLDZCQUFLLEVBQUUsRUFBRSxFQUFFLEVBQUUsU0FBUyxFQUFDLG1CQUFtQjtZQUN0Qyw2QkFBSyxTQUFTLEVBQUMsb0JBQW9CO2dCQUNqQyxvQkFBQyw0QkFBaUIsSUFBQyxFQUFFLEVBQUUsS0FBSyxFQUFHLElBQUksRUFBQyxPQUFPLEVBQUMsR0FBRyxFQUFFLEtBQUssRUFBRSxHQUFHLEVBQUUsT0FBTyxHQUFJLENBQ3BFO1lBRU4sNkJBQUssU0FBUyxFQUFDLGdCQUFnQjtnQkFDN0IsNEJBQUksU0FBUyxFQUFDLGFBQWEsSUFDeEIsSUFBSSxDQUNGO2dCQUNMLDJCQUFHLFNBQVMsRUFBQyxnQkFBZ0IsSUFDMUIsT0FBTyxDQUNOO2dCQUNKLDRCQUFJLFNBQVMsRUFBQyxvQkFBb0IsSUFFOUIsV0FBVyxDQUFDLEdBQUcsQ0FBQyxVQUFDLEVBQVksRUFBRSxLQUFLO3dCQUFsQixZQUFHLEVBQUUsZ0JBQUs7b0JBQzFCLE1BQU0sQ0FBQyxDQUNMLDRCQUFJLEdBQUcsRUFBSyxHQUFHLFNBQUksS0FBTzt3QkFDeEI7NEJBQUksR0FBRztnQ0FBTTs7d0JBQUUsS0FBSyxDQUNqQixDQUNOLENBQUE7Z0JBQ0gsQ0FBQyxDQUFDLENBRUQsQ0FDRCxDQUNGLENBQ0osQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBOztBQUVELGtCQUFlLHdCQUFnQixDQUFBIn0=
-
-/***/ },
-/* 65 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(66);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(32)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./project.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./project.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 66 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(31)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".ProjectsComponent {\n  margin: 0 auto;\n  width: 80%;\n  display: flex;\n  flex-direction: row; }\n  .ProjectsComponent .ProjectExcerpt {\n    order: 1; }\n  .ProjectsComponent .ProjectInformation {\n    order: 2; }\n  .ProjectsComponent .ProjectExcerpt {\n    min-width: 43%;\n    margin-right: 2%;\n    text-align: justify; }\n  .ProjectsComponent .ProjectExcerpt,\n  .ProjectsComponent .ProjectInformation li {\n    line-height: 1.8em; }\n  .ProjectsComponent .main-project-image {\n    order: 3;\n    width: 179%; }\n  .ProjectsComponent .main-project-image img {\n    max-width: 100%; }\n\n@media only screen and (max-width: 480px) {\n  .ProjectsComponent {\n    flex-direction: column; }\n    .ProjectsComponent .ProjectName {\n      text-align: center; }\n    .ProjectsComponent .main-project-image {\n      order: 1;\n      width: 100%; } }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 67 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var React = __webpack_require__(1);
-	var social_1 = __webpack_require__(52);
-	var flat_separator_1 = __webpack_require__(36);
-	var config_1 = __webpack_require__(55);
-	__webpack_require__(68);
-	/**
-	 * Portfolio Header
-	 */
-	exports.FooterComponent = function (props) {
-	    return (React.createElement("footer", { className: "FooterComponent" },
-	        React.createElement("p", null,
-	            React.createElement("a", { href: "mailto:davidjsalazarmoreno@gmail.com?subject=Awesome%20Project" },
-	                React.createElement("i", { className: "fa fa-envelope-o" }),
-	                React.createElement("br", null),
-	                "Contact me")),
-	        React.createElement(flat_separator_1.FlatSeparatorComponent, { margin: "8px auto", width: "13%" }),
-	        React.createElement(social_1.SocialComponent, { id: "SocialsOnFooter", networks: config_1.networks }),
-	        React.createElement("small", { className: "footnote" },
-	            React.createElement("hr", null),
-	            React.createElement("a", { href: "https://github.com/davidjsalazarmoreno/portfolio" },
-	                "Made with ",
-	                React.createElement("i", { className: "fa fa-heart", title: "Love" }),
-	                " and React.js"),
-	            "|" + " " + "The styles are inspired by ",
-	            React.createElement("a", { href: "http://www.hamvocke.com/" }, "hamvocke"))));
-	};
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = exports.FooterComponent;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9vdGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZm9vdGVyLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsNkJBQStCO0FBRS9CLDZDQUFtRDtBQUNuRCxxRUFBMEU7QUFFMUUsb0NBQW1DO0FBRW5DLE9BQU8sQ0FBQyxlQUFlLENBQUMsQ0FBQztBQUV6Qjs7R0FFRztBQUNVLFFBQUEsZUFBZSxHQUFHLFVBQUMsS0FBSztJQUNuQyxNQUFNLENBQUMsQ0FDTCxnQ0FBUSxTQUFTLEVBQUMsaUJBQWlCO1FBQ2pDO1lBQ0UsMkJBQUcsSUFBSSxFQUFDLGdFQUFnRTtnQkFDdEUsMkJBQUcsU0FBUyxFQUFDLGtCQUFrQixHQUFLO2dCQUNwQywrQkFBSzs2QkFFSCxDQUNGO1FBRUosb0JBQUMsdUNBQXNCLElBQUMsTUFBTSxFQUFDLFVBQVUsRUFBQyxLQUFLLEVBQUMsS0FBSyxHQUFHO1FBRXhELG9CQUFDLHdCQUFlLElBQUMsRUFBRSxFQUFDLGlCQUFpQixFQUFDLFFBQVEsRUFBRSxpQkFBUSxHQUFJO1FBRTVELCtCQUFPLFNBQVMsRUFBQyxVQUFVO1lBQ3pCLCtCQUFNO1lBQ04sMkJBQUcsSUFBSSxFQUFDLGtEQUFrRDs7Z0JBQzlDLDJCQUFHLFNBQVMsRUFBQyxhQUFhLEVBQUMsS0FBSyxFQUFDLE1BQU0sR0FBRztnQ0FDbEQ7O1lBRXVCLDJCQUFHLElBQUksRUFBQywwQkFBMEIsZUFBYSxDQUNwRSxDQUNELENBQ1YsQ0FBQztBQUNKLENBQUMsQ0FBQTs7QUFFRCxrQkFBZSx1QkFBZSxDQUFDIn0=
-
-/***/ },
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(69);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(32)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./footer.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./footer.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 69 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(31)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/* Default color palette */\n/* Default font family */\n/* Layout */\n.FooterComponent {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 350px;\n  padding: 0;\n  margin: 0;\n  position: relative;\n  margin-top: -100px;\n  margin-bottom: 8%; }\n  .FooterComponent .heroImage {\n    background-image: url(\"/hero-image.jpg\");\n    background-size: cover;\n    background-position: 50%;\n    background-repeat: no-repeat;\n    width: 100%;\n    position: absolute;\n    z-index: -1;\n    min-width: 100px;\n    height: 350px; }\n  .FooterComponent .hireme {\n    width: 25%;\n    text-transform: capitalize;\n    margin: 0 auto;\n    margin-top: 5%; }\n  .FooterComponent p {\n    margin-top: 10%;\n    text-align: center;\n    color: #aaa;\n    transition: 350ms ease all; }\n  .FooterComponent p a {\n    outline: none;\n    color: #aaa;\n    text-decoration: none;\n    transition: 350ms ease all; }\n  .FooterComponent p i.fa.fa-envelope-o {\n    transition: 350ms ease all;\n    margin: 0 auto;\n    margin-top: 5%;\n    margin-bottom: 1%;\n    font-size: 2.5em;\n    color: #aaa; }\n  .FooterComponent p:hover,\n  .FooterComponent p:hover a,\n  .FooterComponent p:hover i.fa.fa-envelope-o {\n    outline: none;\n    color: rgba(231, 76, 60, 0.9);\n    text-shadow: 0 0 15px rgba(231, 76, 60, 0.1);\n    transition: 350ms ease all;\n    cursor: pointer; }\n  .FooterComponent .SocialComponent {\n    margin: 0 auto;\n    margin-top: 25px; }\n  .FooterComponent .SocialComponent i {\n    font-size: .650em; }\n  .FooterComponent small.footnote {\n    text-align: center;\n    margin-top: 60px;\n    margin-bottom: -25px; }\n  .FooterComponent .footnote a {\n    color: #aaa;\n    text-decoration: none; }\n  .FooterComponent .footnote .fa {\n    color: rgba(255, 70, 70, 0.5);\n    font-style: normal; }\n  .FooterComponent .footnote a:hover {\n    color: #444; }\n  .FooterComponent .footnote:hover .fa {\n    color: #ff4646;\n    font-style: normal; }\n\n@media only screen and (max-width: 480px) {\n  .FooterComponent {\n    height: 300px; } }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 70 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6629,7 +6319,7 @@
 	    },
 	    role: {
 	        id: 'general.role',
-	        defaultMessage: 'role'
+	        defaultMessage: 'Role'
 	    },
 	    technologies: {
 	        id: 'general.technologies',
@@ -6671,9 +6361,25 @@
 	        id: 'sys.period',
 	        defaultMessage: 'January 2016 - May 2016'
 	    },
+	    'sysShowcase-1': {
+	        id: 'sys.sysShowcase-1',
+	        defaultMessage: 'Angular Survey Prototype'
+	    },
+	    'sysShowcase-3': {
+	        id: 'sys.sysShowcase-3',
+	        defaultMessage: 'Braintree Subscriptions + Elixir/Phoenix'
+	    },
+	    'sysShowcase-6': {
+	        id: 'sys.sysShowcase-6',
+	        defaultMessage: 'Working demo of Survey in IE11'
+	    },
 	    geDescription: {
 	        id: 'ge.description',
 	        defaultMessage: 'We are Gente Excelente Venezuela. Our mission is the success of People. Our motto Saving in readiness is to invest in ignorance. Life Coaching.'
+	    },
+	    'geShowcase-1': {
+	        id: 'ge.geShowcase-1',
+	        defaultMessage: 'Gente Excelente Venezuela Website'
 	    },
 	    ilcDescription: {
 	        id: 'ilc.description',
@@ -6683,6 +6389,34 @@
 	        id: 'ilc.period',
 	        defaultMessage: 'January 2013 - January 2015'
 	    },
+	    'ilcShowcase-1': {
+	        id: 'ilc.ilcShowcase-1',
+	        defaultMessage: 'Wordpress plugin video inside the web: This Wordpress plugin allows the user to play the links of youtube and vimeo directly inside the web with the help of the fancybox library.'
+	    },
+	    'ilcShowcase-2': {
+	        id: 'ilc.ilcShowcase-2',
+	        defaultMessage: 'Application Wheel of Life: It is a tool used in the world of coaching but taken to web application, with it you can create wheel life charts, save wheels, associate a customer with a wheel and generate a report in a PDF document.'
+	    },
+	    'ilcShowcase-3': {
+	        id: 'ilc.ilcShowcase-3',
+	        defaultMessage: 'Small design of a contact page, with the button to call via skype.'
+	    },
+	    'ilcShowcase-4': {
+	        id: 'ilc.ilcShowcase-4',
+	        defaultMessage: 'Modification to budypress directory (Wordpress plugin): Basically the directory was modified to show specific roles of wordpress, depending on those roles apply CSS styles (the medallion on the right) in addition to adding these new roles to the filters to refine the users search .'
+	    },
+	    'ilcShowcase-5': {
+	        id: 'ilc.ilcShowcase-5',
+	        defaultMessage: 'Subscriptions buttons with constant contact integration.'
+	    },
+	    'ilcShowcase-7': {
+	        id: 'ilc.ilcShowcase-7',
+	        defaultMessage: '.'
+	    },
+	    'ilcShowcase-8': {
+	        id: 'ilc.ilcShowcase-8',
+	        defaultMessage: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js'
+	    },
 	    contactMe: {
 	        id: 'general.contactMe',
 	        defaultMessage: 'Contact me'
@@ -6690,6 +6424,14 @@
 	    language: {
 	        id: 'general.language',
 	        defaultMessage: 'Language'
+	    },
+	    more: {
+	        id: 'general.more',
+	        defaultMessage: 'more'
+	    },
+	    less: {
+	        id: 'general.less',
+	        defaultMessage: 'less'
 	    },
 	    made: {
 	        id: 'general.made',
@@ -6706,7 +6448,342 @@
 	        }
 	    },
 	});
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZXNzYWdlcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwQztBQUU3QixRQUFBLFFBQVEsR0FBRywyQkFBYyxDQUFDO0lBQ3JDLEVBQUUsRUFBRTtRQUNGLEVBQUUsRUFBRSxpQkFBaUI7UUFDckIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxFQUFFLEVBQUU7UUFDRixFQUFFLEVBQUUsaUJBQWlCO1FBQ3JCLGNBQWMsRUFBRSxTQUFTO0tBQzFCO0lBQ0QsWUFBWSxFQUFFO1FBQ1osRUFBRSxFQUFFLGVBQWU7UUFDbkIsY0FBYyxFQUFFLG9NQUNzRTtRQUN0RixNQUFNLEVBQUU7WUFDTixTQUFTLEVBQUUsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhO1lBQzlELElBQUksRUFBRSwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGNBQVk7WUFDeEQsU0FBUyxFQUFFLGlFQUFzQztTQUNsRDtLQUNGO0lBQ0QsV0FBVyxFQUFFO1FBQ1gsRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLFNBQVM7UUFDekIsTUFBTSxFQUFFO1lBQ04sSUFBSSxFQUFFOztnQkFDMkMsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhOztnQkFBd0QsK0NBQXVCOztnQkFBRSx5Q0FBaUI7O2dCQUM5TCx3Q0FBZ0I7O2dCQUFLLHdDQUFnQjs7Z0JBRU4sMkNBQW1COztnQkFBRSwwQ0FBa0I7O2dCQUFNLDJEQUFtQzs7Z0JBQ3ZDLGlFQUFzQzs7Z0JBQ3hHLDJCQUFHLElBQUksRUFBQyw4QkFBOEIsY0FBWTsrQ0FDbkQ7U0FDZDtLQUNGO0lBQ0QsTUFBTSxFQUFFO1FBQ04sRUFBRSxFQUFFLGdCQUFnQjtRQUNwQixjQUFjLEVBQUUsUUFBUTtLQUN6QjtJQUNELE1BQU0sRUFBRTtRQUNOLEVBQUUsRUFBRSxnQkFBZ0I7UUFDcEIsY0FBYyxFQUFFLFFBQVE7S0FDekI7SUFDRCxRQUFRLEVBQUU7UUFDUixFQUFFLEVBQUUsa0JBQWtCO1FBQ3RCLGNBQWMsRUFBRSxXQUFXO0tBQzVCO0lBQ0QsSUFBSSxFQUFFO1FBQ0osRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLE1BQU07S0FDdkI7SUFDRCxZQUFZLEVBQUU7UUFDWixFQUFFLEVBQUUsc0JBQXNCO1FBQzFCLGNBQWMsRUFBRSxtQkFBbUI7S0FDcEM7SUFDRCxjQUFjLEVBQUU7UUFDZCxFQUFFLEVBQUUsd0JBQXdCO1FBQzVCLGNBQWMsRUFBRSxpQkFBaUI7S0FDbEM7SUFDRCxhQUFhLEVBQUU7UUFDYixFQUFFLEVBQUUsdUJBQXVCO1FBQzNCLGNBQWMsRUFBRSxVQUFVO0tBQzNCO0lBQ0QsaUJBQWlCLEVBQUU7UUFDakIsRUFBRSxFQUFFLDJCQUEyQjtRQUMvQixjQUFjLEVBQUUsNkJBQTZCO0tBQzlDO0lBQ0QsTUFBTSxFQUFFO1FBQ04sRUFBRSxFQUFFLHFCQUFxQjtRQUN6QixjQUFjLEVBQUUsU0FBUztLQUMxQjtJQUNELE9BQU8sRUFBRTtRQUNQLEVBQUUsRUFBRSxVQUFVO1FBQ2QsY0FBYyxFQUFFLFlBQVk7S0FDN0I7SUFDRCxhQUFhLEVBQUU7UUFDYixFQUFFLEVBQUUsZ0JBQWdCO1FBQ3BCLGNBQWMsRUFBRSxrTkFBa047S0FDbk87SUFDRCxRQUFRLEVBQUU7UUFDUixFQUFFLEVBQUUsV0FBVztRQUNmLGNBQWMsRUFBRSx1QkFBdUI7S0FDeEM7SUFDRCxjQUFjLEVBQUU7UUFDZCxFQUFFLEVBQUUsaUJBQWlCO1FBQ3JCLGNBQWMsRUFBRSw0REFBNEQ7S0FDN0U7SUFDRCxTQUFTLEVBQUU7UUFDVCxFQUFFLEVBQUUsWUFBWTtRQUNoQixjQUFjLEVBQUUseUJBQXlCO0tBQzFDO0lBQ0QsYUFBYSxFQUFFO1FBQ2IsRUFBRSxFQUFFLGdCQUFnQjtRQUNwQixjQUFjLEVBQUUsaUpBQWlKO0tBQ2xLO0lBQ0QsY0FBYyxFQUFFO1FBQ2QsRUFBRSxFQUFFLGlCQUFpQjtRQUNyQixjQUFjLEVBQUUsa0hBQWtIO0tBQ25JO0lBQ0QsU0FBUyxFQUFFO1FBQ1QsRUFBRSxFQUFFLFlBQVk7UUFDaEIsY0FBYyxFQUFFLDZCQUE2QjtLQUM5QztJQUNELFNBQVMsRUFBRTtRQUNULEVBQUUsRUFBRSxtQkFBbUI7UUFDdkIsY0FBYyxFQUFFLFlBQVk7S0FDN0I7SUFDRCxRQUFRLEVBQUU7UUFDUixFQUFFLEVBQUUsa0JBQWtCO1FBQ3RCLGNBQWMsRUFBRSxVQUFVO0tBQzNCO0lBQ0QsSUFBSSxFQUFFO1FBQ0osRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLCtCQUErQjtRQUMvQyxNQUFNLEVBQUU7WUFDTixJQUFJLEVBQUUsMkJBQUcsU0FBUyxFQUFDLGFBQWEsRUFBQyxLQUFLLEVBQUMsTUFBTSxHQUFHO1NBQ2pEO0tBQ0Y7SUFDRCxXQUFXLEVBQUU7UUFDWCxFQUFFLEVBQUUscUJBQXFCO1FBQ3pCLGNBQWMsRUFBRSxtQ0FBbUM7UUFDbkQsTUFBTSxFQUFFO1lBQ04sSUFBSSxFQUFFLDJCQUFHLElBQUksRUFBQywwQkFBMEIsZUFBYTtTQUN0RDtLQUNGO0NBQ0YsQ0FBQyxDQUFDIn0=
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZXNzYWdlcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwQztBQUU3QixRQUFBLFFBQVEsR0FBRywyQkFBYyxDQUFDO0lBQ3JDLEVBQUUsRUFBRTtRQUNGLEVBQUUsRUFBRSxpQkFBaUI7UUFDckIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxFQUFFLEVBQUU7UUFDRixFQUFFLEVBQUUsaUJBQWlCO1FBQ3JCLGNBQWMsRUFBRSxTQUFTO0tBQzFCO0lBQ0QsWUFBWSxFQUFFO1FBQ1osRUFBRSxFQUFFLGVBQWU7UUFDbkIsY0FBYyxFQUFFLG9NQUNzRTtRQUN0RixNQUFNLEVBQUU7WUFDTixTQUFTLEVBQUUsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhO1lBQzlELElBQUksRUFBRSwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGNBQVk7WUFDeEQsU0FBUyxFQUFFLGlFQUFzQztTQUNsRDtLQUNGO0lBQ0QsV0FBVyxFQUFFO1FBQ1gsRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLFNBQVM7UUFDekIsTUFBTSxFQUFFO1lBQ04sSUFBSSxFQUFFOztnQkFDMkMsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhOztnQkFBd0QsK0NBQXVCOztnQkFBRSx5Q0FBaUI7O2dCQUM5TCx3Q0FBZ0I7O2dCQUFLLHdDQUFnQjs7Z0JBRU4sMkNBQW1COztnQkFBRSwwQ0FBa0I7O2dCQUFNLDJEQUFtQzs7Z0JBQ3ZDLGlFQUFzQzs7Z0JBQ3hHLDJCQUFHLElBQUksRUFBQyw4QkFBOEIsY0FBWTsrQ0FDbkQ7U0FDZDtLQUNGO0lBQ0QsTUFBTSxFQUFFO1FBQ04sRUFBRSxFQUFFLGdCQUFnQjtRQUNwQixjQUFjLEVBQUUsUUFBUTtLQUN6QjtJQUNELE1BQU0sRUFBRTtRQUNOLEVBQUUsRUFBRSxnQkFBZ0I7UUFDcEIs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
+
+/***/ },
+/* 57 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(58);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(32)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./header.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./header.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 58 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(31)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".HeaderComponent {\n  display: flex;\n  flex-direction: column;\n  background: transparent;\n  margin: 0 auto;\n  width: 80%; }\n  .HeaderComponent * {\n    align-self: center; }\n  .HeaderComponent .HeaderAvatar {\n    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);\n    margin: 40.2px auto auto;\n    border-radius: 80px; }\n  .HeaderComponent .title {\n    order: 2; }\n  .HeaderComponent .HeaderText {\n    margin-top: 40px;\n    order: 3; }\n  .HeaderComponent .SocialComponent {\n    order: 3; }\n  .HeaderComponent .HeaderAvatar {\n    order: 1; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __assign = (this && this.__assign) || Object.assign || function(t) {
+	    for (var s, i = 1, n = arguments.length; i < n; i++) {
+	        s = arguments[i];
+	        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+	            t[p] = s[p];
+	    }
+	    return t;
+	};
+	var React = __webpack_require__(1);
+	__webpack_require__(60);
+	;
+	var ExcerptComponent = (function (_super) {
+	    __extends(ExcerptComponent, _super);
+	    function ExcerptComponent() {
+	        var _this = _super !== null && _super.apply(this, arguments) || this;
+	        _this.state = {
+	            showMore: false
+	        };
+	        return _this;
+	    }
+	    ExcerptComponent.prototype.render = function () {
+	        var _this = this;
+	        var _a = this.props, short = _a.short, long = _a.long, moreLabel = _a.moreLabel, lessLabel = _a.lessLabel;
+	        var showMore = this.state.showMore;
+	        return (React.createElement("div", { className: "ExcerptComponent" },
+	            React.createElement("article", null,
+	                React.createElement("p", { className: "description" },
+	                    showMore ? long : short,
+	                    "\u00A0",
+	                    React.createElement("a", { href: "#", onClick: function (event) {
+	                            event.preventDefault();
+	                            _this.setState(__assign({}, _this.state, { showMore: !showMore }));
+	                        } }, !showMore ? moreLabel : lessLabel),
+	                    "."))));
+	    };
+	    return ExcerptComponent;
+	}(React.Component));
+	exports.ExcerptComponent = ExcerptComponent;
+	;
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = ExcerptComponent;
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXhjZXJwdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImV4Y2VycHQudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7O0FBQUEsNkJBQStCO0FBRS9CLDBCQUF3QjtBQVF2QixDQUFDO0FBRUY7SUFBc0Msb0NBQTRDO0lBQWxGO1FBQUEscUVBaUNDO1FBaENDLFdBQUssR0FBRztZQUNOLFFBQVEsRUFBRSxLQUFLO1NBQ2hCLENBQUM7O0lBOEJKLENBQUM7SUE1QkMsaUNBQU0sR0FBTjtRQUFBLGlCQTJCQztRQTFCTyxJQUFBLGVBQWtELEVBQWhELGdCQUFLLEVBQUUsY0FBSSxFQUFFLHdCQUFTLEVBQUUsd0JBQVMsQ0FBZ0I7UUFFakQsSUFBQSw4QkFBUSxDQUFnQjtRQUVoQyxNQUFNLENBQUMsQ0FDTCw2QkFBSyxTQUFTLEVBQUMsa0JBQWtCO1lBQy9CO2dCQUNFLDJCQUFHLFNBQVMsRUFBQyxhQUFhO29CQUN2QixRQUFRLEdBQUcsSUFBSSxHQUFHLEtBQUs7O29CQUV4QiwyQkFBRyxJQUFJLEVBQUMsR0FBRyxFQUNULE9BQU8sRUFBRSxVQUFDLEtBQUs7NEJBQ2IsS0FBSyxDQUFDLGNBQWMsRUFBRSxDQUFDOzRCQUN2QixLQUFJLENBQUMsUUFBUSxjQUNSLEtBQUksQ0FBQyxLQUFLLElBQ2IsUUFBUSxFQUFFLENBQUMsUUFBUSxJQUNyQixDQUFDO3dCQUNMLENBQUMsSUFDRSxDQUFDLFFBQVEsR0FBSSxTQUFTLEdBQUcsU0FBUyxDQUNqQzt3QkFFRixDQUNJLENBQ04sQ0FDUCxDQUFBO0lBRUgsQ0FBQztJQUNILHVCQUFDO0FBQUQsQ0FBQyxBQWpDRCxDQUFzQyxLQUFLLENBQUMsU0FBUyxHQWlDcEQ7QUFqQ1ksNENBQWdCO0FBaUM1QixDQUFDOztBQUVGLGtCQUFlLGdCQUFnQixDQUFDIn0=
+
+/***/ },
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(61);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(32)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./excerpt.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./excerpt.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 61 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(31)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".ExcerptComponent {\n  text-align: center;\n  width: 80%;\n  margin: 0 auto;\n  margin-bottom: 20px; }\n  .ExcerptComponent p.description {\n    font-size: 20px;\n    line-height: 2em; }\n  .ExcerptComponent .hireme {\n    order: 4; }\n  .ExcerptComponent code {\n    padding: 5px 4px !important;\n    margin-left: 5px !important;\n    font-size: 12px; }\n\n@media only screen and (max-width: 480px) {\n  .ExcerptComponent p.description {\n    font-size: 16px; } }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 62 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var React = __webpack_require__(1);
+	var flat_separator_1 = __webpack_require__(36);
+	__webpack_require__(63);
+	;
+	exports.SectionHeaderComponent = function (props) {
+	    return (React.createElement("div", { className: "SectionHeaderComponent" },
+	        React.createElement("h1", null, props.title),
+	        React.createElement(flat_separator_1.FlatSeparatorComponent, { margin: "0 0", width: "20%" })));
+	};
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = exports.SectionHeaderComponent;
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2VjdGlvbi1oZWFkZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzZWN0aW9uLWhlYWRlci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLDZCQUErQjtBQUUvQixxRUFBMEU7QUFFMUUsaUNBQStCO0FBSTlCLENBQUM7QUFFVyxRQUFBLHNCQUFzQixHQUFHLFVBQUMsS0FBSztJQUMxQyxNQUFNLENBQUEsQ0FDSiw2QkFBSyxTQUFTLEVBQUMsd0JBQXdCO1FBQ3JDLGdDQUFLLEtBQUssQ0FBQyxLQUFLLENBQU07UUFDdEIsb0JBQUMsdUNBQXNCLElBQUMsTUFBTSxFQUFDLEtBQUssRUFBQyxLQUFLLEVBQUMsS0FBSyxHQUFHLENBQy9DLENBQ1AsQ0FBQztBQUNKLENBQUMsQ0FBQTs7QUFFRCxrQkFBZSw4QkFBc0IsQ0FBQyJ9
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(64);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(32)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./section-header.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./section-header.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(31)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".SectionHeaderComponent {\n  margin: 0 auto;\n  width: 80%;\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 25px;\n  justify-content: space-around; }\n  .SectionHeaderComponent h1 {\n    text-align: left;\n    margin-bottom: 30px; }\n  .SectionHeaderComponent div {\n    display: flex;\n    justify-content: center; }\n  .SectionHeaderComponent div > span {\n    border: 1px solid #000;\n    padding: 10px 15px;\n    border-radius: 2px;\n    margin: auto 50px;\n    text-align: center; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var React = __webpack_require__(1);
+	__webpack_require__(66);
+	var lightbox_1 = __webpack_require__(40);
+	;
+	exports.ProjectComponent = function (props) {
+	    var id = props.id, image = props.image, name = props.name, excerpt = props.excerpt, information = props.information;
+	    return (React.createElement("div", null,
+	        React.createElement("div", { id: id, className: "ProjectsComponent" },
+	            React.createElement("div", { className: "main-project-image" },
+	                React.createElement(lightbox_1.LightboxComponent, { id: image, type: "image", url: image, alt: excerpt })),
+	            React.createElement("div", { className: "ProjectExcerpt" },
+	                React.createElement("h2", { className: "ProjectName" }, name),
+	                React.createElement("p", { className: "ProjectExcerpt" }, excerpt),
+	                React.createElement("ul", { className: "ProjectInformation" }, information.map(function (_a, index) {
+	                    var key = _a.key, value = _a.value;
+	                    return (React.createElement("li", { key: key + "-" + index },
+	                        React.createElement("b", null,
+	                            key,
+	                            ":"),
+	                        " ",
+	                        value));
+	                }))))));
+	};
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = exports.ProjectComponent;
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvamVjdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInByb2plY3QudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSw2QkFBK0I7QUFFL0IsT0FBTyxDQUFDLGdCQUFnQixDQUFDLENBQUM7QUFFMUIsaURBQXVEO0FBVXRELENBQUM7QUFFVyxRQUFBLGdCQUFnQixHQUFHLFVBQUUsS0FBNkI7SUFDckQsSUFBQSxhQUFFLEVBQUUsbUJBQUssRUFBRSxpQkFBSSxFQUFFLHVCQUFPLEVBQUUsK0JBQVcsQ0FBVztJQUV4RCxNQUFNLENBQUEsQ0FDSjtRQUNFLDZCQUFLLEVBQUUsRUFBRSxFQUFFLEVBQUUsU0FBUyxFQUFDLG1CQUFtQjtZQUN0Qyw2QkFBSyxTQUFTLEVBQUMsb0JBQW9CO2dCQUNqQyxvQkFBQyw0QkFBaUIsSUFBQyxFQUFFLEVBQUUsS0FBSyxFQUFHLElBQUksRUFBQyxPQUFPLEVBQUMsR0FBRyxFQUFFLEtBQUssRUFBRSxHQUFHLEVBQUUsT0FBTyxHQUFJLENBQ3BFO1lBRU4sNkJBQUssU0FBUyxFQUFDLGdCQUFnQjtnQkFDN0IsNEJBQUksU0FBUyxFQUFDLGFBQWEsSUFDeEIsSUFBSSxDQUNGO2dCQUNMLDJCQUFHLFNBQVMsRUFBQyxnQkFBZ0IsSUFDMUIsT0FBTyxDQUNOO2dCQUNKLDRCQUFJLFNBQVMsRUFBQyxvQkFBb0IsSUFFOUIsV0FBVyxDQUFDLEdBQUcsQ0FBQyxVQUFDLEVBQVksRUFBRSxLQUFLO3dCQUFsQixZQUFHLEVBQUUsZ0JBQUs7b0JBQzFCLE1BQU0sQ0FBQyxDQUNMLDRCQUFJLEdBQUcsRUFBSyxHQUFHLFNBQUksS0FBTzt3QkFDeEI7NEJBQUksR0FBRztnQ0FBTTs7d0JBQUUsS0FBSyxDQUNqQixDQUNOLENBQUE7Z0JBQ0gsQ0FBQyxDQUFDLENBRUQsQ0FDRCxDQUNGLENBQ0osQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBOztBQUVELGtCQUFlLHdCQUFnQixDQUFBIn0=
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(67);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(32)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./project.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./project.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(31)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".ProjectsComponent {\n  margin: 0 auto;\n  width: 80%;\n  display: flex;\n  flex-direction: row; }\n  .ProjectsComponent .ProjectExcerpt {\n    order: 1; }\n  .ProjectsComponent .ProjectInformation {\n    order: 2; }\n  .ProjectsComponent .ProjectExcerpt {\n    min-width: 43%;\n    margin-right: 2%;\n    text-align: justify; }\n  .ProjectsComponent .ProjectExcerpt,\n  .ProjectsComponent .ProjectInformation li {\n    line-height: 1.8em; }\n  .ProjectsComponent .main-project-image {\n    order: 3;\n    width: 179%; }\n  .ProjectsComponent .main-project-image img {\n    max-width: 100%; }\n\n@media only screen and (max-width: 480px) {\n  .ProjectsComponent {\n    flex-direction: column; }\n    .ProjectsComponent .ProjectName {\n      text-align: center; }\n    .ProjectsComponent .main-project-image {\n      order: 1;\n      width: 100%; } }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var React = __webpack_require__(1);
+	var social_1 = __webpack_require__(52);
+	var flat_separator_1 = __webpack_require__(36);
+	__webpack_require__(69);
+	;
+	/**
+	 * Portfolio Header
+	 */
+	exports.FooterComponent = function (props) {
+	    return (React.createElement("footer", { className: "FooterComponent" },
+	        React.createElement("p", null,
+	            React.createElement("a", { href: "mailto:davidjsalazarmoreno@gmail.com?subject=Awesome%20Project" },
+	                React.createElement("i", { className: "fa fa-envelope-o" }),
+	                React.createElement("br", null),
+	                props.contactMe)),
+	        React.createElement(flat_separator_1.FlatSeparatorComponent, { margin: "8px auto", width: "13%" }),
+	        React.createElement(social_1.SocialComponent, { id: "SocialsOnFooter", networks: props.networks }),
+	        React.createElement("small", { className: "footnote" },
+	            React.createElement("hr", null),
+	            React.createElement("a", { href: "https://github.com/davidjsalazarmoreno/portfolio" }, props.made),
+	            "|",
+	            props.inspiration)));
+	};
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = exports.FooterComponent;
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9vdGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZm9vdGVyLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsNkJBQStCO0FBRS9CLDZDQUFtRDtBQUNuRCxxRUFBMEU7QUFFMUUseUJBQXVCO0FBT3RCLENBQUM7QUFFRjs7R0FFRztBQUNVLFFBQUEsZUFBZSxHQUFHLFVBQUMsS0FBdUI7SUFDckQsTUFBTSxDQUFDLENBQ0wsZ0NBQVEsU0FBUyxFQUFDLGlCQUFpQjtRQUNqQztZQUNFLDJCQUFHLElBQUksRUFBQyxnRUFBZ0U7Z0JBQ3RFLDJCQUFHLFNBQVMsRUFBQyxrQkFBa0IsR0FBSztnQkFDcEMsK0JBQUs7Z0JBQ0osS0FBSyxDQUFDLFNBQVMsQ0FDZCxDQUNGO1FBRUosb0JBQUMsdUNBQXNCLElBQUMsTUFBTSxFQUFDLFVBQVUsRUFBQyxLQUFLLEVBQUMsS0FBSyxHQUFHO1FBRXhELG9CQUFDLHdCQUFlLElBQUMsRUFBRSxFQUFDLGlCQUFpQixFQUFDLFFBQVEsRUFBRSxLQUFLLENBQUMsUUFBUSxHQUFJO1FBRWxFLCtCQUFPLFNBQVMsRUFBQyxVQUFVO1lBQ3pCLCtCQUFNO1lBQ04sMkJBQUcsSUFBSSxFQUFDLGtEQUFrRCxJQUN2RCxLQUFLLENBQUMsSUFBSSxDQUNUOztZQUVILEtBQUssQ0FBQyxXQUFXLENBQ1osQ0FDRCxDQUNWLENBQUM7QUFDSixDQUFDLENBQUE7O0FBRUQsa0JBQWUsdUJBQWUsQ0FBQyJ9
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(70);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(32)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./footer.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./footer.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 70 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(31)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/* Default color palette */\n/* Default font family */\n/* Layout */\n.FooterComponent {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 350px;\n  padding: 0;\n  margin: 0;\n  position: relative;\n  margin-top: -100px;\n  margin-bottom: 8%; }\n  .FooterComponent .heroImage {\n    background-image: url(\"/hero-image.jpg\");\n    background-size: cover;\n    background-position: 50%;\n    background-repeat: no-repeat;\n    width: 100%;\n    position: absolute;\n    z-index: -1;\n    min-width: 100px;\n    height: 350px; }\n  .FooterComponent .hireme {\n    width: 25%;\n    text-transform: capitalize;\n    margin: 0 auto;\n    margin-top: 5%; }\n  .FooterComponent p {\n    margin-top: 10%;\n    text-align: center;\n    color: #aaa;\n    transition: 350ms ease all; }\n  .FooterComponent p a {\n    outline: none;\n    color: #aaa;\n    text-decoration: none;\n    transition: 350ms ease all; }\n  .FooterComponent p i.fa.fa-envelope-o {\n    transition: 350ms ease all;\n    margin: 0 auto;\n    margin-top: 5%;\n    margin-bottom: 1%;\n    font-size: 2.5em;\n    color: #aaa; }\n  .FooterComponent p:hover,\n  .FooterComponent p:hover a,\n  .FooterComponent p:hover i.fa.fa-envelope-o {\n    outline: none;\n    color: rgba(231, 76, 60, 0.9);\n    text-shadow: 0 0 15px rgba(231, 76, 60, 0.1);\n    transition: 350ms ease all;\n    cursor: pointer; }\n  .FooterComponent .SocialComponent {\n    margin: 0 auto;\n    margin-top: 25px; }\n  .FooterComponent .SocialComponent i {\n    font-size: .650em; }\n  .FooterComponent small.footnote {\n    text-align: center;\n    margin-top: 60px;\n    margin-bottom: -25px; }\n  .FooterComponent .footnote a {\n    color: #aaa;\n    text-decoration: none; }\n  .FooterComponent .footnote .fa {\n    color: rgba(255, 70, 70, 0.5);\n    font-style: normal; }\n  .FooterComponent .footnote a:hover {\n    color: #444; }\n  .FooterComponent .footnote:hover .fa {\n    color: #ff4646;\n    font-style: normal; }\n\n@media only screen and (max-width: 480px) {\n  .FooterComponent {\n    height: 300px; } }\n", ""]);
+	
+	// exports
+
 
 /***/ },
 /* 71 */
@@ -6724,8 +6801,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./portfolio.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./portfolio.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./portfolio.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./portfolio.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -6744,7 +6821,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);", ""]);
 	
 	// module
-	exports.push([module.id, ".outlined {\n  outline: 1px solid black; }\n\n/* Default color palette */\n/* Default font family */\n/* Layout */\n.example-enter {\n  opacity: 0.01; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n\n.example-leave {\n  opacity: 1; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  transition: opacity 300ms ease-in; }\n\n/* Primary font */\n/* Secondary font */\n/** Modifiers */\n.code, .PortfolioComponent code {\n  background: #383838;\n  color: #F7CA88;\n  white-space: nowrap;\n  padding: 3px 4px;\n  font-size: 90%;\n  border-radius: 4px;\n  font-family: Menlo,Monaco,Consolas,'Courier New',monospace; }\n\n.separator, .PortfolioComponent hr {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  border: 0;\n  border-top: 1px solid #eee;\n  background: #eee;\n  width: 100%; }\n\n.primary-btn, .hireme {\n  background: transparent;\n  padding: 10px 25px;\n  border-color: #444;\n  border-style: solid; }\n\n.hireme {\n  margin-top: 15px;\n  font-size: 20px;\n  text-transform: capitalize; }\n\n/* Portfolio wrapper */\n.PortfolioComponent {\n  background-color: transparent;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  margin: 0 auto;\n  font-size: 14px;\n  font-family: \"Open Sans\", sanf-serif;\n  padding: 0; }\n  .PortfolioComponent a {\n    color: #E74C3C; }\n  .PortfolioComponent .SocialComponent a:hover,\n  .PortfolioComponent .SocialComponent a:active {\n    color: #ef9511;\n    transition: 350ms ease all; }\n  .PortfolioComponent .ExcerptComponent a:hover,\n  .PortfolioComponent .ExcerptComponent a:active {\n    color: #fff;\n    background-color: #ef9511;\n    transition: 350ms ease all; }\n  .PortfolioComponent .HeaderText {\n    margin: 10px auto 45px; }\n  .PortfolioComponent .title {\n    color: #444;\n    font-weight: bold;\n    text-align: center;\n    font-family: \"Roboto Slab\", sanf-serif;\n    padding: 15px;\n    font-size: 40px; }\n  .PortfolioComponent .subtitle {\n    font-style: italic;\n    color: #aaa; }\n\n@media only screen and (max-width: 480px) {\n  .PortfolioComponent > hr:last-of-type {\n    margin-bottom: 90px; } }\n", ""]);
+	exports.push([module.id, "/* Default color palette */\n/* Default font family */\n/* Layout */\n.example-enter {\n  opacity: 0.01; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n\n.example-leave {\n  opacity: 1; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  transition: opacity 300ms ease-in; }\n\n/* Primary font */\n/* Secondary font */\n/** Modifiers */\n.code, .PortfolioComponent code {\n  background: #383838;\n  color: #F7CA88;\n  white-space: nowrap;\n  padding: 3px 4px;\n  font-size: 90%;\n  border-radius: 4px;\n  font-family: Menlo,Monaco,Consolas,'Courier New',monospace; }\n\n.separator, .PortfolioComponent hr {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  border: 0;\n  border-top: 1px solid #eee;\n  background: #eee;\n  width: 100%; }\n\n.primary-btn, .hireme {\n  background: transparent;\n  padding: 10px 25px;\n  border-color: #444;\n  border-style: solid; }\n\n.hireme {\n  margin-top: 15px;\n  font-size: 20px;\n  text-transform: capitalize; }\n\n/* Portfolio wrapper */\n.PortfolioComponent {\n  background-color: transparent;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  margin: 0 auto;\n  font-size: 14px;\n  font-family: \"Open Sans\", sanf-serif;\n  padding: 0; }\n  .PortfolioComponent a {\n    color: #E74C3C; }\n  .PortfolioComponent .SocialComponent a:hover,\n  .PortfolioComponent .SocialComponent a:active {\n    color: #ef9511;\n    transition: 350ms ease all; }\n  .PortfolioComponent .ExcerptComponent a:hover,\n  .PortfolioComponent .ExcerptComponent a:active {\n    color: #fff;\n    background-color: #ef9511;\n    transition: 350ms ease all; }\n  .PortfolioComponent .HeaderText {\n    margin: 10px auto 45px; }\n  .PortfolioComponent .title {\n    color: #444;\n    font-weight: bold;\n    text-align: center;\n    font-family: \"Roboto Slab\", sanf-serif;\n    padding: 15px;\n    font-size: 40px; }\n  .PortfolioComponent .subtitle {\n    font-style: italic;\n    color: #aaa; }\n\n@media only screen and (max-width: 480px) {\n  .PortfolioComponent > hr:last-of-type {\n    margin-bottom: 90px; } }\n", ""]);
 	
 	// exports
 

@@ -19,7 +19,7 @@ import {FooterComponent} from './../../components/footer/footer';
 // Intl Messages
 import {messages} from './../../messages';
 
-import {pmShowcase, sysShowcase, geShowcase, ILCShowcase, networks} from './../../config';
+import {pmShowcase, sysShowcase, geShowcase, ILCShowcase, networks} from './../../config/index';
 
 // Styles
 import './portfolio.scss';
@@ -105,7 +105,6 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
               { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="https://www.cuadrala.com">Cuádrala</a> }
             ]}
           />
-
 
           <ShowcaseComponent id="PlaysmatchShowcase" 
             title={<FormattedMessage {...messages.showcaseTitle} />} 
