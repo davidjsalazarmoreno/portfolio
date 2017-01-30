@@ -29,12 +29,16 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.tsx?$/, loader: 'ts-loader?configFileName=tsconfig.json' },
+      { 
+        test: /\.tsx?$/, loader: 'ts-loader?configFileName=tsconfig.json' 
+      },
       {
         test: /\.css?$/,
         loader: ExtractTextPlugin.extract('style', 'raw')
       },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass?includePaths[]') },
+      { 
+        test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass?includePaths[]') 
+      },
       {
         test: /\.html$/,
         loader: 'file?name=[name].[ext]',
