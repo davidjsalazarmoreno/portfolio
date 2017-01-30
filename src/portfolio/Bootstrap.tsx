@@ -8,8 +8,10 @@ import {injectIntl} from 'react-intl';
 // Containers/Components
 import {PortfolioContainer} from './containers/portfolio/portfolio';
 
-ReactDOM.render(
-  <PortfolioContainer />,
-  document.getElementById('app')
-);
+(window as any).addEventListener('load', function() {
+  ReactDOM.render(
+    <PortfolioContainer />,
+    document.getElementById('app')
+  );
 
+});

@@ -17,25 +17,25 @@ export const pmShowcase = [];
 export const sysShowcase = [
   {
     type: 'image',
-    url: '/Systrix/sys-1.jpg',
+    url: '/assets/Systrix/sys-1.jpg',
     alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
     id: 'sys-showcase-1'
   },
   {
     type: 'image',
-    url: '/Systrix/sys-2.jpg',
+    url: '/assets/Systrix/sys-2.jpg',
     alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
     id: 'sys-image-2'
   },
   {
     type: 'image',
-    url: '/Systrix/sys-3.jpg',
+    url: '/assets/Systrix/sys-3.jpg',
     alt: (<FormattedMessage {...messages['sysShowcase-3']} />),
     id: 'sys-showcase-3'
   },
   {
     type: 'image',
-    url: '/Systrix/sys-4.jpg',
+    url: '/assets/Systrix/sys-4.jpg',
     alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
     id: 'sys-showcase-4'
   },
@@ -57,7 +57,7 @@ export const sysShowcase = [
 export const geShowcase = [
     {
     type: 'image',
-    url: '/GE/ge-1-web.jpeg',
+    url: '/assets/GE/ge-1-web.jpeg',
     alt: (<FormattedMessage {...messages['geShowcase-1']} />),
     id: 'ge-showcase-1'
   }
@@ -92,25 +92,25 @@ export const ILCShowcase = [
   },
   {
     type: 'image',
-    url: '/ilc/subscribe-1.jpg',
+    url: '/assets/ilc/subscribe-1.jpg',
     alt: (<FormattedMessage {...messages['ilcShowcase-5']} />),
     id: 'ilc-showcase-5'
   },
   {
     type: 'image',
-    url: '/ilc/subscribe-2.jpg',
+    url: '/assets/ilc/subscribe-2.jpg',
     alt: (<FormattedMessage {...messages['ilcShowcase-5']} />),
     id: 'ilc-showcase-6'
   },
   {
     type: 'image',
-    url: '/ilc/ilc-certificates-prototype.jpg',
+    url: '/assets/ilc/ilc-certificates-prototype.jpg',
     alt: (<FormattedMessage {...messages['ilcShowcase-7']} />),
     id: 'ilc-showcase-7'
   },
   {
     type: 'image',
-    url: '/ilc/ilc-welcome.jpg',
+    url: '/assets/ilc/ilc-welcome.jpg',
     alt: (<FormattedMessage {...messages['ilcShowcase-8']} />),
     id: 'ilc-showcase-8'
   },
