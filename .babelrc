@@ -1,14 +1,12 @@
 {
   "presets": ["es2015", "react", "stage-0"],
-  "ignore": [
-    "src/playsmatch-core/node_modules"
-  ],
   "plugins": [
     "transform-object-rest-spread",
     "transform-runtime",
+    "add-module-exports",
     [
       "react-intl", {
-        "messagesDir": "./trans-tmp/raw-tmp/",
+        "messagesDir": "./",
         "enforceDescriptions": false
       }
     ]

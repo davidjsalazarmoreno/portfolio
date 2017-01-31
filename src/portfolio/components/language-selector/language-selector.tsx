@@ -12,12 +12,11 @@ interface ILanguageSelectorComponentProps {
   languageLabel: string | JSX.Element;
   selected?: string;
   intl?: InjectedIntl;
-  messages: Messages;
   onChange?: ( event ) => void;
 };
 
 const LanguageSelector = ( props: ILanguageSelectorComponentProps ) => {
-  const { languages, onChange, selected, intl, messages, languageLabel } = props;
+  const { languages, onChange, selected, intl, languageLabel } = props;
   
   return (
     <div className="LanguageSelectorComponent">
@@ -31,7 +30,7 @@ const LanguageSelector = ( props: ILanguageSelectorComponentProps ) => {
                 key={index} 
                 value={value}>
                 {
-                  intl.formatMessage( messages[ value ] )
+                  intl.formatMessage( { id: `general.${value}` } )
                 }
               </option>
             );

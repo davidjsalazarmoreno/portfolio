@@ -8,8 +8,14 @@ It's just my portfolio soon at http://davidjsalazarmoreno.github.io/
 $ yarn install
 ```
 
+## Building project and translations
+
+```
+$ yarn build:production
+```
+
 ## Running project
 
 ```
-$ yarn storybook
+$ yarn start
 ```

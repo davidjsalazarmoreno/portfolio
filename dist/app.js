@@ -100,10 +100,11 @@
 	var project_1 = __webpack_require__(55);
 	var footer_1 = __webpack_require__(57);
 	// Intl Messages
-	var messages_1 = __webpack_require__(49);
+	var messages = __webpack_require__(59);
+	var esMessages = __webpack_require__(60);
 	var index_1 = __webpack_require__(48);
 	// Styles
-	__webpack_require__(59);
+	__webpack_require__(61);
 	;
 	var PortfolioContainer = (function (_super) {
 	    __extends(PortfolioContainer, _super);
@@ -118,61 +119,61 @@
 	        var _this = this;
 	        // State
 	        var language = this.state.language;
-	        return (React.createElement(react_intl_1.IntlProvider, { locale: language },
+	        var currentMessages = language === 'es' ? esMessages : messages;
+	        return (React.createElement(react_intl_1.IntlProvider, { messages: currentMessages, locale: language },
 	            React.createElement("section", { className: "PortfolioComponent" },
 	                React.createElement(language_selector_1.LanguageSelectorComponent, { languages: [
 	                        'en',
 	                        'es',
-	                    ], languageLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.language)), selected: language, messages: messages_1.messages, onChange: function (event) {
+	                    ], languageLabel: React.createElement(react_intl_1.FormattedMessage, { id: "general.language" }), selected: language, messages: messages, onChange: function (event) {
 	                        var languageSelected = event.target.value;
-	                        console.log(languageSelected);
 	                        _this.setState(__assign({}, _this.state, { language: languageSelected }));
 	                    } }),
 	                React.createElement(github_ribbon_1.GithubRibbon, null),
 	                React.createElement(header_1.HeaderComponent, { avatarUrl: "/assets/avatar.jpg" }),
 	                React.createElement(flat_separator_1.FlatSeparatorComponent, { margin: "16px auto", width: "20%" }),
 	                React.createElement(excerpt_1.ExcerptComponent, { short: React.createElement("span", null,
-	                        React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.excerptShort))), long: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.excerptLong)), moreLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.more)), lessLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.less)) }),
+	                        React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.excerptShort))), long: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.excerptLong)), moreLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.more)), lessLabel: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.less)) }),
 	                React.createElement("hr", null),
-	                React.createElement(section_header_1.SectionHeaderComponent, { title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.myWork)) }),
-	                React.createElement(project_1.ProjectComponent, { id: "playsmatch", image: "/assets/pm-showcase-1.png", name: "Cuádrala / Playsmatch", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.pmDescription)), information: [
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'Cuádrala / Playsmatch' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.pmPeriod)) },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'FullTime' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Full Stack Web Developer' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'React / Nodejs' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "https://www.cuadrala.com" }, "Cu\u00E1drala") }
+	                React.createElement(section_header_1.SectionHeaderComponent, { title: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.myWork)) }),
+	                React.createElement(project_1.ProjectComponent, { id: "playsmatch", image: "/assets/pm-showcase-1.png", name: "Cuádrala / Playsmatch", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.pmDescription)), information: [
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.client)), value: 'Cuádrala / Playsmatch' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.pmPeriod)) },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.workType)), value: 'FullTime' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.role)), value: 'Full Stack Web Developer' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.technologies)), value: 'React / Nodejs / Typescript / Redux / React Router' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.companyWebsite)), value: React.createElement("a", { href: "https://www.cuadrala.com" }, "Cu\u00E1drala") }
 	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "PlaysmatchShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), elements: index_1.pmShowcase, emptyStateText: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseEmptyText)) }),
-	                React.createElement(project_1.ProjectComponent, { id: "systrix", image: "/assets/Systrix/sys-3.jpg", name: "Systrix", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.sysDescription)), information: [
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'Systrix' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.sysPeriod)) },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'FullTime' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "https://www.linkedin.com/company/systrix" }, "Systrix") }
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "PlaysmatchShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.showcaseTitle)), elements: index_1.pmShowcase, emptyStateText: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.showcaseEmptyText)) }),
+	                React.createElement(project_1.ProjectComponent, { id: "systrix", image: "/assets/Systrix/sys-3.jpg", name: "Systrix", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.sysDescription)), information: [
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.client)), value: 'Systrix' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.sysPeriod)) },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.workType)), value: 'FullTime' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.role)), value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.technologies)), value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.companyWebsite)), value: React.createElement("a", { href: "https://www.linkedin.com/company/systrix" }, "Systrix") }
 	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "SystrixShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), columnCount: "2", elements: index_1.sysShowcase }),
-	                React.createElement(project_1.ProjectComponent, { id: "GE", image: "/assets/GE/ge.jpeg", name: "Gente Excelente Venezuela", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.geDescription)), information: [
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'Gente Excelente Venezuela' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: '2016' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'Freelancer' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Web Developer / Wordpress Consultant' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'Wordpress / HTML / CSS / Javascript' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "http://gentexcelente.com" }, "gentexcelente.com") }
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "SystrixShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.showcaseTitle)), columnCount: "2", elements: index_1.sysShowcase }),
+	                React.createElement(project_1.ProjectComponent, { id: "GE", image: "/assets/GE/ge.jpeg", name: "Gente Excelente Venezuela", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.geDescription)), information: [
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.client)), value: 'Gente Excelente Venezuela' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.period)), value: '2016' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.workType)), value: 'Freelancer' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.role)), value: 'Web Developer / Wordpress Consultant' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.technologies)), value: 'Wordpress / HTML / CSS / Javascript' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.companyWebsite)), value: React.createElement("a", { href: "http://gentexcelente.com" }, "gentexcelente.com") }
 	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "GenteExcelenteVenezuelaShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), emptyStateText: "Soon", elements: index_1.geShowcase, columnCount: "2" }),
-	                React.createElement(project_1.ProjectComponent, { id: "ilc", image: "/assets/ilc/ilc-main.jpg", name: "ILC Academy", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.ilcDescription)), information: [
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.client)), value: 'ILC Academy' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.ilcPeriod)) },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.workType)), value: 'FullTime' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.role)), value: 'Web Developer / Wordpress Consultant / Project Leader' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.technologies)), value: 'Wordpress / jQuery / HTML / CSS' },
-	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.companyWebsite)), value: React.createElement("a", { href: "http://ilcacademy.com/" }, "ilcacademy.com") }
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "GenteExcelenteVenezuelaShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.showcaseTitle)), emptyStateText: "Soon", elements: index_1.geShowcase, columnCount: "2" }),
+	                React.createElement(project_1.ProjectComponent, { id: "ilc", image: "/assets/ilc/ilc-main.jpg", name: "ILC Academy", excerpt: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.ilcDescription)), information: [
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.client)), value: 'ILC Academy' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.period)), value: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.ilcPeriod)) },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.workType)), value: 'FullTime' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.role)), value: 'Web Developer / Wordpress Consultant / Project Leader' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.technologies)), value: 'Wordpress / jQuery / HTML / CSS' },
+	                        { key: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.companyWebsite)), value: React.createElement("a", { href: "http://ilcacademy.com/" }, "ilcacademy.com") }
 	                    ] }),
-	                React.createElement(showcase_1.ShowcaseComponent, { id: "ILCAcademyShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.showcaseTitle)), columnCount: "2", elements: index_1.ILCShowcase }),
+	                React.createElement(showcase_1.ShowcaseComponent, { id: "ILCAcademyShowcase", title: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.showcaseTitle)), columnCount: "2", elements: index_1.ILCShowcase }),
 	                React.createElement("hr", null),
-	                React.createElement(footer_1.FooterComponent, { contactMe: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.contactMe)), networks: index_1.networks, made: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.made)), inspiration: React.createElement(react_intl_1.FormattedMessage, __assign({}, messages_1.messages.inspiration)) }))));
+	                React.createElement(footer_1.FooterComponent, { contactMe: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.contactMe)), networks: index_1.networks, made: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.made)), inspiration: React.createElement(react_intl_1.FormattedMessage, __assign({}, currentMessages.inspiration)) }))));
 	    };
 	    return PortfolioContainer;
 	}(React.Component));
@@ -180,7 +181,7 @@
 	;
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = PortfolioContainer;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9ydGZvbGlvLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicG9ydGZvbGlvLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwRDtBQUUxRCxhQUFhO0FBQ2IsNEZBQWlHO0FBQ2pHLGdGQUE0RTtBQUM1RSxtRkFBd0Y7QUFDeEYsaUVBQXVFO0FBQ3ZFLDJEQUFpRTtBQUNqRSw4REFBb0U7QUFDcEUsbUZBQXdGO0FBQ3hGLDhEQUFvRTtBQUVwRSwyREFBaUU7QUFFakUsZ0JBQWdCO0FBQ2hCLDZDQUEwQztBQUUxQyw4Q0FBZ0c7QUFFaEcsU0FBUztBQUNULDRCQUEwQjtBQUl6QixDQUFDO0FBRUY7SUFBd0Msc0NBQThDO0lBS3BGLDRCQUFZLEtBQUs7UUFBakIsWUFDRSxrQkFBTSxLQUFLLENBQUMsU0FDYjtRQU5ELFdBQUssR0FBRztZQUNOLFFBQVEsRUFBRSxJQUFJO1NBQ2YsQ0FBQzs7SUFJRixDQUFDO0lBRUQsbUNBQU0sR0FBTjtRQUFBLGlCQTZKQztRQTVKQyxRQUFRO1FBQ0EsSUFBQSw4QkFBUSxDQUFnQjtRQUVoQyxNQUFNLENBQUMsQ0FDTCxvQkFBQyx5QkFBWSxJQUFDLE1BQU0sRUFBRSxRQUFRO1lBQzVCLGlDQUFTLFNBQVMsRUFBQyxvQkFBb0I7Z0JBQ3JDLG9CQUFDLDZDQUF5QixJQUN4QixTQUFTLEVBQUU7d0JBQ1QsSUFBSTt3QkFDSixJQUFJO3FCQUNMLEVBQ0QsYUFBYSxFQUFFLG9CQUFDLDZCQUFnQixlQUFLLG1CQUFRLENBQUMsUUFBUSxFQUFJLEVBQzFELFFBQVEsRUFBRSxRQUFRLEVBQ2xCLFFBQVEsRUFBRSxtQkFBUSxFQUNsQixRQUFRLEVBQUUsVUFBQyxLQUFLO3dCQUNkLElBQU0sZ0JBQWdCLEdBQUcsS0FBSyxDQUFDLE1BQU0sQ0FBQyxLQUFLLENBQUM7d0JBRTVDLE9BQU8sQ0FBQyxHQUFHLENBQUMsZ0JBQWdC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
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9ydGZvbGlvLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicG9ydGZvbGlvLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwRDtBQUUxRCxhQUFhO0FBQ2IsNEZBQWlHO0FBQ2pHLGdGQUE0RTtBQUM1RSxtRkFBd0Y7QUFDeEYsaUVBQXVFO0FBQ3ZFLDJEQUFpRTtBQUNqRSw4REFBb0U7QUFDcEUsbUZBQXdGO0FBQ3hGLDhEQUFvRTtBQUVwRSwyREFBaUU7QUFFakUsZ0JBQWdCO0FBQ2hCLElBQU0sUUFBUSxHQUFHLE9BQU8sQ0FBQyxvQ0FBb0MsQ0FBQyxDQUFDO0FBQy9ELElBQU0sVUFBVSxHQUFHLE9BQU8sQ0FBQyxvQ0FBb0MsQ0FBQyxDQUFDO0FBR2pFLDhDQUFnRztBQUVoRyxTQUFTO0FBQ1QsNEJBQTBCO0FBSXpCLENBQUM7QUFFRjtJQUF3QyxzQ0FBOEM7SUFLcEYsNEJBQVksS0FBSztRQUFqQixZQUNFLGtCQUFNLEtBQUssQ0FBQyxTQUNiO1FBTkQsV0FBSyxHQUFHO1lBQ04sUUFBUSxFQUFFLElBQUk7U0FDZixDQUFDOztJQUlGLENBQUM7SUFFRCxtQ0FBTSxHQUFOO1FBQUEsaUJBNkpDO1FBNUpDLFFBQVE7UUFDQSxJQUFBLDhCQUFRLENBQWdCO1FBRWhDLElBQU0sZUFBZSxHQUFHLFFBQVEsS0FBSyxJQUFJLEdBQUcsVUFBVSxHQUFHLFFBQVEsQ0FBQztRQUVsRSxNQUFNLENBQUMsQ0FDTCxvQkFBQyx5QkFBWSxJQUFDLFFBQVEsRUFBRSxlQUFlLEVBQUUsTUFBTSxFQUFFLFFBQVE7WUFDdkQsaUNBQVMsU0FBUyxFQUFDLG9CQUFvQjtnQkFDckMsb0JBQUMsNkNBQXlCLElBQ3hCLFNBQVMsRUFBRTt3QkFDVCxJQUFJO3dCQUNKLElBQUk7cUJBQ0wsRUFDRCxhQUFhLEVBQUUsb0JBQUMsNkJBQWdCLElBQUMsRUFBRSxFQUFDLGtC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
 
 /***/ },
 /* 4 */
@@ -5810,11 +5811,11 @@
 	    },
 	    workType: {
 	        id: 'general.workType',
-	        defaultMessage: 'Work Type'
+	        defaultMessage: 'Working Mode'
 	    },
 	    role: {
 	        id: 'general.role',
-	        defaultMessage: 'Role'
+	        defaultMessage: 'Rol'
 	    },
 	    technologies: {
 	        id: 'general.technologies',
@@ -5826,7 +5827,7 @@
 	    },
 	    showcaseTitle: {
 	        id: 'general.showcaseTitle',
-	        defaultMessage: 'Showcase'
+	        defaultMessage: 'Gallery'
 	    },
 	    showcaseEmptyText: {
 	        id: 'general.showcaseEmptyText',
@@ -5943,7 +5944,7 @@
 	        }
 	    },
 	});
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZXNzYWdlcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwQztBQUU3QixRQUFBLFFBQVEsR0FBRywyQkFBYyxDQUFDO0lBQ3JDLEVBQUUsRUFBRTtRQUNGLEVBQUUsRUFBRSxpQkFBaUI7UUFDckIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxFQUFFLEVBQUU7UUFDRixFQUFFLEVBQUUsaUJBQWlCO1FBQ3JCLGNBQWMsRUFBRSxTQUFTO0tBQzFCO0lBQ0QsWUFBWSxFQUFFO1FBQ1osRUFBRSxFQUFFLGVBQWU7UUFDbkIsY0FBYyxFQUFFLG9NQUNzRTtRQUN0RixNQUFNLEVBQUU7WUFDTixTQUFTLEVBQUUsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhO1lBQzlELElBQUksRUFBRSwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGNBQVk7WUFDeEQsU0FBUyxFQUFFLGlFQUFzQztTQUNsRDtLQUNGO0lBQ0QsV0FBVyxFQUFFO1FBQ1gsRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLFNBQVM7UUFDekIsTUFBTSxFQUFFO1lBQ04sSUFBSSxFQUFFOztnQkFDMkMsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhOztnQkFBd0QsK0NBQXVCOztnQkFBRSx5Q0FBaUI7O2dCQUM5TCx3Q0FBZ0I7O2dCQUFLLHdDQUFnQjs7Z0JBRU4sMkNBQW1COztnQkFBRSwwQ0FBa0I7O2dCQUFNLDJEQUFtQzs7Z0JBQ3ZDLGlFQUFzQzs7Z0JBQ3hHLDJCQUFHLElBQUksRUFBQyw4QkFBOEIsY0FBWTsrQ0FDbkQ7U0FDZDtLQUNGO0lBQ0QsTUFBTSxFQUFFO1FBQ04sRUFBRSxFQUFFLGdCQUFnQjtRQUNwQixjQUFjLEVBQUUsUUFBUTtLQUN6QjtJQUNELE1BQU0sRUFBRTtRQUNOLEVBQUUsRUFBRSxnQkFBZ0I7UUFDcEIs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
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZXNzYWdlcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwQztBQUU3QixRQUFBLFFBQVEsR0FBRywyQkFBYyxDQUFDO0lBQ3JDLEVBQUUsRUFBRTtRQUNGLEVBQUUsRUFBRSxpQkFBaUI7UUFDckIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxFQUFFLEVBQUU7UUFDRixFQUFFLEVBQUUsaUJBQWlCO1FBQ3JCLGNBQWMsRUFBRSxTQUFTO0tBQzFCO0lBQ0QsWUFBWSxFQUFFO1FBQ1osRUFBRSxFQUFFLGVBQWU7UUFDbkIsY0FBYyxFQUFFLG9NQUNzRTtRQUN0RixNQUFNLEVBQUU7WUFDTixTQUFTLEVBQUUsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhO1lBQzlELElBQUksRUFBRSwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGNBQVk7WUFDeEQsU0FBUyxFQUFFLGlFQUFzQztTQUNsRDtLQUNGO0lBQ0QsV0FBVyxFQUFFO1FBQ1gsRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLFNBQVM7UUFDekIsTUFBTSxFQUFFO1lBQ04sSUFBSSxFQUFFOztnQkFDMkMsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixlQUFhOztnQkFBd0QsK0NBQXVCOztnQkFBRSx5Q0FBaUI7O2dCQUM5TCx3Q0FBZ0I7O2dCQUFLLHdDQUFnQjs7Z0JBRU4sMkNBQW1COztnQkFBRSwwQ0FBa0I7O2dCQUFNLDJEQUFtQzs7Z0JBQ3ZDLGlFQUFzQzs7Z0JBQ3hHLDJCQUFHLElBQUksRUFBQyw4QkFBOEIsY0FBWTsrQ0FDbkQ7U0FDZDtLQUNGO0lBQ0QsTUFBTSxFQUFFO1FBQ04sRUFBRSxFQUFFLGdCQUFnQjtRQUNwQixjQUFjLEVBQUUsUUFBUTtLQUN6QjtJQUNELE1BQU0sRUFBRTtRQUNOLEVBQUUsRUFBRSxnQkFBZ0I7UUFDcEIs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
 
 /***/ },
 /* 50 */
@@ -6112,6 +6113,324 @@
 
 /***/ },
 /* 59 */
+/***/ function(module, exports) {
+
+	[
+	  {
+	    "id": "general.english",
+	    "defaultMessage": "English"
+	  },
+	  {
+	    "id": "general.spanish",
+	    "defaultMessage": "Spanish"
+	  },
+	  {
+	    "id": "excerpt.short",
+	    "defaultMessage": "Hi, I'm Software Developer, currently at {currently}, you can see the technologies and approaches that \n                I have worked in {attention} or visit {blog} to know some of my thoughts,"
+	  },
+	  {
+	    "id": "excerpt.long",
+	    "defaultMessage": "{long},"
+	  },
+	  {
+	    "id": "general.client",
+	    "defaultMessage": "Client"
+	  },
+	  {
+	    "id": "general.period",
+	    "defaultMessage": "Period"
+	  },
+	  {
+	    "id": "general.workType",
+	    "defaultMessage": "Work Type"
+	  },
+	  {
+	    "id": "general.role",
+	    "defaultMessage": "Role"
+	  },
+	  {
+	    "id": "general.technologies",
+	    "defaultMessage": "Technologies used"
+	  },
+	  {
+	    "id": "general.companyWebsite",
+	    "defaultMessage": "Company Website"
+	  },
+	  {
+	    "id": "general.showcaseTitle",
+	    "defaultMessage": "Gallery"
+	  },
+	  {
+	    "id": "general.showcaseEmptyText",
+	    "defaultMessage": "Soon (Work in progress ;-D)"
+	  },
+	  {
+	    "id": "general.myWorkTitle",
+	    "defaultMessage": "My Work"
+	  },
+	  {
+	    "id": "pm.title",
+	    "defaultMessage": "Playsmatch"
+	  },
+	  {
+	    "id": "pm.description",
+	    "defaultMessage": "Playsmatch is a reservation and payment management system for sports complexes, which seeks to eliminate all the flaws and difficulties that have a moment of renting a court for both users and administrators."
+	  },
+	  {
+	    "id": "pm.period",
+	    "defaultMessage": "June 2016 - Currently"
+	  },
+	  {
+	    "id": "sys.description",
+	    "defaultMessage": "Web development, media agency and call center outsourcing."
+	  },
+	  {
+	    "id": "sys.period",
+	    "defaultMessage": "January 2016 - May 2016"
+	  },
+	  {
+	    "id": "sys.sysShowcase-1",
+	    "defaultMessage": "Angular Survey Prototype"
+	  },
+	  {
+	    "id": "sys.sysShowcase-3",
+	    "defaultMessage": "Braintree Subscriptions + Elixir/Phoenix"
+	  },
+	  {
+	    "id": "sys.sysShowcase-6",
+	    "defaultMessage": "Working demo of Survey in IE11"
+	  },
+	  {
+	    "id": "ge.description",
+	    "defaultMessage": "We are Gente Excelente Venezuela. Our mission is the success of People. Our motto Saving in readiness is to invest in ignorance. Life Coaching."
+	  },
+	  {
+	    "id": "ge.geShowcase-1",
+	    "defaultMessage": "Gente Excelente Venezuela Website"
+	  },
+	  {
+	    "id": "ilc.description",
+	    "defaultMessage": "ILC Academy, a platform for expanding awareness, knowledge and skills to enhance your attributes like LifeCoach."
+	  },
+	  {
+	    "id": "ilc.period",
+	    "defaultMessage": "January 2013 - January 2015"
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-1",
+	    "defaultMessage": "Wordpress plugin video inside the web: This Wordpress plugin allows the user to play the links of youtube and vimeo directly inside the web with the help of the fancybox library."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-2",
+	    "defaultMessage": "Application Wheel of Life: It is a tool used in the world of coaching but taken to web application, with it you can create wheel life charts, save wheels, associate a customer with a wheel and generate a report in a PDF document."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-3",
+	    "defaultMessage": "Small design of a contact page, with the button to call via skype."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-4",
+	    "defaultMessage": "Modification to budypress directory (Wordpress plugin): Basically the directory was modified to show specific roles of wordpress, depending on those roles apply CSS styles (the medallion on the right) in addition to adding these new roles to the filters to refine the users search ."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-5",
+	    "defaultMessage": "Subscriptions buttons with constant contact integration."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-7",
+	    "defaultMessage": "."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-8",
+	    "defaultMessage": "Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js"
+	  },
+	  {
+	    "id": "general.contactMe",
+	    "defaultMessage": "Contact me"
+	  },
+	  {
+	    "id": "general.language",
+	    "defaultMessage": "Language"
+	  },
+	  {
+	    "id": "general.more",
+	    "defaultMessage": "more"
+	  },
+	  {
+	    "id": "general.less",
+	    "defaultMessage": "less"
+	  },
+	  {
+	    "id": "general.made",
+	    "defaultMessage": "Made with {love} and React.js"
+	  },
+	  {
+	    "id": "general.inspiration",
+	    "defaultMessage": "The styles are inspired by {link}"
+	  }
+	]
+
+/***/ },
+/* 60 */
+/***/ function(module, exports) {
+
+	[
+	  {
+	    "id": "general.english",
+	    "defaultMessage": "Español"
+	  },
+	  {
+	    "id": "general.spanish",
+	    "defaultMessage": "Ingles"
+	  },
+	  {
+	    "id": "excerpt.short",
+	    "defaultMessage": "Hola, soy un Desarrollador de Software, actualmente en {currently}, puedes ver las tecnologías y paradigmas con los que he trabajado en {attention} o visitar {blog} para conocer más de lo que pienso,"
+	  },
+	  {
+	    "id": "excerpt.long",
+	    "defaultMessage": "{long},"
+	  },
+	  {
+	    "id": "general.client",
+	    "defaultMessage": "Cliente"
+	  },
+	  {
+	    "id": "general.period",
+	    "defaultMessage": "Periodo"
+	  },
+	  {
+	    "id": "general.workType",
+	    "defaultMessage": "Modalidad de Trabajo"
+	  },
+	  {
+	    "id": "general.role",
+	    "defaultMessage": "Rol"
+	  },
+	  {
+	    "id": "general.technologies",
+	    "defaultMessage": "Tecnologías usadas"
+	  },
+	  {
+	    "id": "general.companyWebsite",
+	    "defaultMessage": "Sitio web de la compañía"
+	  },
+	  {
+	    "id": "general.showcaseTitle",
+	    "defaultMessage": "Galería"
+	  },
+	  {
+	    "id": "general.showcaseEmptyText",
+	    "defaultMessage": "Pronto (Trabajo en progreso ;-D)"
+	  },
+	  {
+	    "id": "general.myWorkTitle",
+	    "defaultMessage": "Mi Trabajo"
+	  },
+	  {
+	    "id": "pm.title",
+	    "defaultMessage": "Cuádrala"
+	  },
+	  {
+	    "id": "pm.description",
+	    "defaultMessage": "Cuádrala es un sistema de gestión de reservaciones y pagos para complejos deportivos, que busca eliminar todas las fallas y dificultades que se tienen al momento de alquilar una cancha, tanto para los usuarios como para los administradores."
+	  },
+	  {
+	    "id": "pm.period",
+	    "defaultMessage": "Junio 2016 - Actualmente"
+	  },
+	  {
+	    "id": "sys.description",
+	    "defaultMessage": "Desarrollo web, agencia de medios y outsourcing de call center."
+	  },
+	  {
+	    "id": "sys.period",
+	    "defaultMessage": "Enero 2016 - Mayo 2016"
+	  },
+	  {
+	    "id": "sys.sysShowcase-1",
+	    "defaultMessage": "Prototipo de encuesta en Angular"
+	  },
+	  {
+	    "id": "sys.sysShowcase-3",
+	    "defaultMessage": "Subscripciones con Braintree + Elixir/Phoenix"
+	  },
+	  {
+	    "id": "sys.sysShowcase-6",
+	    "defaultMessage": "rabajando en el demo de la encuesta para Internet Explorer 11"
+	  },
+	  {
+	    "id": "ge.description",
+	    "defaultMessage": "Somos Gente Excelente Venezuela. Nuestra misión es el éxito de la gente. Nuestro lema el ahorro en la preparación es invertir en la ignorancia. Coaching de vida."
+	  },
+	  {
+	    "id": "ge.geShowcase-1",
+	    "defaultMessage": "Sitio Web de Gente Excelente Venezuela"
+	  },
+	  {
+	    "id": "ilc.description",
+	    "defaultMessage": "ILC Academy, una plataforma para expandir la conciencia, el conocimiento y las habilidades para mejorar tus atributos como LifeCoach."
+	  },
+	  {
+	    "id": "ilc.period",
+	    "defaultMessage": "Enero 2013 - Enero 2015"
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-1",
+	    "defaultMessage": "Wordpress plugin de vídeo dentro de la web: Este plugin de Wordpress permite al usuario reproducir los enlaces de youtube y vimeo directamente dentro de la web con la ayuda de la biblioteca fancybox."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-2",
+	    "defaultMessage": "Aplicación Rueda de la Vida: Es una herramienta utilizada en el mundo del coaching pero llevada a la aplicación web, con ella se pueden crear gráficos de rueda de la vida, guardar ruedas, asociar un cliente con una rueda y generar un informe en un documento PDF."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-3",
+	    "defaultMessage": "Pequeño diseño de una página de contacto, con un botón para llamar a través de skype."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-4",
+	    "defaultMessage": "Modificación al directorio budypress (Wordpress plugin): Básicamente el directorio fue modificado para mostrar roles específicos de wordpress, dependiendo de esos roles se aplican estilos CSS (el medallón a la derecha) además de agregar estas nuevas funciones a los filtros para refinar la búsqueda de usuarios."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-5",
+	    "defaultMessage": "Botones de suscripción con integración a constant contact."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-7",
+	    "defaultMessage": "."
+	  },
+	  {
+	    "id": "ilc.ilcShowcase-8",
+	    "defaultMessage": "Diseño de un landing page parallax, en este proyecto realicé el diseño y la maquetación del mismo, así como aplicar el efecto de parallax con la biblioteca skroll.js"
+	  },
+	  {
+	    "id": "general.contactMe",
+	    "defaultMessage": "Contáctame"
+	  },
+	  {
+	    "id": "general.language",
+	    "defaultMessage": "Idioma"
+	  },
+	  {
+	    "id": "general.more",
+	    "defaultMessage": "más"
+	  },
+	  {
+	    "id": "general.less",
+	    "defaultMessage": "menos"
+	  },
+	  {
+	    "id": "general.made",
+	    "defaultMessage": "Creado con amor {love} y React.js"
+	  },
+	  {
+	    "id": "general.inspiration",
+	    "defaultMessage": "Los estilos están inspirados por {link}"
+	  }
+	]
+
+/***/ },
+/* 61 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

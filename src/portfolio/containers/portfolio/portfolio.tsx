@@ -17,7 +17,28 @@ import {SocialComponent} from './../../components/social/social';
 import {FooterComponent} from './../../components/footer/footer';
 
 // Intl Messages
-import {messages} from './../../messages';
+const messages = require('./../../../../translations/en.json');
+const esMessages = require('./../../../../translations/es.json');
+
+
+const longEn = <span>
+               Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuadrala</a>,tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
+              <code>CSS</code> and <code>PHP</code>, he trabajado tanto en el backend como en el frontend pero tiendo a pasar más tiempo trabajando en este ultimo.
+
+              Recientemente he estado inmerso en  <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
+              puedes ver las tecnologías y paradigmas con los que he trabajado en <b>mi sección de proyecto (justo debajo)</b> o
+              visitar <a href="http://davidjsmoreno.com.ve/">mi blog</a> para conocer más de lo que pienso
+            </span>;
+
+const longEs = <span>
+               Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuadrala</a>,tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
+              <code>CSS</code> and <code>PHP</code>, he trabajado tanto en el backend como en el frontend pero tiendo a pasar más tiempo trabajando en este ultimo.
+
+              Recientemente he estado inmerso en  <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
+              puedes ver las tecnologías y paradigmas con los que he trabajado en <b>mi sección de proyecto (justo debajo)</b> o
+              visitar <a href="http://davidjsmoreno.com.ve/">mi blog</a> para conocer más de lo que pienso
+            </span>;
+
 
 import {pmShowcase, sysShowcase, geShowcase, ILCShowcase, networks} from './../../config/index';
 
@@ -41,21 +62,20 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
     // State
     const { language } = this.state;
 
+    const currentMessages = language === 'es' ? esMessages : messages;
+
     return (
-      <IntlProvider locale={language}>
+      <IntlProvider messages={currentMessages} locale={'en'}>
         <section className="PortfolioComponent">
           <LanguageSelectorComponent 
             languages={[
               'en' ,
               'es',
             ]}
-            languageLabel={<FormattedMessage {...messages.language} />}
+            languageLabel={<FormattedMessage id="general.language" />}
             selected={language}
-            messages={messages}
             onChange={(event) => {
               const languageSelected = event.target.value;
-
-              console.log(languageSelected);
 
               this.setState({
                 ...this.state,
@@ -74,42 +94,54 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
           <ExcerptComponent
             short={
               <span>
-                <FormattedMessage {...messages.excerptShort} />
+                <FormattedMessage 
+                  id="excerpt.short" 
+                  values={{
+                    currently: <a href="https://www.cuadrala.com/es/">Cuadrala</a>,
+                    blog: <a href="http://davidjsmoreno.com.ve/">my blog</a>,
+                    attention: <b>my projects section right below</b>
+                  }}
+                />
               </span>
             }
             long={
-              <FormattedMessage {...messages.excerptLong} />
+              <FormattedMessage 
+                id="excerpt.long"
+                values={{
+                  long: language === 'es' ? longEs : longEn
+                }}
+              />
             }
-            moreLabel={<FormattedMessage {...messages.more} />}
-            lessLabel={<FormattedMessage {...messages.less} />}
+            moreLabel={<FormattedMessage id="general.more" />}
+            lessLabel={<FormattedMessage id="general.less" />}
           />
           
           {/** /Portfolio excerpt */}
           
           <hr />
 
-          <SectionHeaderComponent title={<FormattedMessage {...messages.myWork} />} />
+          <SectionHeaderComponent title={<FormattedMessage id="general.myWorkTitle" />} />
           {/** /Project filters */}
 
           <ProjectComponent 
             id="playsmatch" 
             image="/assets/pm-showcase-1.png" 
             name="Cuádrala / Playsmatch"
-            excerpt={<FormattedMessage {...messages.pmDescription} />}
+            excerpt={<FormattedMessage id="pm.description" />}
             information={[
-              { key: <FormattedMessage {...messages.client} />, value: 'Cuádrala / Playsmatch' },
-              { key: <FormattedMessage {...messages.period} />, value: <FormattedMessage {...messages.pmPeriod} /> },
-              { key: <FormattedMessage {...messages.workType} />, value: 'FullTime' },
-              { key: <FormattedMessage {...messages.role} />, value: 'Full Stack Web Developer' },
-              { key: <FormattedMessage {...messages.technologies} />, value: 'React / Nodejs' },
-              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="https://www.cuadrala.com">Cuádrala</a> }
+              { key: <FormattedMessage id="general.client" />, value: 'Cuádrala / Playsmatch' },
+              { key: <FormattedMessage id="general.period" />, value: <FormattedMessage id="pm.period" />},
+              { key: <FormattedMessage id="general.workType" />, value: 'FullTime' },
+              { key: <FormattedMessage id="general.role" />, value: 'Full Stack Web Developer' },
+              { key: <FormattedMessage id="general.technologies" />, value: 'React / Nodejs / Typescript / Redux / React Router' },
+              { key: <FormattedMessage id="general.companyWebsite" />, value: <a href="https://www.cuadrala.com">Cuádrala</a> }
             ]}
           />
 
           <ShowcaseComponent id="PlaysmatchShowcase" 
-            title={<FormattedMessage {...messages.showcaseTitle} />} 
+            title={<FormattedMessage id="general.showcaseTitle" />} 
             elements={pmShowcase} 
-            emptyStateText={<FormattedMessage {...messages.showcaseEmptyText} />} 
+            emptyStateText={<FormattedMessage id="general.showcaseEmptyText" />} 
           />
           {/** /Playsmatch Project and showcase */}
           
@@ -117,20 +149,20 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             id="systrix" 
             image="/assets/Systrix/sys-3.jpg" 
             name="Systrix"
-            excerpt={<FormattedMessage {...messages.sysDescription} />}
+            excerpt={<FormattedMessage id="sys.description" />}
             information={[
-              { key: <FormattedMessage {...messages.client} />, value: 'Systrix' },
-              { key: <FormattedMessage {...messages.period} />, value: <FormattedMessage {...messages.sysPeriod} /> },
-              { key: <FormattedMessage {...messages.workType} />, value: 'FullTime' },
-              { key: <FormattedMessage {...messages.role} />, value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
-              { key: <FormattedMessage {...messages.technologies} />, value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
-              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="https://www.linkedin.com/company/systrix">Systrix</a> }
+              { key: <FormattedMessage id="general.client" />, value: 'Systrix' },
+              { key: <FormattedMessage id="general.period" />, value: <FormattedMessage id="sys.period" />},
+              { key: <FormattedMessage id="general.workType" />, value: 'FullTime' },
+              { key: <FormattedMessage id="general.role" />, value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
+              { key: <FormattedMessage id="general.technologies" />, value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
+              { key: <FormattedMessage id="general.companyWebsite" />, value: <a href="https://www.linkedin.com/company/systrix">Systrix</a> }
             ]}
           />
 
           <ShowcaseComponent 
             id="SystrixShowcase" 
-            title={<FormattedMessage {...messages.showcaseTitle} />}
+            title={<FormattedMessage id="general.showcaseTitle" />}
             columnCount="2" 
             elements={sysShowcase} 
           />
@@ -140,20 +172,20 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             id="GE" 
             image="/assets/GE/ge.jpeg" 
             name="Gente Excelente Venezuela"
-            excerpt={<FormattedMessage {...messages.geDescription} />}
+            excerpt={<FormattedMessage id="ge.description" />}
             information={[
-              { key: <FormattedMessage {...messages.client} />, value: 'Gente Excelente Venezuela' },
-              { key: <FormattedMessage {...messages.period} />, value: '2016' },
-              { key: <FormattedMessage {...messages.workType} />, value: 'Freelancer' },
-              { key: <FormattedMessage {...messages.role} />, value: 'Web Developer / Wordpress Consultant' },
-              { key: <FormattedMessage {...messages.technologies} />, value: 'Wordpress / HTML / CSS / Javascript' },
-              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="http://gentexcelente.com">gentexcelente.com</a> }
+              { key: <FormattedMessage id="general.client" />, value: 'Gente Excelente Venezuela' },
+              { key: <FormattedMessage id="general.period" />, value: '2016' },
+              { key: <FormattedMessage id="general.workType" />, value: 'Freelancer' },
+              { key: <FormattedMessage id="general.role" />, value: 'Web Developer / Wordpress Consultant' },
+              { key: <FormattedMessage id="general.technologies" />, value: 'Wordpress / HTML / CSS / Javascript' },
+              { key: <FormattedMessage id="general.companyWebsite" />, value: <a href="http://gentexcelente.com">gentexcelente.com</a> }
             ]}
           />
 
           <ShowcaseComponent 
             id="GenteExcelenteVenezuelaShowcase" 
-            title={<FormattedMessage {...messages.showcaseTitle} />} 
+            title={<FormattedMessage id="general.showcaseTitle" />} 
             emptyStateText="Soon" 
             elements={geShowcase}
             columnCount="2" 
@@ -164,20 +196,20 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             id="ilc" 
             image="/assets/ilc/ilc-main.jpg" 
             name="ILC Academy"
-            excerpt={<FormattedMessage {...messages.ilcDescription} />}
+            excerpt={<FormattedMessage id="ilc.description" />}
             information={[
-              { key: <FormattedMessage {...messages.client} />, value: 'ILC Academy' },
-              { key: <FormattedMessage {...messages.period} />, value: <FormattedMessage {...messages.ilcPeriod} /> },
-              { key: <FormattedMessage {...messages.workType} />, value: 'FullTime' },
-              { key: <FormattedMessage {...messages.role} />, value: 'Web Developer / Wordpress Consultant / Project Leader' },
-              { key: <FormattedMessage {...messages.technologies} />, value: 'Wordpress / jQuery / HTML / CSS' },
-              { key: <FormattedMessage {...messages.companyWebsite} />, value: <a href="http://ilcacademy.com/">ilcacademy.com</a> }
+              { key: <FormattedMessage id="general.client" />, value: 'ILC Academy' },
+              { key: <FormattedMessage id="general.period" />, value: <FormattedMessage id="ilc.period" />},
+              { key: <FormattedMessage id="general.workType" />, value: 'FullTime' },
+              { key: <FormattedMessage id="general.role" />, value: 'Web Developer / Wordpress Consultant / Project Leader' },
+              { key: <FormattedMessage id="general.technologies" />, value: 'Wordpress / jQuery / HTML / CSS' },
+              { key: <FormattedMessage id="general.companyWebsite" />, value: <a href="http://ilcacademy.com/">ilcacademy.com</a> }
             ]}
           />
 
           <ShowcaseComponent 
             id="ILCAcademyShowcase" 
-            title={<FormattedMessage {...messages.showcaseTitle} />} 
+            title={<FormattedMessage id="general.showcaseTitle" />} 
             columnCount="2" 
             elements={ILCShowcase} 
           />
@@ -185,10 +217,10 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
           <hr />
           <FooterComponent 
-            contactMe={<FormattedMessage {...messages.contactMe} />}
+            contactMe={<FormattedMessage id="general.contactMe" />}
             networks={networks}
-            made={<FormattedMessage {...messages.made} />}
-            inspiration={<FormattedMessage {...messages.inspiration} />}
+            made={<FormattedMessage id="general.made" values={{ love: <i className="fa fa-heart" title="Love" /> }} />}
+            inspiration={<FormattedMessage id="general.inspiration" values={{ link: <a href="http://www.hamvocke.com/">hamvocke</a> }} />}
           />
 
         </section>
