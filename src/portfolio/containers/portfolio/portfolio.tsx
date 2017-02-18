@@ -22,16 +22,16 @@ const esMessages = require('./../../../../translations/es.json');
 
 
 const longEn = <span>
-               Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuadrala</a>,tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
-              <code>CSS</code> and <code>PHP</code>, he trabajado tanto en el backend como en el frontend pero tiendo a pasar más tiempo trabajando en este ultimo.
+              Hi, I'm Software Developer, currently at <a href="https://www.cuadrala.com/es/">Cuadrala</a>, I have experience with several web technologies like  <code>Javascript</code>, <code>HTML</code>, 
+              <code>CSS</code> and <code>PHP</code>, I have worked on both backend and frontend but spent more of the time working with the last one.
 
-              Recientemente he estado inmerso en  <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
-              puedes ver las tecnologías y paradigmas con los que he trabajado en <b>mi sección de proyecto (justo debajo)</b> o
-              visitar <a href="http://davidjsmoreno.com.ve/">mi blog</a> para conocer más de lo que pienso
-            </span>;
+              Recently I has been immerse in <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
+              you can see the other technologies and approaches that I have worked in <b>my projects section right below</b> or
+              visit <a href="http://davidjsmoreno.com.ve/">my blog</a> to know some of my thoughts
+            </span> ;
 
 const longEs = <span>
-               Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuadrala</a>,tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
+              Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuadrala</a>,tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
               <code>CSS</code> and <code>PHP</code>, he trabajado tanto en el backend como en el frontend pero tiendo a pasar más tiempo trabajando en este ultimo.
 
               Recientemente he estado inmerso en  <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
@@ -64,6 +64,8 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
     const currentMessages = language === 'es' ? esMessages : messages;
 
+    const longExcerpt = language === 'es' ? longEs : longEn;
+
     return (
       <IntlProvider messages={currentMessages} locale={'en'}>
         <section className="PortfolioComponent">
@@ -95,12 +97,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             short={
               <span>
                 <FormattedMessage 
-                  id="excerpt.short" 
-                  values={{
-                    currently: <a href="https://www.cuadrala.com/es/">Cuadrala</a>,
-                    blog: <a href="http://davidjsmoreno.com.ve/">my blog</a>,
-                    attention: <b>my projects section right below</b>
-                  }}
+                  id="excerpt.short"
                 />
               </span>
             }
@@ -108,7 +105,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
               <FormattedMessage 
                 id="excerpt.long"
                 values={{
-                  long: language === 'es' ? longEs : longEn
+                  long: longExcerpt
                 }}
               />
             }

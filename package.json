@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/http-server/bin/http-server dist/",
-    "build": "node_modules/webpack/bin/webpack.js; npm run autoprefixer",
-    "build:production": "node_modules/webpack/bin/webpack.js -p, npm run autoprefixer",
+    "build": "node_modules/webpack/bin/webpack.js --progress; npm run autoprefixer",
+    "build:production": "node_modules/webpack/bin/webpack.js --progress -p, npm run autoprefixer",
     "watch:dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base /dist",
     "autoprefixer": "node_modules/postcss-cli/bin/postcss --use autoprefixer -o dist/styles.css dist/*.css",
     "storybook": "start-storybook -s ./src/assets -p 6006",

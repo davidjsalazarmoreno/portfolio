@@ -90,10 +90,10 @@
 	// React intl
 	var react_intl_1 = __webpack_require__(4);
 	// Components
-	var language_selector_1 = __webpack_require__(28);
-	var github_ribbon_1 = __webpack_require__(31);
-	var flat_separator_1 = __webpack_require__(33);
-	var showcase_1 = __webpack_require__(35);
+	var language_selector_1 = __webpack_require__(27);
+	var github_ribbon_1 = __webpack_require__(30);
+	var flat_separator_1 = __webpack_require__(32);
+	var showcase_1 = __webpack_require__(34);
 	var header_1 = __webpack_require__(45);
 	var excerpt_1 = __webpack_require__(51);
 	var section_header_1 = __webpack_require__(53);
@@ -164,6 +164,7 @@
 	        // State
 	        var language = this.state.language;
 	        var currentMessages = language === 'es' ? esMessages : messages;
+	        var longExcerpt = language === 'es' ? longEs : longEn;
 	        return (React.createElement(react_intl_1.IntlProvider, { messages: currentMessages, locale: 'en' },
 	            React.createElement("section", { className: "PortfolioComponent" },
 	                React.createElement(language_selector_1.LanguageSelectorComponent, { languages: [
@@ -177,12 +178,8 @@
 	                React.createElement(header_1.HeaderComponent, { avatarUrl: "/assets/avatar.jpg" }),
 	                React.createElement(flat_separator_1.FlatSeparatorComponent, { margin: "16px auto", width: "20%" }),
 	                React.createElement(excerpt_1.ExcerptComponent, { short: React.createElement("span", null,
-	                        React.createElement(react_intl_1.FormattedMessage, { id: "excerpt.short", values: {
-	                                currently: React.createElement("a", { href: "https://www.cuadrala.com/es/" }, "Cuadrala"),
-	                                blog: React.createElement("a", { href: "http://davidjsmoreno.com.ve/" }, "my blog"),
-	                                attention: React.createElement("b", null, "my projects section right below")
-	                            } })), long: React.createElement(react_intl_1.FormattedMessage, { id: "excerpt.long", values: {
-	                            long: language === 'es' ? longEs : longEn
+	                        React.createElement(react_intl_1.FormattedMessage, { id: "excerpt.short" })), long: React.createElement(react_intl_1.FormattedMessage, { id: "excerpt.long", values: {
+	                            long: longExcerpt
 	                        } }), moreLabel: React.createElement(react_intl_1.FormattedMessage, { id: "general.more" }), lessLabel: React.createElement(react_intl_1.FormattedMessage, { id: "general.less" }) }),
 	                React.createElement("hr", null),
 	                React.createElement(section_header_1.SectionHeaderComponent, { title: React.createElement(react_intl_1.FormattedMessage, { id: "general.myWorkTitle" }) }),
@@ -231,13 +228,13 @@
 	;
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = PortfolioContainer;
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9ydGZvbGlvLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicG9ydGZvbGlvLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwRDtBQUUxRCxhQUFhO0FBQ2IsNEZBQWlHO0FBQ2pHLGdGQUE0RTtBQUM1RSxtRkFBd0Y7QUFDeEYsaUVBQXVFO0FBQ3ZFLDJEQUFpRTtBQUNqRSw4REFBb0U7QUFDcEUsbUZBQXdGO0FBQ3hGLDhEQUFvRTtBQUVwRSwyREFBaUU7QUFFakUsZ0JBQWdCO0FBQ2hCLElBQU0sUUFBUSxHQUFHLE9BQU8sQ0FBQyxvQ0FBb0MsQ0FBQyxDQUFDO0FBQy9ELElBQU0sVUFBVSxHQUFHLE9BQU8sQ0FBQyxvQ0FBb0MsQ0FBQyxDQUFDO0FBR2pFLElBQU0sTUFBTSxHQUFHOztJQUN1RCwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGVBQWE7O0lBQW1ELCtDQUF1Qjs7SUFBRSx5Q0FBaUI7O0lBQ3hNLHdDQUFnQjs7SUFBSyx3Q0FBZ0I7O0lBRUQsMkNBQW1COztJQUFFLDBDQUFrQjs7SUFBTSwyREFBbUM7O0lBQ2hELDRFQUE0Qzs7SUFDeEcsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixjQUFZOzhDQUNyRCxDQUFDO0FBRXBCLElBQU0sTUFBTSxHQUFHOztJQUN1RCwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGVBQWE7O0lBQW1ELCtDQUF1Qjs7SUFBRSx5Q0FBaUI7O0lBQ3hNLHdDQUFnQjs7SUFBSyx3Q0FBZ0I7O0lBRUQsMkNBQW1COztJQUFFLDBDQUFrQjs7SUFBTSwyREFBbUM7O0lBQ2hELDRFQUE0Qzs7SUFDeEcsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixjQUFZOzhDQUNyRCxDQUFDO0FBR3BCLDhDQUFnRztBQUVoRyxTQUFTO0FBQ1QsNEJBQTBCO0FBSXpCLENBQUM7QUFFRjtJQUF3QyxzQ0FBOEM7SUFLcEYsNEJBQVksS0FBSztR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
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9ydGZvbGlvLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicG9ydGZvbGlvLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwRDtBQUUxRCxhQUFhO0FBQ2IsNEZBQWlHO0FBQ2pHLGdGQUE0RTtBQUM1RSxtRkFBd0Y7QUFDeEYsaUVBQXVFO0FBQ3ZFLDJEQUFpRTtBQUNqRSw4REFBb0U7QUFDcEUsbUZBQXdGO0FBQ3hGLDhEQUFvRTtBQUVwRSwyREFBaUU7QUFFakUsZ0JBQWdCO0FBQ2hCLElBQU0sUUFBUSxHQUFHLE9BQU8sQ0FBQyxvQ0FBb0MsQ0FBQyxDQUFDO0FBQy9ELElBQU0sVUFBVSxHQUFHLE9BQU8sQ0FBQyxvQ0FBb0MsQ0FBQyxDQUFDO0FBR2pFLElBQU0sTUFBTSxHQUFHOztJQUN1RCwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGVBQWE7O0lBQW1ELCtDQUF1Qjs7SUFBRSx5Q0FBaUI7O0lBQ3hNLHdDQUFnQjs7SUFBSyx3Q0FBZ0I7O0lBRUQsMkNBQW1COztJQUFFLDBDQUFrQjs7SUFBTSwyREFBbUM7O0lBQ2hELDRFQUE0Qzs7SUFDeEcsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixjQUFZOzhDQUNyRCxDQUFDO0FBRXBCLElBQU0sTUFBTSxHQUFHOztJQUN1RCwyQkFBRyxJQUFJLEVBQUMsOEJBQThCLGVBQWE7O0lBQW1ELCtDQUF1Qjs7SUFBRSx5Q0FBaUI7O0lBQ3hNLHdDQUFnQjs7SUFBSyx3Q0FBZ0I7O0lBRUQsMkNBQW1COztJQUFFLDBDQUFrQjs7SUFBTSwyREFBbUM7O0lBQ2hELDRFQUE0Qzs7SUFDeEcsMkJBQUcsSUFBSSxFQUFDLDhCQUE4QixjQUFZOzhDQUNyRCxDQUFDO0FBR3BCLDhDQUFnRztBQUVoRyxTQUFTO0FBQ1QsNEJBQTBCO0FBSXpCLENBQUM7QUFFRjtJQUF3QyxzQ0FBOEM7SUFLcEYsNEJBQVksS0FBSztR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
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/*
+	/*
 	 * Copyright 2017, Yahoo Inc.
 	 * Copyrights licensed under the New BSD License.
 	 * See the accompanying LICENSE file for terms.
@@ -249,13 +246,13 @@
 	
 	function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 	
-	var allLocaleData = _interopDefault(__webpack_require__(6));
-	var IntlMessageFormat = _interopDefault(__webpack_require__(7));
-	var IntlRelativeFormat = _interopDefault(__webpack_require__(17));
+	var allLocaleData = _interopDefault(__webpack_require__(5));
+	var IntlMessageFormat = _interopDefault(__webpack_require__(6));
+	var IntlRelativeFormat = _interopDefault(__webpack_require__(16));
 	var React = __webpack_require__(1);
 	var React__default = _interopDefault(React);
-	var invariant = _interopDefault(__webpack_require__(24));
-	var memoizeIntlConstructor = _interopDefault(__webpack_require__(25));
+	var invariant = _interopDefault(__webpack_require__(23));
+	var memoizeIntlConstructor = _interopDefault(__webpack_require__(24));
 	
 	// GENERATED FILE
 	var defaultLocaleData = { "locale": "en", "pluralRuleFunction": function pluralRuleFunction(n, ord) {
@@ -772,7 +769,7 @@
 	        return format;
 	    }
 	
-	    if (process.env.NODE_ENV !== 'production') {
+	    if (true) {
 	        console.error('[React Intl] No ' + type + ' format named: ' + name);
 	    }
 	}
@@ -791,7 +788,7 @@
 	    try {
 	        return state.getDateTimeFormat(locale, filteredOptions).format(date);
 	    } catch (e) {
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (true) {
 	            console.error('[React Intl] Error formatting date.\n' + e);
 	        }
 	    }
@@ -818,7 +815,7 @@
 	    try {
 	        return state.getDateTimeFormat(locale, filteredOptions).format(date);
 	    } catch (e) {
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (true) {
 	            console.error('[React Intl] Error formatting time.\n' + e);
 	        }
 	    }
@@ -848,7 +845,7 @@
 	            now: isFinite(now) ? now : state.now()
 	        });
 	    } catch (e) {
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (true) {
 	            console.error('[React Intl] Error formatting relative time.\n' + e);
 	        }
 	    } finally {
@@ -871,7 +868,7 @@
 	    try {
 	        return state.getNumberFormat(locale, filteredOptions).format(value);
 	    } catch (e) {
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (true) {
 	            console.error('[React Intl] Error formatting number.\n' + e);
 	        }
 	    }
@@ -889,7 +886,7 @@
 	    try {
 	        return state.getPluralFormat(locale, filteredOptions).format(value);
 	    } catch (e) {
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (true) {
 	            console.error('[React Intl] Error formatting plural.\n' + e);
 	        }
 	    }
@@ -917,7 +914,7 @@
 	
 	    // Avoid expensive message formatting for simple messages without values. In
 	    // development messages will always be formatted in case of missing values.
-	    if (!hasValues && process.env.NODE_ENV === 'production') {
+	    if (!hasValues && ("development") === 'production') {
 	        return message || defaultMessage || id;
 	    }
 	
@@ -929,12 +926,12 @@
 	
 	            formattedMessage = formatter.format(values);
 	        } catch (e) {
-	            if (process.env.NODE_ENV !== 'production') {
+	            if (true) {
 	                console.error('[React Intl] Error formatting message: "' + id + '" for locale: "' + locale + '"' + (defaultMessage ? ', using default message as fallback.' : '') + ('\n' + e));
 	            }
 	        }
 	    } else {
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (true) {
 	            // This prevents warnings from littering the console in development
 	            // when no `messages` are passed into the <IntlProvider> for the
 	            // default locale, and a default message is in the source.
@@ -951,14 +948,14 @@
 	
 	            formattedMessage = _formatter.format(values);
 	        } catch (e) {
-	            if (process.env.NODE_ENV !== 'production') {
+	            if (true) {
 	                console.error('[React Intl] Error formatting the default message for: "' + id + '"' + ('\n' + e));
 	            }
 	        }
 	    }
 	
 	    if (!formattedMessage) {
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (true) {
 	            console.error('[React Intl] Cannot format message: "' + id + '", ' + ('using message ' + (message || defaultMessage ? 'source' : 'id') + ' as fallback.'));
 	        }
 	    }
@@ -1090,7 +1087,7 @@
 	                    defaultFormats = _config.defaultFormats;
 	
 	
-	                if (process.env.NODE_ENV !== 'production') {
+	                if (true) {
 	                    console.error('[React Intl] Missing locale data for locale: "' + locale + '". ' + ('Using default locale: "' + defaultLocale + '" as fallback.'));
 	                }
 	
@@ -1166,7 +1163,7 @@
 	IntlProvider.childContextTypes = {
 	    intl: intlShape.isRequired
 	};
-	process.env.NODE_ENV !== "production" ? IntlProvider.propTypes = _extends({}, intlConfigPropTypes, {
+	 true ? IntlProvider.propTypes = _extends({}, intlConfigPropTypes, {
 	    children: React.PropTypes.element.isRequired,
 	    initialNow: React.PropTypes.any
 	}) : void 0;
@@ -1229,7 +1226,7 @@
 	FormattedDate.contextTypes = {
 	    intl: intlShape
 	};
-	process.env.NODE_ENV !== "production" ? FormattedDate.propTypes = _extends({}, dateTimeFormatPropTypes, {
+	 true ? FormattedDate.propTypes = _extends({}, dateTimeFormatPropTypes, {
 	    value: React.PropTypes.any.isRequired,
 	    format: React.PropTypes.string,
 	    children: React.PropTypes.func
@@ -1293,7 +1290,7 @@
 	FormattedTime.contextTypes = {
 	    intl: intlShape
 	};
-	process.env.NODE_ENV !== "production" ? FormattedTime.propTypes = _extends({}, dateTimeFormatPropTypes, {
+	 true ? FormattedTime.propTypes = _extends({}, dateTimeFormatPropTypes, {
 	    value: React.PropTypes.any.isRequired,
 	    format: React.PropTypes.string,
 	    children: React.PropTypes.func
@@ -1480,7 +1477,7 @@
 	FormattedRelative.defaultProps = {
 	    updateInterval: 1000 * 10
 	};
-	process.env.NODE_ENV !== "production" ? FormattedRelative.propTypes = _extends({}, relativeFormatPropTypes, {
+	 true ? FormattedRelative.propTypes = _extends({}, relativeFormatPropTypes, {
 	    value: React.PropTypes.any.isRequired,
 	    format: React.PropTypes.string,
 	    updateInterval: React.PropTypes.number,
@@ -1546,7 +1543,7 @@
 	FormattedNumber.contextTypes = {
 	    intl: intlShape
 	};
-	process.env.NODE_ENV !== "production" ? FormattedNumber.propTypes = _extends({}, numberFormatPropTypes, {
+	 true ? FormattedNumber.propTypes = _extends({}, numberFormatPropTypes, {
 	    value: React.PropTypes.any.isRequired,
 	    format: React.PropTypes.string,
 	    children: React.PropTypes.func
@@ -1615,7 +1612,7 @@
 	FormattedPlural.defaultProps = {
 	    style: 'cardinal'
 	};
-	process.env.NODE_ENV !== "production" ? FormattedPlural.propTypes = _extends({}, pluralFormatPropTypes, {
+	 true ? FormattedPlural.propTypes = _extends({}, pluralFormatPropTypes, {
 	    value: React.PropTypes.any.isRequired,
 	
 	    other: React.PropTypes.node.isRequired,
@@ -1769,7 +1766,7 @@
 	FormattedMessage.defaultProps = {
 	    values: {}
 	};
-	process.env.NODE_ENV !== "production" ? FormattedMessage.propTypes = _extends({}, messageDescriptorPropTypes, {
+	 true ? FormattedMessage.propTypes = _extends({}, messageDescriptorPropTypes, {
 	    values: React.PropTypes.object,
 	    tagName: React.PropTypes.string,
 	    children: React.PropTypes.func
@@ -1862,7 +1859,7 @@
 	FormattedHTMLMessage.defaultProps = {
 	    values: {}
 	};
-	process.env.NODE_ENV !== "production" ? FormattedHTMLMessage.propTypes = _extends({}, messageDescriptorPropTypes, {
+	 true ? FormattedHTMLMessage.propTypes = _extends({}, messageDescriptorPropTypes, {
 	    values: React.PropTypes.object,
 	    tagName: React.PropTypes.string,
 	    children: React.PropTypes.func
@@ -1896,214 +1893,27 @@
 	exports.FormattedPlural = FormattedPlural;
 	exports.FormattedMessage = FormattedMessage;
 	exports.FormattedHTMLMessage = FormattedHTMLMessage;
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+
 
 /***/ },
 /* 5 */
 /***/ function(module, exports) {
 
-	// shim for using process in browser
-	var process = module.exports = {};
-	
-	// cached from whatever global is present so that test runners that stub it
-	// don't break things.  But we need to wrap it in a try catch in case it is
-	// wrapped in strict mode code which doesn't define any globals.  It's inside a
-	// function because try/catches deoptimize in certain engines.
-	
-	var cachedSetTimeout;
-	var cachedClearTimeout;
-	
-	function defaultSetTimout() {
-	    throw new Error('setTimeout has not been defined');
-	}
-	function defaultClearTimeout () {
-	    throw new Error('clearTimeout has not been defined');
-	}
-	(function () {
-	    try {
-	        if (typeof setTimeout === 'function') {
-	            cachedSetTimeout = setTimeout;
-	        } else {
-	            cachedSetTimeout = defaultSetTimout;
-	        }
-	    } catch (e) {
-	        cachedSetTimeout = defaultSetTimout;
-	    }
-	    try {
-	        if (typeof clearTimeout === 'function') {
-	            cachedClearTimeout = clearTimeout;
-	        } else {
-	            cachedClearTimeout = defaultClearTimeout;
-	        }
-	    } catch (e) {
-	        cachedClearTimeout = defaultClearTimeout;
-	    }
-	} ())
-	function runTimeout(fun) {
-	    if (cachedSetTimeout === setTimeout) {
-	        //normal enviroments in sane situations
-	        return setTimeout(fun, 0);
-	    }
-	    // if setTimeout wasn't available but was latter defined
-	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-	        cachedSetTimeout = setTimeout;
-	        return setTimeout(fun, 0);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedSetTimeout(fun, 0);
-	    } catch(e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-	            return cachedSetTimeout.call(null, fun, 0);
-	        } catch(e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-	            return cachedSetTimeout.call(this, fun, 0);
-	        }
-	    }
-	
-	
-	}
-	function runClearTimeout(marker) {
-	    if (cachedClearTimeout === clearTimeout) {
-	        //normal enviroments in sane situations
-	        return clearTimeout(marker);
-	    }
-	    // if clearTimeout wasn't available but was latter defined
-	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-	        cachedClearTimeout = clearTimeout;
-	        return clearTimeout(marker);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedClearTimeout(marker);
-	    } catch (e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-	            return cachedClearTimeout.call(null, marker);
-	        } catch (e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-	            return cachedClearTimeout.call(this, marker);
-	        }
-	    }
-	
-	
-	
-	}
-	var queue = [];
-	var draining = false;
-	var currentQueue;
-	var queueIndex = -1;
-	
-	function cleanUpNextTick() {
-	    if (!draining || !currentQueue) {
-	        return;
-	    }
-	    draining = false;
-	    if (currentQueue.length) {
-	        queue = currentQueue.concat(queue);
-	    } else {
-	        queueIndex = -1;
-	    }
-	    if (queue.length) {
-	        drainQueue();
-	    }
-	}
-	
-	function drainQueue() {
-	    if (draining) {
-	        return;
-	    }
-	    var timeout = runTimeout(cleanUpNextTick);
-	    draining = true;
-	
-	    var len = queue.length;
-	    while(len) {
-	        currentQueue = queue;
-	        queue = [];
-	        while (++queueIndex < len) {
-	            if (currentQueue) {
-	                currentQueue[queueIndex].run();
-	            }
-	        }
-	        queueIndex = -1;
-	        len = queue.length;
-	    }
-	    currentQueue = null;
-	    draining = false;
-	    runClearTimeout(timeout);
-	}
-	
-	process.nextTick = function (fun) {
-	    var args = new Array(arguments.length - 1);
-	    if (arguments.length > 1) {
-	        for (var i = 1; i < arguments.length; i++) {
-	            args[i - 1] = arguments[i];
-	        }
-	    }
-	    queue.push(new Item(fun, args));
-	    if (queue.length === 1 && !draining) {
-	        runTimeout(drainQueue);
-	    }
-	};
-	
-	// v8 likes predictible objects
-	function Item(fun, array) {
-	    this.fun = fun;
-	    this.array = array;
-	}
-	Item.prototype.run = function () {
-	    this.fun.apply(null, this.array);
-	};
-	process.title = 'browser';
-	process.browser = true;
-	process.env = {};
-	process.argv = [];
-	process.version = ''; // empty string to avoid regexp issues
-	process.versions = {};
-	
-	function noop() {}
-	
-	process.on = noop;
-	process.addListener = noop;
-	process.once = noop;
-	process.off = noop;
-	process.removeListener = noop;
-	process.removeAllListeners = noop;
-	process.emit = noop;
-	
-	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
-	};
-	
-	process.cwd = function () { return '/' };
-	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
-	};
-	process.umask = function() { return 0; };
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
 	/* (ignored) */
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* jshint node:true */
 	
 	'use strict';
 	
-	var IntlMessageFormat = __webpack_require__(8)['default'];
+	var IntlMessageFormat = __webpack_require__(7)['default'];
 	
 	// Add all locale data to `IntlMessageFormat`. This module will be ignored when
 	// bundling for the browser with Browserify/Webpack.
-	__webpack_require__(16);
+	__webpack_require__(15);
 	
 	// Re-export `IntlMessageFormat` as the CommonJS default exports with all the
 	// locale data registered, and with English set as the default locale. Define
@@ -2113,13 +1923,13 @@
 
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* jslint esnext: true */
 	
 	"use strict";
-	var src$core$$ = __webpack_require__(9), src$en$$ = __webpack_require__(15);
+	var src$core$$ = __webpack_require__(8), src$en$$ = __webpack_require__(14);
 	
 	src$core$$["default"].__addLocaleData(src$en$$["default"]);
 	src$core$$["default"].defaultLocale = 'en';
@@ -2129,7 +1939,7 @@
 	//# sourceMappingURL=main.js.map
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -2141,7 +1951,7 @@
 	/* jslint esnext: true */
 	
 	"use strict";
-	var src$utils$$ = __webpack_require__(10), src$es5$$ = __webpack_require__(11), src$compiler$$ = __webpack_require__(12), intl$messageformat$parser$$ = __webpack_require__(13);
+	var src$utils$$ = __webpack_require__(9), src$es5$$ = __webpack_require__(10), src$compiler$$ = __webpack_require__(11), intl$messageformat$parser$$ = __webpack_require__(12);
 	exports["default"] = MessageFormat;
 	
 	// -- MessageFormat --------------------------------------------------------
@@ -2398,7 +2208,7 @@
 	//# sourceMappingURL=core.js.map
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
 	/*
@@ -2435,7 +2245,7 @@
 	//# sourceMappingURL=utils.js.map
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -2447,7 +2257,7 @@
 	/* jslint esnext: true */
 	
 	"use strict";
-	var src$utils$$ = __webpack_require__(10);
+	var src$utils$$ = __webpack_require__(9);
 	
 	// Purposely using the same implementation as the Intl.js `Intl` polyfill.
 	// Copyright 2013 Andy Earnshaw, MIT License
@@ -2489,7 +2299,7 @@
 	//# sourceMappingURL=es5.js.map
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/*
@@ -2703,17 +2513,17 @@
 	//# sourceMappingURL=compiler.js.map
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	exports = module.exports = __webpack_require__(14)['default'];
+	exports = module.exports = __webpack_require__(13)['default'];
 	exports['default'] = exports;
 
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4077,7 +3887,7 @@
 	//# sourceMappingURL=parser.js.map
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports) {
 
 	// GENERATED FILE
@@ -4087,24 +3897,24 @@
 	//# sourceMappingURL=en.js.map
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* jshint node:true */
 	
 	'use strict';
 	
-	var IntlRelativeFormat = __webpack_require__(18)['default'];
+	var IntlRelativeFormat = __webpack_require__(17)['default'];
 	
 	// Add all locale data to `IntlRelativeFormat`. This module will be ignored when
 	// bundling for the browser with Browserify/Webpack.
-	__webpack_require__(23);
+	__webpack_require__(22);
 	
 	// Re-export `IntlRelativeFormat` as the CommonJS default exports with all the
 	// locale data registered, and with English set as the default locale. Define
@@ -4114,13 +3924,13 @@
 
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* jslint esnext: true */
 	
 	"use strict";
-	var src$core$$ = __webpack_require__(19), src$en$$ = __webpack_require__(22);
+	var src$core$$ = __webpack_require__(18), src$en$$ = __webpack_require__(21);
 	
 	src$core$$["default"].__addLocaleData(src$en$$["default"]);
 	src$core$$["default"].defaultLocale = 'en';
@@ -4130,7 +3940,7 @@
 	//# sourceMappingURL=main.js.map
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -4142,7 +3952,7 @@
 	/* jslint esnext: true */
 	
 	"use strict";
-	var intl$messageformat$$ = __webpack_require__(7), src$diff$$ = __webpack_require__(20), src$es5$$ = __webpack_require__(21);
+	var intl$messageformat$$ = __webpack_require__(6), src$diff$$ = __webpack_require__(19), src$es5$$ = __webpack_require__(20);
 	exports["default"] = RelativeFormat;
 	
 	// -----------------------------------------------------------------------------
@@ -4432,7 +4242,7 @@
 	//# sourceMappingURL=core.js.map
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports) {
 
 	/*
@@ -4483,7 +4293,7 @@
 	//# sourceMappingURL=diff.js.map
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports) {
 
 	/*
@@ -4563,7 +4373,7 @@
 	//# sourceMappingURL=es5.js.map
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports) {
 
 	// GENERATED FILE
@@ -4573,16 +4383,16 @@
 	//# sourceMappingURL=en.js.map
 
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 24 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/**
+	/**
 	 * Copyright 2013-2015, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -4605,7 +4415,7 @@
 	 */
 	
 	var invariant = function(condition, format, a, b, c, d, e, f) {
-	  if (process.env.NODE_ENV !== 'production') {
+	  if (true) {
 	    if (format === undefined) {
 	      throw new Error('invariant requires an error message argument');
 	    }
@@ -4633,25 +4443,24 @@
 	};
 	
 	module.exports = invariant;
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+	exports = module.exports = __webpack_require__(25)['default'];
+	exports['default'] = exports;
+
 
 /***/ },
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	exports = module.exports = __webpack_require__(26)['default'];
-	exports['default'] = exports;
-
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
 	"use strict";
-	var src$es5$$ = __webpack_require__(27);
+	var src$es5$$ = __webpack_require__(26);
 	exports["default"] = createFormatCache;
 	
 	// -----------------------------------------------------------------------------
@@ -4727,7 +4536,7 @@
 	//# sourceMappingURL=memoizer.js.map
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4811,7 +4620,7 @@
 	//# sourceMappingURL=es5.js.map
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4820,7 +4629,7 @@
 	// React Intl
 	var react_intl_1 = __webpack_require__(4);
 	// Styles
-	__webpack_require__(29);
+	__webpack_require__(28);
 	;
 	var LanguageSelector = function (props) {
 	    var languages = props.languages, onChange = props.onChange, selected = props.selected, intl = props.intl, languageLabel = props.languageLabel;
@@ -4837,19 +4646,19 @@
 	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFuZ3VhZ2Utc2VsZWN0b3IuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsYW5ndWFnZS1zZWxlY3Rvci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUE4RDtBQUU5RCxTQUFTO0FBQ1Qsb0NBQWtDO0FBUWpDLENBQUM7QUFFRixJQUFNLGdCQUFnQixHQUFHLFVBQUUsS0FBc0M7SUFDdkQsSUFBQSwyQkFBUyxFQUFFLHlCQUFRLEVBQUUseUJBQVEsRUFBRSxpQkFBSSxFQUFFLG1DQUFhLENBQVc7SUFFckUsTUFBTSxDQUFDLENBQ0wsNkJBQUssU0FBUyxFQUFDLDJCQUEyQjtRQUN4QywyQkFBRyxTQUFTLEVBQUMsZ0JBQWdCLGlCQUFhLE1BQU0sR0FBSztRQUNyRCw4QkFBTSxTQUFTLEVBQUMsdUJBQXVCLElBQUUsYUFBYSxDQUFRO1FBQzlELGdDQUFRLElBQUksRUFBQyxrQkFBa0IsRUFBQyxFQUFFLEVBQUMsa0JBQWtCLEVBQUMsUUFBUSxFQUFFLFFBQVEsRUFBRSxZQUFZLEVBQUUsUUFBUSxJQUU1RixTQUFTLENBQUMsR0FBRyxDQUFDLFVBQUMsS0FBSyxFQUFFLEtBQUs7WUFDekIsTUFBTSxDQUFDLENBQ0wsZ0NBQ0UsR0FBRyxFQUFFLEtBQUssRUFDVixLQUFLLEVBQUUsS0FBSyxJQUVWLElBQUksQ0FBQyxhQUFhLENBQUUsRUFBRSxFQUFFLEVBQUUsYUFBVyxLQUFPLEVBQUUsQ0FBRSxDQUUzQyxDQUNWLENBQUM7UUFDSixDQUFDLENBQUMsQ0FFRyxDQUNMLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQztBQUlXLFFBQUEseUJBQXlCLEdBQUcsdUJBQVUsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDOztBQUN0RSxrQkFBZSxpQ0FBeUIsQ0FBQyJ9
 
 /***/ },
-/* 29 */
+/* 28 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 30 */,
-/* 31 */
+/* 29 */,
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var React = __webpack_require__(1);
-	__webpack_require__(32);
+	__webpack_require__(31);
 	/**
 	 * Github ribbon
 	 * Source: https://github.com/simonwhitaker/github-fork-ribbon-css
@@ -4866,18 +4675,18 @@
 	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2l0aHViLXJpYmJvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImdpdGh1Yi1yaWJib24udHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSw2QkFBK0I7QUFFL0IsT0FBTyxDQUFDLHNCQUFzQixDQUFDLENBQUM7QUFFaEM7OztHQUdHO0FBQ1UsUUFBQSxZQUFZLEdBQUcsVUFBQyxLQUFLO0lBQ2hDLE1BQU0sQ0FBQyxDQUNKLDJCQUFHLFNBQVMsRUFBQyx1QkFBdUIsRUFBQyxJQUFJLEVBQUMsa0RBQWtELGdCQUFZLHVCQUF1QjtRQUMvSCw2QkFBSyxLQUFLLEVBQUMsSUFBSSxFQUFDLE1BQU0sRUFBQyxJQUFJLEVBQUMsT0FBTyxFQUFDLGFBQWEsaUJBQWEsTUFBTTtZQUNuRSw4QkFBTSxDQUFDLEVBQUMsbURBQW1ELEdBQVE7WUFDbkUsOEJBQU0sQ0FBQyxFQUFDLDBMQUEwTCxFQUFDLElBQUksRUFBQyxjQUFjLEVBQUMsU0FBUyxFQUFDLFVBQVUsR0FBUTtZQUNuUCw4QkFBTSxDQUFDLEVBQUMscWhCQUFxaEIsRUFBQyxJQUFJLEVBQUMsY0FBYyxFQUFDLFNBQVMsRUFBQyxXQUFXLEdBQVEsQ0FDemtCLENBQ0gsQ0FDTixDQUFDO0FBQ0osQ0FBQyxDQUFBOztBQUVELGtCQUFlLG9CQUFZLENBQUMifQ==
 
 /***/ },
-/* 32 */
+/* 31 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 33 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var React = __webpack_require__(1);
-	__webpack_require__(34);
+	__webpack_require__(33);
 	exports.FlatSeparatorComponent = function (props) {
 	    return (React.createElement("div", { className: "FlatSeparatorComponent", style: { margin: props.margin, width: props.width } }));
 	};
@@ -4886,13 +4695,13 @@
 	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmxhdC1zZXBhcmF0b3IuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJmbGF0LXNlcGFyYXRvci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLDZCQUErQjtBQUUvQixPQUFPLENBQUMsdUJBQXVCLENBQUMsQ0FBQztBQUVwQixRQUFBLHNCQUFzQixHQUFHLFVBQUMsS0FBSztJQUMxQyxNQUFNLENBQUEsQ0FDSiw2QkFBSyxTQUFTLEVBQUMsd0JBQXdCLEVBQUMsS0FBSyxFQUFFLEVBQUMsTUFBTSxFQUFFLEtBQUssQ0FBQyxNQUFNLEVBQUUsS0FBSyxFQUFFLEtBQUssQ0FBQyxLQUFLLEVBQUMsR0FBUSxDQUNsRyxDQUFBO0FBQ0gsQ0FBQyxDQUFBOztBQUVELGtCQUFlLDhCQUFzQixDQUFBIn0=
 
 /***/ },
-/* 34 */
+/* 33 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 35 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4907,7 +4716,7 @@
 	// React
 	var React = __webpack_require__(1);
 	// Components
-	var lightbox_1 = __webpack_require__(36);
+	var lightbox_1 = __webpack_require__(35);
 	__webpack_require__(44);
 	exports.ShowcaseComponent = function (props) {
 	    // Props
@@ -4928,7 +4737,7 @@
 	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2hvd2Nhc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzaG93Y2FzZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUEsUUFBUTtBQUNSLDZCQUErQjtBQUUvQixhQUFhO0FBQ2IsaURBQXVEO0FBRXZELDJCQUF5QjtBQUVaLFFBQUEsaUJBQWlCLEdBQUcsVUFBQyxLQUFLO0lBQ3JDLFFBQVE7SUFDQSxJQUFBLG1CQUFLLEVBQUUseUJBQVEsRUFBRSxxQ0FBYyxDQUFXO0lBRWxELEVBQUUsQ0FBQyxDQUFFLFFBQVEsQ0FBQyxNQUFNLEtBQUssQ0FBRSxDQUFDLENBQUMsQ0FBQztRQUM1QixNQUFNLENBQUMsQ0FDTCw2QkFBSyxFQUFFLEVBQUUsTUFBRyxLQUFLLENBQUMsRUFBRSxHQUFHLEtBQUssQ0FBRSxFQUFFLFNBQVMsRUFBQyxtQkFBbUI7WUFDM0QsZ0NBQUssS0FBSyxDQUFNO1lBQ2hCLCtCQUFJLGNBQWMsQ0FBSyxDQUNuQixDQUNQLENBQUE7SUFDSCxDQUFDO0lBRUQsTUFBTSxDQUFDLENBQ0wsNkJBQUssRUFBRSxFQUFFLE1BQUcsS0FBSyxDQUFDLEVBQUUsR0FBRyxLQUFLLENBQUUsRUFBRSxTQUFTLEVBQUMsbUJBQW1CO1FBQzNELGdDQUFLLEtBQUssQ0FBTTtRQUVoQiw2QkFBSyxTQUFTLEVBQUMsWUFBWSxFQUFDLEtBQUssRUFBRTtnQkFDakMsV0FBVyxFQUFFLEtBQUssQ0FBQyxXQUFXLElBQUksR0FBRzthQUN0QyxJQUVHLEtBQUssQ0FBQyxRQUFRLENBQUMsR0FBRyxDQUFDLFVBQUMsT0FBTyxJQUFLLE9BQUEsb0JBQUMsNEJBQWlCLGFBQUMsR0FBRyxFQUFFLEtBQUcsT0FBTyxDQUFDLEdBQUssSUFBTSxPQUFPLEVBQUksRUFBekQsQ0FBeUQsQ0FBQyxDQUV4RixDQUNGLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTs7QUFFRCxrQkFBZSx5QkFBaUIsQ0FBQSJ9
 
 /***/ },
-/* 36 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4946,7 +4755,7 @@
 	    return t;
 	};
 	var React = __webpack_require__(1);
-	var LazyLoad = __webpack_require__(37).default;
+	var LazyLoad = __webpack_require__(36).default;
 	__webpack_require__(43);
 	var LightboxComponent = (function (_super) {
 	    __extends(LightboxComponent, _super);
@@ -5057,7 +4866,7 @@
 	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlnaHRib3guanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsaWdodGJveC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7QUFBQSw2QkFBK0I7QUFJL0IsSUFBTSxRQUFRLEdBQUcsT0FBTyxDQUFDLGdCQUFnQixDQUFDLENBQUMsT0FBTyxDQUFDO0FBRW5ELDJCQUF5QjtBQUV6QjtJQUF1QyxxQ0FBeUI7SUFNOUQsMkJBQVksS0FBSztRQUFqQixZQUNFLGtCQUFNLEtBQUssQ0FBQyxTQVFiO1FBZEQsV0FBSyxHQUFHO1lBQ04sT0FBTyxFQUFFLEtBQUs7WUFDZCxTQUFTLEVBQUUsSUFBSTtTQUNoQixDQUFDO1FBS0EsaUJBQWlCO1FBQ2pCLEtBQUksQ0FBQyxtQkFBbUIsR0FBRyxLQUFJLENBQUMsbUJBQW1CLENBQUMsSUFBSSxDQUFDLEtBQUksQ0FBQyxDQUFDO1FBQy9ELEtBQUksQ0FBQyxxQkFBcUIsR0FBRyxLQUFJLENBQUMscUJBQXFCLENBQUMsSUFBSSxDQUFDLEtBQUksQ0FBQyxDQUFDO1FBRW5FLHdCQUF3QjtRQUN4QixLQUFJLENBQUMsZ0JBQWdCLEdBQUcsS0FBSSxDQUFDLGdCQUFnQixDQUFDLElBQUksQ0FBQyxLQUFJLENBQUMsQ0FBQzs7SUFDM0QsQ0FBQztJQUVELDRDQUFnQixHQUFoQjtRQUNFLElBQU0sUUFBUSxnQkFBUSxJQUFJLENBQUMsS0FBSyxJQUFFLE9BQU8sRUFBRSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsT0FBTyxHQUFFLENBQUM7UUFFakUsSUFBSSxDQUFDLFFBQVEsQ0FBQyxRQUFRLENBQUMsQ0FBQztJQUMxQixDQUFDO0lBRUQsK0NBQW1CLEdBQW5CO1FBQ0UsUUFBUTtRQUNGLElBQUEsZUFBeUIsRUFBdkIsWUFBRyxFQUFFLFlBQUcsQ0FBZ0I7UUFFaEMsUUFBUTtRQUNBLElBQUEsNEJBQU8sQ0FBZ0I7UUFFL0Isd0JBQXdCO1FBQ2hCLElBQUEsd0NBQWdCLENBQVU7UUFFbEMs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
 
 /***/ },
-/* 37 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -5242,7 +5051,7 @@
 	  _createClass(LazyLoad, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      if (typeof process !== 'undefined' && process.env.NODE_ENV !== 'production') {
+	      if (typeof process !== 'undefined' && ("development") !== 'production') {
 	        if (_react2.default.Children.count(this.props.children) > 1) {
 	          console.warn('[react-lazyload] Only one child is allowed to be passed to `LazyLoad`.');
 	        }
@@ -5379,7 +5188,193 @@
 	var lazyload = exports.lazyload = _decorator2.default;
 	exports.default = LazyLoad;
 	exports.forceCheck = lazyLoadHandler;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
+
+/***/ },
+/* 37 */
+/***/ function(module, exports) {
+
+	// shim for using process in browser
+	var process = module.exports = {};
+	
+	// cached from whatever global is present so that test runners that stub it
+	// don't break things.  But we need to wrap it in a try catch in case it is
+	// wrapped in strict mode code which doesn't define any globals.  It's inside a
+	// function because try/catches deoptimize in certain engines.
+	
+	var cachedSetTimeout;
+	var cachedClearTimeout;
+	
+	function defaultSetTimout() {
+	    throw new Error('setTimeout has not been defined');
+	}
+	function defaultClearTimeout () {
+	    throw new Error('clearTimeout has not been defined');
+	}
+	(function () {
+	    try {
+	        if (typeof setTimeout === 'function') {
+	            cachedSetTimeout = setTimeout;
+	        } else {
+	            cachedSetTimeout = defaultSetTimout;
+	        }
+	    } catch (e) {
+	        cachedSetTimeout = defaultSetTimout;
+	    }
+	    try {
+	        if (typeof clearTimeout === 'function') {
+	            cachedClearTimeout = clearTimeout;
+	        } else {
+	            cachedClearTimeout = defaultClearTimeout;
+	        }
+	    } catch (e) {
+	        cachedClearTimeout = defaultClearTimeout;
+	    }
+	} ())
+	function runTimeout(fun) {
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch(e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch(e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+	
+	
+	}
+	function runClearTimeout(marker) {
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+	
+	
+	
+	}
+	var queue = [];
+	var draining = false;
+	var currentQueue;
+	var queueIndex = -1;
+	
+	function cleanUpNextTick() {
+	    if (!draining || !currentQueue) {
+	        return;
+	    }
+	    draining = false;
+	    if (currentQueue.length) {
+	        queue = currentQueue.concat(queue);
+	    } else {
+	        queueIndex = -1;
+	    }
+	    if (queue.length) {
+	        drainQueue();
+	    }
+	}
+	
+	function drainQueue() {
+	    if (draining) {
+	        return;
+	    }
+	    var timeout = runTimeout(cleanUpNextTick);
+	    draining = true;
+	
+	    var len = queue.length;
+	    while(len) {
+	        currentQueue = queue;
+	        queue = [];
+	        while (++queueIndex < len) {
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
+	        }
+	        queueIndex = -1;
+	        len = queue.length;
+	    }
+	    currentQueue = null;
+	    draining = false;
+	    runClearTimeout(timeout);
+	}
+	
+	process.nextTick = function (fun) {
+	    var args = new Array(arguments.length - 1);
+	    if (arguments.length > 1) {
+	        for (var i = 1; i < arguments.length; i++) {
+	            args[i - 1] = arguments[i];
+	        }
+	    }
+	    queue.push(new Item(fun, args));
+	    if (queue.length === 1 && !draining) {
+	        runTimeout(drainQueue);
+	    }
+	};
+	
+	// v8 likes predictible objects
+	function Item(fun, array) {
+	    this.fun = fun;
+	    this.array = array;
+	}
+	Item.prototype.run = function () {
+	    this.fun.apply(null, this.array);
+	};
+	process.title = 'browser';
+	process.browser = true;
+	process.env = {};
+	process.argv = [];
+	process.version = ''; // empty string to avoid regexp issues
+	process.versions = {};
+	
+	function noop() {}
+	
+	process.on = noop;
+	process.addListener = noop;
+	process.once = noop;
+	process.off = noop;
+	process.removeListener = noop;
+	process.removeAllListeners = noop;
+	process.emit = noop;
+	
+	process.binding = function (name) {
+	    throw new Error('process.binding is not supported');
+	};
+	
+	process.cwd = function () { return '/' };
+	process.chdir = function (dir) {
+	    throw new Error('process.chdir is not supported');
+	};
+	process.umask = function() { return 0; };
+
 
 /***/ },
 /* 38 */
@@ -5554,7 +5549,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _index = __webpack_require__(37);
+	var _index = __webpack_require__(36);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -5816,7 +5811,7 @@
 	    },
 	    excerptShort: {
 	        id: 'excerpt.short',
-	        defaultMessage: "Hi, I'm Software Developer, currently at {currently}, you can see the technologies and approaches that \n                I have worked in {attention} or visit {blog} to know some of my thoughts,"
+	        defaultMessage: "Hi, I'm Software Developer, currently at Cu\u00E1drala, you can see the technologies and approaches that \n                I have worked in my projects section right below or visit my blog to know some of my thoughts,"
 	    },
 	    excerptLong: {
 	        id: 'excerpt.long',
@@ -5962,7 +5957,7 @@
 	        }
 	    },
 	});
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZXNzYWdlcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwQztBQUU3QixRQUFBLFFBQVEsR0FBRywyQkFBYyxDQUFDO0lBQ3JDLEVBQUUsRUFBRTtRQUNGLEVBQUUsRUFBRSxZQUFZO1FBQ2hCLGNBQWMsRUFBRSxTQUFTO0tBQzFCO0lBQ0QsRUFBRSxFQUFFO1FBQ0YsRUFBRSxFQUFFLFlBQVk7UUFDaEIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxZQUFZLEVBQUU7UUFDWixFQUFFLEVBQUUsZUFBZTtRQUNuQixjQUFjLEVBQUUsb01BQ3NFO0tBQ3ZGO0lBQ0QsV0FBVyxFQUFFO1FBQ1gsRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxNQUFNLEVBQUU7UUFDTixFQUFFLEVBQUUsZ0JBQWdCO1FBQ3BCLGNBQWMsRUFBRSxRQUFRO0tBQ3pCO0lBQ0QsTUFBTSxFQUFFO1FBQ04sRUFBRSxFQUFFLGdCQUFnQjtRQUNwQixjQUFjLEVBQUUsUUFBUTtLQUN6QjtJQUNELFFBQVEsRUFBRTtRQUNSLEVBQUUsRUFBRSxrQkFBa0I7UUFDdEIsY0FBYyxFQUFFLGNBQWM7S0FDL0I7SUFDRCxJQUFJLEVBQUU7UUFDSixFQUFFLEVBQUUsY0FBYztRQUNsQixjQUFjLEVBQUUsS0FBSztLQUN0QjtJQUNELFlBQVksRUFBRTtRQUNaLEVBQUUsRUFBRSxzQkFBc0I7UUFDMUIsY0FBYyxFQUFFLG1CQUFtQjtLQUNwQztJQUNELGNBQWMsRUFBRTtRQUNkLEVBQUUsRUFBRSx3QkFBd0I7UUFDNUIsY0FBYyxFQUFFLGlCQUFpQjtLQUNsQztJQUNELGFBQWEsRUFBRTtRQUNiLEVBQUUsRUFBRSx1QkFBdUI7UUFDM0IsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxpQkFBaUIsRUFBRTtRQUNq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
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZXNzYWdlcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQVE7QUFDUiw2QkFBK0I7QUFFL0IsYUFBYTtBQUNiLHlDQUEwQztBQUU3QixRQUFBLFFBQVEsR0FBRywyQkFBYyxDQUFDO0lBQ3JDLEVBQUUsRUFBRTtRQUNGLEVBQUUsRUFBRSxZQUFZO1FBQ2hCLGNBQWMsRUFBRSxTQUFTO0tBQzFCO0lBQ0QsRUFBRSxFQUFFO1FBQ0YsRUFBRSxFQUFFLFlBQVk7UUFDaEIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxZQUFZLEVBQUU7UUFDWixFQUFFLEVBQUUsZUFBZTtRQUNuQixjQUFjLEVBQUUsMk5BQzJGO0tBQzVHO0lBQ0QsV0FBVyxFQUFFO1FBQ1gsRUFBRSxFQUFFLGNBQWM7UUFDbEIsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxNQUFNLEVBQUU7UUFDTixFQUFFLEVBQUUsZ0JBQWdCO1FBQ3BCLGNBQWMsRUFBRSxRQUFRO0tBQ3pCO0lBQ0QsTUFBTSxFQUFFO1FBQ04sRUFBRSxFQUFFLGdCQUFnQjtRQUNwQixjQUFjLEVBQUUsUUFBUTtLQUN6QjtJQUNELFFBQVEsRUFBRTtRQUNSLEVBQUUsRUFBRSxrQkFBa0I7UUFDdEIsY0FBYyxFQUFFLGNBQWM7S0FDL0I7SUFDRCxJQUFJLEVBQUU7UUFDSixFQUFFLEVBQUUsY0FBYztRQUNsQixjQUFjLEVBQUUsS0FBSztLQUN0QjtJQUNELFlBQVksRUFBRTtRQUNaLEVBQUUsRUFBRSxzQkFBc0I7UUFDMUIsY0FBYyxFQUFFLG1CQUFtQjtLQUNwQztJQUNELGNBQWMsRUFBRTtRQUNkLEVBQUUsRUFBRSx3QkFBd0I7UUFDNUIsY0FBYyxFQUFFLGlCQUFpQjtLQUNsQztJQUNELGFBQWEsRUFBRTtRQUNiLEVBQUUsRUFBRSx1QkFBdUI7UUFDM0IsY0FBYyxFQUFFLFNBQVM7S0FDMUI7SUFDRCxpQkFBaUIsRUFBRTtRQUNq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
 
 /***/ },
 /* 50 */
@@ -6035,7 +6030,7 @@
 
 	"use strict";
 	var React = __webpack_require__(1);
-	var flat_separator_1 = __webpack_require__(33);
+	var flat_separator_1 = __webpack_require__(32);
 	__webpack_require__(54);
 	;
 	exports.SectionHeaderComponent = function (props) {
@@ -6060,7 +6055,7 @@
 	"use strict";
 	var React = __webpack_require__(1);
 	__webpack_require__(56);
-	var lightbox_1 = __webpack_require__(36);
+	var lightbox_1 = __webpack_require__(35);
 	;
 	exports.ProjectComponent = function (props) {
 	    var id = props.id, image = props.image, name = props.name, excerpt = props.excerpt, information = props.information;
@@ -6098,7 +6093,7 @@
 	"use strict";
 	var React = __webpack_require__(1);
 	var social_1 = __webpack_require__(46);
-	var flat_separator_1 = __webpack_require__(33);
+	var flat_separator_1 = __webpack_require__(32);
 	__webpack_require__(58);
 	;
 	/**
@@ -6136,7 +6131,7 @@
 	module.exports = {
 		"general.en": "English",
 		"general.es": "Spanish",
-		"excerpt.short": "Hi, I'm Software Developer, currently at {currently}, you can see the technologies and approaches that \n                I have worked in {attention} or visit {blog} to know some of my thoughts,",
+		"excerpt.short": "Hi, I'm Software Developer, currently at Cuádrala, you can see the technologies and approaches that \n                I have worked in my projects section right below or visit my blog to know some of my thoughts,",
 		"excerpt.long": "{long},",
 		"general.client": "Client",
 		"general.period": "Period",
@@ -6181,7 +6176,7 @@
 	module.exports = {
 		"general.en": "Inglés",
 		"general.es": "Español",
-		"excerpt.short": "Hola, soy un Desarrollador de Software, actualmente en {currently}, puedes ver las tecnologías y paradigmas con los que he trabajado en {attention} o visitar {blog} para conocer más de lo que pienso,",
+		"excerpt.short": "Hola, soy un Desarrollador de Software, actualmente en Cuádrala, puedes ver las tecnologías y paradigmas con los que he trabajado en mi sección de proyectos (justo debajo) o visitar mi blog para conocer más de lo que pienso,",
 		"excerpt.long": "{long},",
 		"general.client": "Cliente",
 		"general.period": "Periodo",

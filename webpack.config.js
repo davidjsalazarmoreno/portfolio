@@ -1,5 +1,6 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    webpack = require('webpack'),
     path = require('path');
 
 
@@ -51,6 +52,11 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
     new CopyWebpackPlugin([
       { 
         from: path.resolve( __dirname, 'src/assets' ),
@@ -67,5 +73,5 @@ module.exports = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM'
-  },
+  }
 };
