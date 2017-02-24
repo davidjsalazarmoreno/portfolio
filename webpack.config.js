@@ -3,8 +3,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin'),
     webpack = require('webpack'),
     path = require('path');
 
-
-
 module.exports = {
   entry: [
    'webpack-dev-server/client?http://0.0.0.0:8000', // WebpackDevServer host and port

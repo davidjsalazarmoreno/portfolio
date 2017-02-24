@@ -6,9 +6,7 @@ Site: davidjsalazarmoreno@gmail.com
 Twitter: @davidjsmoreno                            
 Location: Caracas, Venezuela                      
 
-                     
-
-                            
+                
 /* SITE */
 
                             
