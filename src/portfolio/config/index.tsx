@@ -17,18 +17,6 @@ export const pmShowcase = [];
 export const sysShowcase = [
   {
     type: 'image',
-    url: '/assets/Systrix/sys-1.jpg',
-    alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
-    id: 'sys-showcase-1'
-  },
-  {
-    type: 'image',
-    url: '/assets/Systrix/sys-2.jpg',
-    alt: (<FormattedMessage {...messages['sysShowcase-1']} />),
-    id: 'sys-image-2'
-  },
-  {
-    type: 'image',
     url: '/assets/Systrix/sys-3.jpg',
     alt: (<FormattedMessage {...messages['sysShowcase-3']} />),
     id: 'sys-showcase-3'

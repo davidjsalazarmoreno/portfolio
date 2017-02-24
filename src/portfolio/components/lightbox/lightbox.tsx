@@ -1,7 +1,10 @@
+// React
 import * as React from 'react';
 
-import * as ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// React intl
+import {FormattedMessage} from 'react-intl';
 
+// React Lazy Load
 const LazyLoad = require('react-lazyload').default;
 
 import './lightbox.scss';
@@ -87,7 +90,13 @@ export class LightboxComponent extends React.Component<any, any> {
           toggleVisibility();
         }}></i>
         <figure>
-          {this.state.isLoading && <h2>Loading video, please wait...</h2>}
+
+          <h2 style={{ display: this.state.isLoading ? 'inherit' : 'none !important' }}>
+            <FormattedMessage id="general.loadingVideo" /> 
+            <i className="fa fa-circle-o-notch fa-spin fa-fw"></i>
+          </h2>
+          {/* /Video Loading Spinner */}
+
           <iframe 
             src={`https://www.youtube.com/embed/${url}`} 
             width="640" 
@@ -104,6 +113,7 @@ export class LightboxComponent extends React.Component<any, any> {
           >
           </iframe>
           <figcaption>{alt}</figcaption>
+          {/* /Youtube player and caption*/}
         
         </figure>
       </div>
@@ -129,12 +139,6 @@ export class LightboxComponent extends React.Component<any, any> {
     };
     
     return(
-        // <ReactCSSTransitionGroup
-        //   transitionName="example"
-        //       transitionAppear={false}
-        //   transitionEnterTimeout={0}
-        //   transitionLeaveTimeout={0}
-        // >
       <div key={`${url}-${Math.random()}`} id={id} className="LightboxComponent">
         <a 
           href={ type === 'youtube' ? `https://www.youtube.com/watch?v=${url}` : `${url}` } 
@@ -166,7 +170,6 @@ export class LightboxComponent extends React.Component<any, any> {
         
         {/* Rendering lightbox by type prop*/}
       </div>
-        // </ReactCSSTransitionGroup>
     );
   }
 }

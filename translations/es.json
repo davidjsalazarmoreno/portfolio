@@ -1,7 +1,10 @@
 {
   "general.en": "Inglés",
   "general.es": "Español",
-  "excerpt.short": "Hola, soy un Desarrollador de Software, actualmente en Cuádrala, puedes ver las tecnologías y paradigmas con los que he trabajado en mi sección de proyectos (justo debajo) o visitar mi blog para conocer más de lo que pienso,",
+  "general.loadingVideo": "Cargando vídeo, por favor espera...",
+  "excerpt.currently": "Cuádrala",
+  "excerpt.projectsSection": "en mi sección de proyectos (justo debajo)",
+  "excerpt.short": "Hola, soy un Desarrollador de Software, actualmente en {currently}, puedes ver las tecnologías y paradigmas con los que he trabajado en {projects} o visitar mi blog para conocer más de lo que pienso,",
   "excerpt.long": "{long},",
   "general.client": "Cliente",
   "general.period": "Periodo",

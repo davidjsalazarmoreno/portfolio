@@ -35,7 +35,9 @@ export const FooterComponent = (props: IFooterComponent) => {
         <a href="https://github.com/davidjsalazarmoreno/portfolio">
           {props.made}
         </a>
-        |
+
+        <span className="pipe">|</span>
+
         {props.inspiration} 
       </small>
     </footer> 

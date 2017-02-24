@@ -13,10 +13,22 @@ export const messages = defineMessages({
     id: 'general.es',
     defaultMessage: 'Spanish'
   },
+  loadingVideo: {
+    id: 'general.loadingVideo',
+    defaultMessage: 'Loading video, please wait...'
+  },
+  excerptCurrently: {
+    id: 'excerpt.currently',
+    defaultMessage: 'Cuádrala'
+  },
+  excerptProjectsSection: {
+    id: 'excerpt.projectsSection',
+    defaultMessage: 'my projects section right below '
+  },
   excerptShort: {
     id: 'excerpt.short',
-    defaultMessage: `Hi, I'm Software Developer, currently at Cuádrala, you can see the technologies and approaches that 
-                I have worked in my projects section right below or visit my blog to know some of my thoughts,`
+    defaultMessage: `Hi, I'm Software Developer, currently at {currently}, you can see the technologies and approaches that 
+                I have worked in {projects} or visit my blog to know some of my thoughts,`
   },
   excerptLong: {
     id: 'excerpt.long',

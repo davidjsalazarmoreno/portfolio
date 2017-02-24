@@ -98,6 +98,10 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
               <span>
                 <FormattedMessage 
                   id="excerpt.short"
+                  values={{
+                    currently: <a href="http://cuadrala.com/"><FormattedMessage id="excerpt.currently" /></a>,
+                    projects: <b><FormattedMessage id="excerpt.projectsSection" /></b>
+                  }}
                 />
               </span>
             }
@@ -122,7 +126,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
           <ProjectComponent 
             id="playsmatch" 
-            image="/assets/pm-showcase-1.png" 
+            image="/assets/PM/pm-showcase-1.png" 
             name="Cuádrala / Playsmatch"
             excerpt={<FormattedMessage id="pm.description" />}
             information={[

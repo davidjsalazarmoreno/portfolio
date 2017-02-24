@@ -1,7 +1,10 @@
 {
   "general.en": "English",
   "general.es": "Spanish",
-  "excerpt.short": "Hi, I'm Software Developer, currently at Cuádrala, you can see the technologies and approaches that \n                I have worked in my projects section right below or visit my blog to know some of my thoughts,",
+  "general.loadingVideo": "Loading video, please wait...",
+  "excerpt.currently": "Cuádrala",
+  "excerpt.projectsSection": "my projects section right below",
+  "excerpt.short": "Hi, I'm Software Developer, currently at {currently}, you can see the technologies and approaches that \n                I have worked in {projects} or visit my blog to know some of my thoughts,",
   "excerpt.long": "{long},",
   "general.client": "Client",
   "general.period": "Period",
