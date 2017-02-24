@@ -134,7 +134,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
               { key: <FormattedMessage id="general.period" />, value: <FormattedMessage id="pm.period" />},
               { key: <FormattedMessage id="general.workType" />, value: 'FullTime' },
               { key: <FormattedMessage id="general.role" />, value: 'Full Stack Web Developer' },
-              { key: <FormattedMessage id="general.technologies" />, value: 'React / Nodejs / Typescript / Redux / React Router' },
+              { key: <FormattedMessage id="general.technologies" />, value: 'React / Nodejs / Express / GraphQL / Typescript / Redux / React Router' },
               { key: <FormattedMessage id="general.companyWebsite" />, value: <a href="https://www.cuadrala.com">Cuádrala</a> }
             ]}
           />

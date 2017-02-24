@@ -91,10 +91,10 @@ export class LightboxComponent extends React.Component<any, any> {
         }}></i>
         <figure>
 
-          <h2 style={{ display: this.state.isLoading ? 'inherit' : 'none !important' }}>
+          {this.state.isLoading && <h2>
             <FormattedMessage id="general.loadingVideo" /> 
             <i className="fa fa-circle-o-notch fa-spin fa-fw"></i>
-          </h2>
+          </h2>}
           {/* /Video Loading Spinner */}
 
           <iframe 
