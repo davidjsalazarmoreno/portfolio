@@ -144,10 +144,15 @@ export class LightboxComponent extends React.Component<any, any> {
           href={ type === 'youtube' ? `https://www.youtube.com/watch?v=${url}` : `${url}` } 
           className="Thumbnail" 
           onClick={(e) => {
-            e.preventDefault();
+            if ( type === 'youtube' && window.matchMedia('(max-width: 768px)').matches ) {
+              return;
+            } else {
+              e.preventDefault();
+              toggleVisibility();
+            }
 
-            toggleVisibility();
           }}
+          target="_blank"
         >
           <LazyLoad offset={100} placeholder={
             <div className="placeholder">
