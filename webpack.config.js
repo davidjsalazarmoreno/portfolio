@@ -14,13 +14,12 @@ module.exports = {
   // },
   output: {
     filename: 'app.js',
-    path: path.resolve( __dirname, 'docs/' ),
-    publicPath: '/portfolio'
+    path: path.resolve( __dirname, 'docs/' )
   },
 
   // https://github.com/kevlened/copy-webpack-plugin/issues/44
   devServer: {
-    outputPath: __dirname + '/docs'
+    outputPath: path.resolve( __dirname, 'docs/' )
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -55,7 +54,6 @@ module.exports = {
   },
 
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')

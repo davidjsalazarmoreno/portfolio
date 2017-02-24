@@ -88,7 +88,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
           <GithubRibbon />
           
-          <HeaderComponent avatarUrl="/assets/avatar.jpg" />
+          <HeaderComponent avatarUrl="assets/avatar.jpg" />
           {/** /Header excerpt */}
 
           <FlatSeparatorComponent margin="16px auto" width="20%" />
@@ -126,7 +126,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
           <ProjectComponent 
             id="playsmatch" 
-            image="/assets/PM/pm-showcase-1.png" 
+            image="assets/PM/pm-showcase-1.png" 
             name="Cuádrala / Playsmatch"
             excerpt={<FormattedMessage id="pm.description" />}
             information={[
@@ -148,7 +148,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
           
           <ProjectComponent 
             id="systrix" 
-            image="/assets/Systrix/sys-3.jpg" 
+            image="assets/Systrix/sys-3.jpg" 
             name="Systrix"
             excerpt={<FormattedMessage id="sys.description" />}
             information={[
@@ -171,7 +171,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
           <ProjectComponent 
             id="GE" 
-            image="/assets/GE/ge.jpeg" 
+            image="assets/GE/ge.jpeg" 
             name="Gente Excelente Venezuela"
             excerpt={<FormattedMessage id="ge.description" />}
             information={[
@@ -195,7 +195,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
           <ProjectComponent 
             id="ilc" 
-            image="/assets/ilc/ilc-main.jpg" 
+            image="assets/ilc/ilc-main.jpg" 
             name="ILC Academy"
             excerpt={<FormattedMessage id="ilc.description" />}
             information={[
