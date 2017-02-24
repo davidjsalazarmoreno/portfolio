@@ -7,12 +7,14 @@ var CopyWebpackPlugin = require('copy-webpack-plugin'),
 
 module.exports = {
   entry: {
-    javascript: './src/portfolio/Bootstrap.tsx',
-    html: './src/views/index.html'
+    'app': path.resolve( __dirname, 'src/portfolio/Bootstrap.tsx' )
   },
+  // node: {
+  //   fs: "empty"
+  // },
   output: {
     filename: 'app.js',
-    path: __dirname + '/dist'
+    path: path.resolve( __dirname, 'dist/' )
   },
 
   // https://github.com/kevlened/copy-webpack-plugin/issues/44
@@ -61,7 +63,11 @@ module.exports = {
       { 
         from: path.resolve( __dirname, 'src/assets' ),
         to: path.resolve( __dirname, 'dist/assets' ) 
-      }
+      },
+      { 
+        from: path.resolve( __dirname, 'src/views/index.html' ),
+        to: path.resolve( __dirname, 'dist/index.html' ) 
+      },
     ]),
     new ExtractTextPlugin( 'styles.css' )
   ],
