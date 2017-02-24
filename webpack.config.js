@@ -6,9 +6,11 @@ var CopyWebpackPlugin = require('copy-webpack-plugin'),
 
 
 module.exports = {
-  entry: {
-    'app': path.resolve( __dirname, 'src/portfolio/Bootstrap.tsx' )
-  },
+  entry: [
+   'webpack-dev-server/client?http://0.0.0.0:8000', // WebpackDevServer host and port
+   'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+    path.resolve( __dirname, 'src/portfolio/Bootstrap.tsx' )
+  ],
   // node: {
   //   fs: "empty"
   // },
@@ -33,7 +35,7 @@ module.exports = {
   module: {
     loaders: [
       { 
-        test: /\.tsx?$/, loader: 'ts-loader?configFileName=tsconfig.json' 
+        test: /\.tsx?$/, loaders: [ 'react-hot', 'ts-loader?configFileName=tsconfig.json' ]
       },
       {
         test: /\.css?$/,
@@ -54,6 +56,7 @@ module.exports = {
   },
 
   plugins: [
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -67,6 +70,10 @@ module.exports = {
       { 
         from: path.resolve( __dirname, 'src/views/index.html' ),
         to: path.resolve( __dirname, 'dist/index.html' ) 
+      },
+      { 
+        from: path.resolve( __dirname, 'src/humans.txt' ),
+        to: path.resolve( __dirname, 'dist/humans.txt' ) 
       },
     ]),
     new ExtractTextPlugin( 'styles.css' )

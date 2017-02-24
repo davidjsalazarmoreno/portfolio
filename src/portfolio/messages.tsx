@@ -48,7 +48,7 @@ export const messages = defineMessages({
   },
   role: {
     id: 'general.role',
-    defaultMessage: 'Rol'
+    defaultMessage: 'Role'
   },
   technologies: {
     id: 'general.technologies',
@@ -140,11 +140,11 @@ export const messages = defineMessages({
   },
   'ilcShowcase-7': {
     id: 'ilc.ilcShowcase-7',
-    defaultMessage: '.'
+    defaultMessage: 'WPLMS Course asociator: Entering a certificate code and part of an ID code the graduated students in presencial can reclaim a course in the online mode'
   },
   'ilcShowcase-8': {
     id: 'ilc.ilcShowcase-8',
-    defaultMessage: 'Design of the landing page parallax, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js'
+    defaultMessage: 'Design of a parallax landing page, in this project I made the design and the layout, as well as applying the parallax effect with the library skroll.js'
   },
   contactMe: {
     id: 'general.contactMe',
