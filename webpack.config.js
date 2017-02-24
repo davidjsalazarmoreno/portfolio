@@ -5,8 +5,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin'),
 
 module.exports = {
   entry: [
-   'webpack-dev-server/client?http://0.0.0.0:8000', // WebpackDevServer host and port
-   'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+  //  'webpack-dev-server/client?http://0.0.0.0:8000', // WebpackDevServer host and port
+  //  'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     path.resolve( __dirname, 'src/portfolio/Bootstrap.tsx' )
   ],
   // node: {
@@ -14,12 +14,12 @@ module.exports = {
   // },
   output: {
     filename: 'app.js',
-    path: path.resolve( __dirname, 'dist/' )
+    path: path.resolve( __dirname, 'docs/' )
   },
 
   // https://github.com/kevlened/copy-webpack-plugin/issues/44
   devServer: {
-    outputPath: __dirname + '/dist'
+    outputPath: __dirname + '/docs'
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -63,15 +63,15 @@ module.exports = {
     new CopyWebpackPlugin([
       { 
         from: path.resolve( __dirname, 'src/assets' ),
-        to: path.resolve( __dirname, 'dist/assets' ) 
+        to: path.resolve( __dirname, 'docs/assets' ) 
       },
       { 
         from: path.resolve( __dirname, 'src/views/index.html' ),
-        to: path.resolve( __dirname, 'dist/index.html' ) 
+        to: path.resolve( __dirname, 'docs/index.html' ) 
       },
       { 
         from: path.resolve( __dirname, 'humans.txt' ),
-        to: path.resolve( __dirname, 'dist/humans.txt' ) 
+        to: path.resolve( __dirname, 'docs/humans.txt' ) 
       },
     ]),
     new ExtractTextPlugin( 'styles.css' )

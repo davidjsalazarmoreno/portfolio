@@ -4,11 +4,11 @@
   "description": "It's just my portfolio",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/http-server/bin/http-server dist/",
+    "start": "node_modules/http-server/bin/http-server docs/",
     "build": "node_modules/webpack/bin/webpack.js --progress -c webpack.config.js; npm run autoprefixer",
     "build:production": "node_modules/webpack/bin/webpack.js -c webpack.config.js --progress -p; npm run autoprefixer",
-    "watch:dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --content-base /dist",
-    "autoprefixer": "node_modules/postcss-cli/bin/postcss --use autoprefixer -o dist/styles.css dist/*.css",
+    "watch:dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --content-base /docs",
+    "autoprefixer": "node_modules/postcss-cli/bin/postcss --use autoprefixer -o docs/styles.css docs/*.css",
     "storybook": "start-storybook -s ./src/assets -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages"

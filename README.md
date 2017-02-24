@@ -1,6 +1,6 @@
 # Portfolio
 
-It's just my portfolio soon at http://davidjsalazarmoreno.github.io/
+It's just my portfolio soon at http://davidjsalazarmoreno.github.io/portfolio
 
 
 ## Install Dependencies
