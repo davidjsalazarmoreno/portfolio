@@ -31,8 +31,8 @@ const longEn = <span>
             </span> ;
 
 const longEs = <span>
-              Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuadrala</a>,tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
-              <code>CSS</code> and <code>PHP</code>, he trabajado tanto en el backend como en el frontend pero tiendo a pasar más tiempo trabajando en este ultimo.
+              Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuádrala</a>, tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
+              <code>CSS</code> y <code>PHP</code>, he trabajado tanto en el backend como en el frontend pero tiendo a pasar más tiempo trabajando en este último.
 
               Recientemente he estado inmerso en  <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
               puedes ver las tecnologías y paradigmas con los que he trabajado en <b>mi sección de proyecto (justo debajo)</b> o
@@ -156,7 +156,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
               { key: <FormattedMessage id="general.period" />, value: <FormattedMessage id="sys.period" />},
               { key: <FormattedMessage id="general.workType" />, value: 'FullTime' },
               { key: <FormattedMessage id="general.role" />, value: 'Full Stack Web Developer / Wordpress Developer / Frontend Team Leader' },
-              { key: <FormattedMessage id="general.technologies" />, value: 'Angular 2 / React/ Elixir / Phoenix / Elm' },
+              { key: <FormattedMessage id="general.technologies" />, value: 'Angular 2 / React/ Elixir / Phoenix / Elm / Google Contacts API' },
               { key: <FormattedMessage id="general.companyWebsite" />, value: <a href="https://www.linkedin.com/company/systrix">Systrix</a> }
             ]}
           />

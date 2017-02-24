@@ -19,7 +19,7 @@ export const messages = defineMessages({
   },
   excerptCurrently: {
     id: 'excerpt.currently',
-    defaultMessage: 'Cuádrala'
+    defaultMessage: 'Cuadrala'
   },
   excerptProjectsSection: {
     id: 'excerpt.projectsSection',
@@ -27,8 +27,7 @@ export const messages = defineMessages({
   },
   excerptShort: {
     id: 'excerpt.short',
-    defaultMessage: `Hi, I'm Software Developer, currently at {currently}, you can see the technologies and approaches that 
-                I have worked in {projects} or visit my blog to know some of my thoughts,`
+    defaultMessage: 'Hi, I\'m Software Developer, currently at {currently}, you can see the technologies and approaches that I have worked in {projects} or visit my blog to know some of my thoughts,'
   },
   excerptLong: {
     id: 'excerpt.long',
@@ -140,7 +139,7 @@ export const messages = defineMessages({
   },
   'ilcShowcase-7': {
     id: 'ilc.ilcShowcase-7',
-    defaultMessage: 'WPLMS Course asociator: Entering a certificate code and part of an ID code the graduated students in presencial can reclaim a course in the online mode'
+    defaultMessage: 'WPLMS Courses associator: Entering a certificate code and part of an personal ID code the graduated students in presencial modality can reclaim a course in the online modality.'
   },
   'ilcShowcase-8': {
     id: 'ilc.ilcShowcase-8',

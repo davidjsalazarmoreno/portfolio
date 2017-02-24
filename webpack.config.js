@@ -70,7 +70,7 @@ module.exports = {
         to: path.resolve( __dirname, 'dist/index.html' ) 
       },
       { 
-        from: path.resolve( __dirname, 'src/humans.txt' ),
+        from: path.resolve( __dirname, 'humans.txt' ),
         to: path.resolve( __dirname, 'dist/humans.txt' ) 
       },
     ]),
