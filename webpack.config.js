@@ -14,7 +14,8 @@ module.exports = {
   // },
   output: {
     filename: 'app.js',
-    path: path.resolve( __dirname, 'docs/' )
+    path: path.resolve( __dirname, 'docs/' ),
+    publicPath: '/portfolio'
   },
 
   // https://github.com/kevlened/copy-webpack-plugin/issues/44
