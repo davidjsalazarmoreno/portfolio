@@ -10,8 +10,7 @@
     "watch:dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --content-base /docs",
     "autoprefixer": "node_modules/postcss-cli/bin/postcss --use autoprefixer -o docs/styles.css docs/*.css",
     "storybook": "start-storybook -s ./src/assets -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages"
+    "build-storybook": "build-storybook -c .storybook -o .out"
   },
   "repository": {
     "type": "git",
