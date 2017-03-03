@@ -1,6 +1,6 @@
 # Portfolio
 
-It's just my portfolio soon at http://davidjsalazarmoreno.github.io/portfolio
+It's just my portfolio at http://davidjsalazarmoreno.github.io/portfolio
 
 
 ## Install Dependencies
@@ -12,6 +12,10 @@ $ yarn install
 
 ```
 $ yarn build:production
+```
+
+```
+$ ./translations.sh
 ```
 
 ## Running project
