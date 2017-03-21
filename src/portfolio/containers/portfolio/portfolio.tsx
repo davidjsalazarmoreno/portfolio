@@ -15,6 +15,7 @@ import {SectionHeaderComponent} from './../../components/section-header/section-
 import {ProjectComponent} from './../../components/project/project';
 import {SocialComponent} from './../../components/social/social';
 import {FooterComponent} from './../../components/footer/footer';
+import {MenuComponent} from './../../components/menu/menu';
 
 // Intl Messages
 const messages = require('./../../../../translations/en.json');
@@ -68,7 +69,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
     return (
       <IntlProvider messages={currentMessages} locale={'en'}>
-        <section className="PortfolioComponent">
+        <section id="about" className="PortfolioComponent">
           <LanguageSelectorComponent 
             languages={[
               'en' ,
@@ -87,6 +88,14 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
           />
 
           <GithubRibbon />
+
+          <MenuComponent 
+            links={[
+              { text: 'About', url: '#about' },
+              { text: 'Portfolio', url: '#portfolio' },
+              { text: 'Contact me', url: '#contact' },
+            ]}
+          />
           
           <HeaderComponent avatarUrl="assets/avatar.jpg" />
           {/** /Header excerpt */}

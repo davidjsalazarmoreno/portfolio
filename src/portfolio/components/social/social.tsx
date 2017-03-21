@@ -1,8 +1,19 @@
+// React
 import * as React from 'react';
 
-require('./social.scss');
+// Styles
+import './social.scss';
 
-export const SocialComponent = (props) => {
+export interface ISocialComponentProps {
+  id: string;
+  networks: Array<{
+    url: string;
+    iconClassName: string,
+    title: string
+  }>
+};
+
+export const SocialComponent = (props: ISocialComponentProps) => {
   // Props
   const { id, networks } = props;
 

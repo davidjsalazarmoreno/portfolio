@@ -18,7 +18,7 @@ interface IFooterComponent {
 export const FooterComponent = (props: IFooterComponent) => {
   return (
     <footer className="FooterComponent">
-      <p>
+      <p  id="contact">
         <a href="mailto:davidjsalazarmoreno@gmail.com?subject=Awesome%20Project">
           <i className="fa fa-envelope-o"></i>
           <br/>

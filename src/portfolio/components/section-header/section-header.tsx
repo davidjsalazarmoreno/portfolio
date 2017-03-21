@@ -11,7 +11,9 @@ interface ISectionHeaderComponent {
 export const SectionHeaderComponent = (props) => {
   return(
     <div className="SectionHeaderComponent">
-      <h1>{props.title}</h1>
+      <h1 id="portfolio">
+        {props.title}
+      </h1>
       <FlatSeparatorComponent margin="0 0" width="20%" />
     </div>
   );
