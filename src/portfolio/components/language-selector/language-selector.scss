@@ -11,14 +11,10 @@
   &:hover {
     color: #E74C3C;
     transition: all 350ms ease 250ms;
-    cursor: pointer;
   }
 
   &:hover select,
   &:active select {
-    opacity: 1;
-    transform: translateX(0%);
-    transition: all 350ms ease; 
     cursor: pointer;
   }
   
@@ -41,12 +37,12 @@
     margin-left: 5px;
     transition: all 350ms ease 250ms;
     padding: 5px;
-    opacity: 0;
+    // opacity: 0;
     background: #fff;
     border: none;
     border-bottom: 1px solid opacify(#E74C3C, 0.5);
     outline: none;
     box-shadow: none;
-    transform: translateX(-100%);
+    // transform: translateX(-100%);
   }
 }
