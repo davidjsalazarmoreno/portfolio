@@ -18,7 +18,15 @@
     & > span {
       margin: 0 25px;
       // text-indent: 50%;
+    }
 
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .SocialComponent {
+    & > span {
+      font-size: 18px;
     }
 
   }

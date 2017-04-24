@@ -7,9 +7,10 @@ import { storiesOf, action, linkTo, module } from '@kadira/storybook';
 // Containers/Components
 import {ProjectComponent} from '../portfolio/components/project/project';
 
+      // <ProjectComponent id="" key="" excerpt="" image="" information={[{ key: '', value: '' }]} name=""  />
 storiesOf('Project Component', module)
   .add('default view', () => {
     return (
-      <ProjectComponent id="" key="" excerpt="" image="" information={[{ key: '', value: '' }]} name=""  />
+      <span></span>
     );
   });

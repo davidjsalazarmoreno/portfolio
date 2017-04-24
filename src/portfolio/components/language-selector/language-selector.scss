@@ -7,6 +7,7 @@
   font-size: 1em;
   vertical-align: super;
   transition: all 350ms ease 250ms;
+  z-index: 1000;
   
   &:hover {
     color: #E74C3C;

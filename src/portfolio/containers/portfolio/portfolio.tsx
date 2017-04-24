@@ -15,7 +15,7 @@ import {SectionHeaderComponent} from './../../components/section-header/section-
 import {ProjectComponent} from './../../components/project/project';
 import {SocialComponent} from './../../components/social/social';
 import {FooterComponent} from './../../components/footer/footer';
-import {MenuComponent} from './../../components/menu/menu';
+import {MenuComponent} from './../../components/menu/menu.component';
 
 // Intl Messages
 const messages = require('./../../../../translations/en.json');
@@ -28,8 +28,8 @@ const longEn = <span>
 
               Recently I has been immerse in <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
               you can see the other technologies and approaches that I have worked in <b>my projects section right below</b> or
-              visit <a href="http://davidjsmoreno.com.ve/">my blog</a> to know some of my thoughts
-            </span> ;
+              visit <a href="">my blog</a> to know some of my thoughts
+            </span>;
 
 const longEs = <span>
               Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuádrala</a>, tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
@@ -37,7 +37,7 @@ const longEs = <span>
 
               Recientemente he estado inmerso en  <code>NodeJS</code>, <code>React</code> y  <code>Programación Funcional</code>,
               puedes ver las tecnologías y paradigmas con los que he trabajado en <b>mi sección de proyecto (justo debajo)</b> o
-              visitar <a href="http://davidjsmoreno.com.ve/">mi blog</a> para conocer más de lo que pienso
+              visitar <a href="https://medium.com/@davidjsmoreno">mi blog</a> para conocer más de lo que pienso
             </span>;
 
 
@@ -48,11 +48,13 @@ import './portfolio.scss';
 
 interface IPortfolioContainerState {
   language: string;
+  isMenuVisible: boolean;
 };
 
 export class PortfolioContainer extends React.Component<any, IPortfolioContainerState> {
   state = {
-    language: 'en'
+    language: 'en',
+    isMenuVisible: false
   };
 
   constructor(props) {
@@ -61,7 +63,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
   render() {
     // State
-    const { language } = this.state;
+    const { language, isMenuVisible } = this.state;
 
     const currentMessages = language === 'es' ? esMessages : messages;
 
@@ -69,7 +71,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
 
     return (
       <IntlProvider messages={currentMessages} locale={'en'}>
-        <section id="about" className="PortfolioComponent">
+        <section id="about" className={`${isMenuVisible ? 'isBlurred' : ''} PortfolioComponent`}>
           <LanguageSelectorComponent 
             languages={[
               'en' ,
@@ -87,14 +89,22 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
             }} 
           />
 
-          <GithubRibbon />
-
-          <MenuComponent 
+          <MenuComponent
+            text="Menu"
             links={[
               { text: 'About', url: '#about' },
               { text: 'Portfolio', url: '#portfolio' },
               { text: 'Contact me', url: '#contact' },
             ]}
+            isMenuVisible={this.state.isMenuVisible}
+            onMenuToggle={() => {
+              this.setState((state, props) => {
+                return ({
+                  ...state, 
+                  isMenuVisible: !state.isMenuVisible
+                })
+              })
+            }}
           />
           
           <HeaderComponent avatarUrl="assets/avatar.jpg" />

@@ -1,0 +1,115 @@
+@import '../../styles/variables.scss';
+
+.MenuComponentVisible {
+  border-bottom: 2px solid #E74C3C;
+}
+
+.MenuComponent {
+  width: 100%;
+  background: transparent;
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+  color: $primary;
+
+  // Menu overlay
+  ul {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: -15px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 350ms ease;
+    z-index: 1000;
+    background: rgba(255,255,255,.5);
+    overflow: hidden;
+  }
+
+  ul li {
+    list-style: none;
+    margin: 0;
+    font-size: 2.2rem;
+    text-align: center;
+    line-height: 4em;
+  }
+
+  ul li:first-child {
+    margin-top: 8%;
+  }
+
+  ul li a {
+    color: $accent !important;
+    text-decoration: none;
+  }
+
+  // Menu button
+  & > button {
+    border-radius: 50px;
+    background: transparent;
+    width: 64px;
+    height: 40px;
+    border: none;
+    margin-top: 3.5px;
+    margin-right: 15px;
+    z-index: 10000;
+    outline: none !important;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    position: fixed;
+
+  }
+
+  & > button:hover {
+    cursor: pointer;
+  }
+
+  & > button .fa {
+    font-size: 1.2rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  & > button .fa-close {
+    display: none;
+  }
+
+  & > button span {
+    padding-right: 11px;
+    font-size: .800em;
+    line-height: 1.8em;
+  }
+
+  .showMenu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .showMenu ~ button .fa-close {
+    display: inline;
+    color: red;
+  }
+
+  .showMenu ~ button {
+    justify-content: flex-end !important;
+  }
+
+  .showMenu ~ button span,
+  .showMenu ~ button .fa-bars {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .MenuComponent ul  li {
+    text-indent: -71px;
+    font-size: 2rem;
+  }
+} 
+

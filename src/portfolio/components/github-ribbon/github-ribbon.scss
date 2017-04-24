@@ -20,6 +20,7 @@
     }
 }
 .GithubRibbonComponent {
+  z-index: 1000;
   &:hover .octo-arm {
     animation:octocat-wave 560ms ease-in-out
   }

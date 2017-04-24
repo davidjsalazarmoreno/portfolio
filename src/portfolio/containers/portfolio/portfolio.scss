@@ -1,4 +1,18 @@
 @import '../../styles/variables';
+@import '../../styles/extends';
 @import '../../styles/mixins';
 @import '../../styles/transitions';
 @import '../../styles/base';
+
+.PortfolioComponent.isBlurred {
+  // Blurring the componentes when menu is visible
+  .LanguageSelectorComponent,
+  .HeaderComponent,
+  .ExcerptComponent,
+  .ProjectsComponent,
+  .SectionHeaderComponent,
+  .ShowcaseComponent,
+  .FooterComponent {
+    @extend .blur;
+  }
+}

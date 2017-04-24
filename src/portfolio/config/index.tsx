@@ -109,5 +109,6 @@ export const networks = [
   { url: 'https://twitter.com/davidjsmoreno', iconClassName: 'fa fa-twitter' , title: 'Twitter' },
   { url: 'https://github.com/davidjsalazarmoreno', iconClassName: 'fa fa-github' , title: 'Github' },
   { url: 'https://ve.linkedin.com/in/david-salazar-63500724', iconClassName: 'fa fa-linkedin' , title: 'Linkedin' },
-  { url: 'http://davidjsmoreno.com.ve/', iconClassName: 'fa fa-wordpress' , title: 'Wordpress blog' }
+  { url: 'https://medium.com/@davidjsmoreno', iconClassName: 'fa fa-medium' , title: 'Medium blog' },
+  { url: 'skype:davidjsalazarmoreno@outlook.com?call', iconClassName: 'fa fa-skype' , title: 'Skype' },
 ];
