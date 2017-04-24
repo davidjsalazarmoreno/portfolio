@@ -24,7 +24,17 @@ export class LightboxComponent extends React.Component<any, any> {
 
     // State getters/setters
     this.toggleVisibility = this.toggleVisibility.bind(this);
-  }  
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if ( this.state.visible ) {
+      document.querySelector('.MenuComponent').classList.add('isNotDisplayed');
+    } else {
+      document.querySelector('.MenuComponent').classList.remove('isNotDisplayed');
+
+    }
+  }
+  
 
   toggleVisibility() {
     const newState = { ...this.state, visible: !this.state.visible };
