@@ -3,3 +3,5 @@ node_modules/
 dist/
 trans-tmp
 .env
+npm-debug.log
+yarn-error.log

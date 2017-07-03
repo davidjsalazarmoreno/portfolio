@@ -26,29 +26,53 @@ module.exports = {
   devtool: 'source-map',
 
   resolve: {
-      // Add '.ts' and '.tsx' as resolvable extensions.
-      extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
 
   module: {
-    loaders: [
+    rules: [
       { 
-        test: /\.tsx?$/, loaders: [ 'react-hot', 'ts-loader?configFileName=tsconfig.json' ]
+        test: /\.tsx?$/, 
+        use: [ 
+          { loader: 'react-hot-loader' }, 
+          { loader: 'ts-loader?configFileName=tsconfig.json' } 
+        ]
       },
       {
         test: /\.css?$/,
-        loader: ExtractTextPlugin.extract('style', 'raw')
+        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'raw-loader' })
       },
       { 
-        test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass?includePaths[]') 
+        test: /\.scss$/, 
+        // https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/265q
+        loader: ExtractTextPlugin.extract({
+          loader: [
+            {
+              loader: 'css-loader',
+              // current extract-text-plugin supports query not never options format
+              query: {
+                importLoaders: 3,
+                minimize: true,
+                // Even if disabled sourceMaps gets generated
+                sourceMap: false
+              }
+            },
+            {
+              loader: 'sass-loader',
+              query: {
+                // Enable sourcemaps for resolve-url-loader to work properly
+                sourceMap: true
+              }
+            }
+          ]
+        })
       },
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
+        use: [
+          { loader: 'file-loader?name=[name].[ext]' }
+        ],
       }
     ]
   },
