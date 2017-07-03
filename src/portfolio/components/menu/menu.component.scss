@@ -36,7 +36,7 @@
     margin: 0;
     font-size: 2.2rem;
     text-align: center;
-    line-height: 4em;
+    // line-height: 4em;
   }
 
   ul li:first-child {
@@ -106,8 +106,20 @@
   }
 }
 
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+  .MenuComponent ul li {
+    line-height: 4em;
+  }
+}
+
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+  .MenuComponent ul li {
+    line-height: 2.5em;
+  }
+}
+
 @media only screen and (max-width: 425px) {
-  .MenuComponent ul  li {
+  .MenuComponent ul li {
     text-indent: -71px;
     font-size: 2rem;
   }
