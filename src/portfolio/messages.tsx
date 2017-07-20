@@ -69,6 +69,14 @@ export const messages = defineMessages({
     id: 'general.myWorkTitle',
     defaultMessage: 'My Work'
   },
+  evepDescription: {
+    id: 'evep.description',
+    defaultMessage: 'We are a NTT DATA Company, we are dedicated to consulting and outsourcing covering all sectors of the economic field, reaching a turnover in the last fiscal year about 816 million euros. We are a large family of more than 18,000 professionals spread across Europe, USA and Latin America.'
+  },
+  evepPeriod: {
+    id: 'evep.period',
+    defaultMessage: 'May 2017 - Currently'
+  },
   pmTitle: {
     id: 'pm.title',
     defaultMessage: 'Playsmatch'
@@ -79,7 +87,7 @@ export const messages = defineMessages({
   },
   pmPeriod: {
     id: 'pm.period',
-    defaultMessage: 'June 2016 - Currently'
+    defaultMessage: 'June 2016 - April 2017'
   },
   sysDescription: {
     id: 'sys.description',

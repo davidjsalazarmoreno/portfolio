@@ -144,6 +144,28 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
           {/** /Project filters */}
 
           <ProjectComponent 
+            id="everisperu" 
+            image="assets/evep/evep-showcase-1.jpg" 
+            name="Everis Perú"
+            excerpt={<FormattedMessage id="evep.description" />}
+            information={[
+              { key: <FormattedMessage id="general.client" />, value: 'Everis Perú' },
+              { key: <FormattedMessage id="general.period" />, value: <FormattedMessage id="evep.period" />},
+              { key: <FormattedMessage id="general.workType" />, value: 'FullTime' },
+              { key: <FormattedMessage id="general.role" />, value: 'Full Stack Web Developer' },
+              { key: <FormattedMessage id="general.technologies" />, value: 'Angular / Polymer' },
+              { key: <FormattedMessage id="general.companyWebsite" />, value: <a href="https://www.everis.com/peru/es/home-peru">Everis Perú</a> }
+            ]}
+          />
+
+          <ShowcaseComponent id="EverisPeruShowcase" 
+            title={<FormattedMessage id="general.showcaseTitle" />} 
+            elements={pmShowcase} 
+            emptyStateText={<FormattedMessage id="general.showcaseEmptyText" />} 
+          />
+          {/** /EverisPeru Project and showcase */}
+          
+          <ProjectComponent 
             id="playsmatch" 
             image="assets/PM/pm-showcase-1.png" 
             name="Cuádrala / Playsmatch"
