@@ -1,29 +1,27 @@
-// React
+import {FormattedMessage, IntlProvider} from 'react-intl';
 import * as React from 'react';
 
-// React intl
-import {FormattedMessage, IntlProvider} from 'react-intl';
-
-// Components
-import {LanguageSelectorComponent} from './../../components/language-selector/language-selector';
-import {GithubRibbon} from './../../components/github-ribbon/github-ribbon';
-import {FlatSeparatorComponent} from './../../components/flat-separator/flat-separator';
-import {ShowcaseComponent} from './../../components/showcase/showcase';
-import {HeaderComponent} from './../../components/header/header';
 import {ExcerptComponent} from './../../components/excerpt/excerpt';
-import {SectionHeaderComponent} from './../../components/section-header/section-header';
-import {ProjectComponent} from './../../components/project/project';
-import {SocialComponent} from './../../components/social/social';
+import {FlatSeparatorComponent} from './../../components/flat-separator/flat-separator';
 import {FooterComponent} from './../../components/footer/footer';
+import {GithubRibbon} from './../../components/github-ribbon/github-ribbon';
+import {HeaderComponent} from './../../components/header/header';
+import {LanguageSelectorComponent} from './../../components/language-selector/language-selector';
 import {MenuComponent} from './../../components/menu/menu.component';
+import {ProjectComponent} from './../../components/project/project';
+import {SectionHeaderComponent} from './../../components/section-header/section-header';
+import {ShowcaseComponent} from './../../components/showcase/showcase';
+import {SocialComponent} from './../../components/social/social';
+import {pmShowcase, sysShowcase, geShowcase, ILCShowcase, networks} from './../../config/index';
+import './portfolio.scss';
 
 // Intl Messages
-const messages = require('./../../../../translations/en.json');
 const esMessages = require('./../../../../translations/es.json');
+const messages = require('./../../../../translations/en.json');
 
 
 const longEn = <span>
-              Hi, I'm Software Developer, currently at <a href="https://www.cuadrala.com/es/">Cuadrala</a>, I have experience with several web technologies like  <code>Javascript</code>, <code>HTML</code>, 
+              Hi, I'm Software Developer, currently at <a href="https://www.everis.com/peru/es/home-peru">Everis Perú</a>, I have experience with several web technologies like  <code>Javascript</code>, <code>HTML</code>, 
               <code>CSS</code> and <code>PHP</code>, I have worked on both backend and frontend but spent more of the time working with the last one.
 
               Recently I has been immerse in <code>NodeJS</code>, <code>React</code> and  <code>Functional Programming</code>,
@@ -32,19 +30,14 @@ const longEn = <span>
             </span>;
 
 const longEs = <span>
-              Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.cuadrala.com/es/">Cuádrala</a>, tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
+              Hola, soy un Desarrollador de Software, actualmente en <a href="https://www.everis.com/peru/es/home-peru">Everis Perú</a>, tengo experiencia con varias tecnologías web como <code>Javascript</code>, <code>HTML</code>, 
               <code>CSS</code> y <code>PHP</code>, he trabajado tanto en el backend como en el frontend pero tiendo a pasar más tiempo trabajando en este último.
 
-              Recientemente he estado inmerso en  <code>NodeJS</code>, <code>React</code> y  <code>Programación Funcional</code>,
+              Recientemente he estado inmerso en <code>NodeJS</code>, <code>React</code> y <code>Programación Funcional</code>,
               puedes ver las tecnologías y paradigmas con los que he trabajado en <b>mi sección de proyecto (justo debajo)</b> o
               visitar <a href="https://medium.com/@davidjsmoreno">mi blog</a> para conocer más de lo que pienso
             </span>;
 
-
-import {pmShowcase, sysShowcase, geShowcase, ILCShowcase, networks} from './../../config/index';
-
-// Styles
-import './portfolio.scss';
 
 interface IPortfolioContainerState {
   language: string;
@@ -118,7 +111,7 @@ export class PortfolioContainer extends React.Component<any, IPortfolioContainer
                 <FormattedMessage 
                   id="excerpt.short"
                   values={{
-                    currently: <a href="http://cuadrala.com/"><FormattedMessage id="excerpt.currently" /></a>,
+                    currently: <a href="https://www.everis.com/peru/es/home-peru" target="_blank"><FormattedMessage id="excerpt.currently" /></a>,
                     projects: <b><FormattedMessage id="excerpt.projectsSection" /></b>
                   }}
                 />

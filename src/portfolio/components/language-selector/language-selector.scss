@@ -8,6 +8,8 @@
   vertical-align: super;
   transition: all 350ms ease 250ms;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
   
   &:hover {
     color: #E74C3C;
@@ -33,17 +35,13 @@
   }
 
   select {
-    float: left;
-    position: absolute;
     margin-left: 5px;
     transition: all 350ms ease 250ms;
     padding: 5px;
-    // opacity: 0;
     background: #fff;
     border: none;
     border-bottom: 1px solid opacify(#E74C3C, 0.5);
     outline: none;
     box-shadow: none;
-    // transform: translateX(-100%);
   }
 }

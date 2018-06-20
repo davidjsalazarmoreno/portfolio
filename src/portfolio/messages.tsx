@@ -19,7 +19,7 @@ export const messages = defineMessages({
   },
   excerptCurrently: {
     id: 'excerpt.currently',
-    defaultMessage: 'Cuadrala'
+    defaultMessage: 'Everis Perú'
   },
   excerptProjectsSection: {
     id: 'excerpt.projectsSection',

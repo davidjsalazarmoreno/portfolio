@@ -21,7 +21,6 @@ const LanguageSelector = ( props: ILanguageSelectorComponentProps ) => {
   return (
     <div className="LanguageSelectorComponent">
       <i className="fa fa-language" aria-hidden="true"></i>
-      {/*<span className="languageSelectorLabel">{languageLabel}</span>*/}
       <select name="LanguageSelector" id="LanguageSelector" onChange={onChange} defaultValue={selected}>
          {
           languages.map((value, index) => {
