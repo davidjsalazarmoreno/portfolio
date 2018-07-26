@@ -1,7 +1,7 @@
-var CopyWebpackPlugin = require('copy-webpack-plugin'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    webpack = require('webpack'),
-    path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: [
@@ -35,8 +35,14 @@ module.exports = {
       { 
         test: /\.tsx?$/, 
         use: [ 
-          { loader: 'react-hot-loader' }, 
-          { loader: 'ts-loader?configFileName=tsconfig.json' } 
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: false,
+              plugins: ['react-hot-loader/babel'],
+            },
+          },
+          'ts-loader' 
         ]
       },
       {
@@ -46,43 +52,18 @@ module.exports = {
       { 
         test: /\.scss$/, 
         // https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/265q
-        loader: ExtractTextPlugin.extract({
-          loader: [
-            {
-              loader: 'css-loader',
-              // current extract-text-plugin supports query not never options format
-              query: {
-                importLoaders: 3,
-                minimize: true,
-                // Even if disabled sourceMaps gets generated
-                sourceMap: false
-              }
-            },
-            {
-              loader: 'sass-loader',
-              query: {
-                // Enable sourcemaps for resolve-url-loader to work properly
-                sourceMap: true
-              }
-            }
-          ]
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'sass-loader']
         })
       },
       {
         test: /\.html$/,
-        use: [
-          { loader: 'file-loader?name=[name].[ext]' }
-        ],
+        use: 'file-loader?name=[name].[ext]',
       }
     ]
   },
 
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
     new CopyWebpackPlugin([
       { 
         from: path.resolve( __dirname, 'src/assets' ),
