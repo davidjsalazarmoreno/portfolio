@@ -1,25 +1,20 @@
-var CopyWebpackPlugin = require('copy-webpack-plugin'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    webpack = require('webpack'),
-    path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 
 module.exports = {
   entry: [
-  //  'webpack-dev-server/client?http://0.0.0.0:8000', // WebpackDevServer host and port
-  //  'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     path.resolve( __dirname, 'src/portfolio/Bootstrap.tsx' )
   ],
-  // node: {
-  //   fs: "empty"
-  // },
   output: {
     filename: 'app.js',
     path: path.resolve( __dirname, 'docs/' )
   },
 
-  // https://github.com/kevlened/copy-webpack-plugin/issues/44
   devServer: {
-    outputPath: path.resolve( __dirname, 'docs/' )
+    // hot: true, 
+    inline: true, 
+    contentBase:  path.resolve( __dirname, 'docs/' ),
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -34,9 +29,8 @@ module.exports = {
     rules: [
       { 
         test: /\.tsx?$/, 
-        use: [ 
-          { loader: 'react-hot-loader' }, 
-          { loader: 'ts-loader?configFileName=tsconfig.json' } 
+        use: [
+          'ts-loader' 
         ]
       },
       {
@@ -45,44 +39,18 @@ module.exports = {
       },
       { 
         test: /\.scss$/, 
-        // https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/265q
-        loader: ExtractTextPlugin.extract({
-          loader: [
-            {
-              loader: 'css-loader',
-              // current extract-text-plugin supports query not never options format
-              query: {
-                importLoaders: 3,
-                minimize: true,
-                // Even if disabled sourceMaps gets generated
-                sourceMap: false
-              }
-            },
-            {
-              loader: 'sass-loader',
-              query: {
-                // Enable sourcemaps for resolve-url-loader to work properly
-                sourceMap: true
-              }
-            }
-          ]
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'sass-loader']
         })
       },
       {
         test: /\.html$/,
-        use: [
-          { loader: 'file-loader?name=[name].[ext]' }
-        ],
+        use: 'file-loader?name=[name].[ext]',
       }
     ]
   },
 
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
     new CopyWebpackPlugin([
       { 
         from: path.resolve( __dirname, 'src/assets' ),

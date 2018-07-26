@@ -4,13 +4,13 @@
 Web Developer: David Salazar                            
 Site: davidjsalazarmoreno@gmail.com        
 Twitter: @davidjsmoreno                            
-Location: Caracas, Venezuela                      
+Location: Lima, Perú                      
 
                 
 /* SITE */
 
                             
-Last update: 2017/02/24
+Last update: 2018/07/25
 Language: English / Spanish                
 Standards: HTML5, CSS3.               
 Components: React, React Intl, React Lazy Load, Font Awesome and normalize.css              
