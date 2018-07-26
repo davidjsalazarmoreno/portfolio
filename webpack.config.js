@@ -1,25 +1,20 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
   entry: [
-  //  'webpack-dev-server/client?http://0.0.0.0:8000', // WebpackDevServer host and port
-  //  'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     path.resolve( __dirname, 'src/portfolio/Bootstrap.tsx' )
   ],
-  // node: {
-  //   fs: "empty"
-  // },
   output: {
     filename: 'app.js',
     path: path.resolve( __dirname, 'docs/' )
   },
 
-  // https://github.com/kevlened/copy-webpack-plugin/issues/44
   devServer: {
-    outputPath: path.resolve( __dirname, 'docs/' )
+    // hot: true, 
+    inline: true, 
+    contentBase:  path.resolve( __dirname, 'docs/' ),
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -34,14 +29,7 @@ module.exports = {
     rules: [
       { 
         test: /\.tsx?$/, 
-        use: [ 
-          {
-            loader: 'babel-loader',
-            options: {
-              babelrc: false,
-              plugins: ['react-hot-loader/babel'],
-            },
-          },
+        use: [
           'ts-loader' 
         ]
       },
@@ -51,7 +39,6 @@ module.exports = {
       },
       { 
         test: /\.scss$/, 
-        // https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/265q
         use: ExtractTextPlugin.extract({
           use: ['css-loader', 'sass-loader']
         })
