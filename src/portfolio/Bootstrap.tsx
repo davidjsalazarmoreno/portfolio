@@ -1,17 +1,13 @@
-// React
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-// React Intl
-import {injectIntl} from 'react-intl';
+import { PortfolioContainer } from './containers/portfolio/portfolio';
 
-// Containers/Components
-import {PortfolioContainer} from './containers/portfolio/portfolio';
+const APP_CONTAINER_ID = 'app';
 
-(window as any).addEventListener('load', function() {
+(window as Window).addEventListener('load', () => {
   ReactDOM.render(
     <PortfolioContainer />,
-    document.getElementById('app')
+    document.getElementById(APP_CONTAINER_ID)
   );
-
 });
