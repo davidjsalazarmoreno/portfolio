@@ -4,9 +4,10 @@
   "description": "It's just my portfolio",
   "main": "./src/index.pug",
   "scripts": {
-    "start": "lite-server docs/",
-    "build": "pug src/index.pug -o docs/",
-    "watch": "pug src/index.pug -w -o docs/"
+    "dev": "concurrently --kill-others \"yarn server\" \"yarn watch\" ",
+    "server": "lite-server docs/",
+    "watch": "pug src/index.pug -w -o docs/",
+    "build": "pug src/index.pug -o docs/"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "author": "David Salazar <davidjsalazarmoreno@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "lite-server": "^2.5.4",
     "pug": "^3.0.0",
     "pug-cli": "^1.0.0-alpha6"
